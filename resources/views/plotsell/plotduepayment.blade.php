@@ -174,7 +174,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
   <div class="row">
          <div class="col-6">
       
-রিসিভেবল এমাউন্ট :  <input type="text" autocomplete="off" name="receiveableamount" id="receiveableamount"  value="0"  class="form-control  receiveableamount"  />
+পেইড এমাউন্ট :  <input type="text" autocomplete="off" name="receiveableamount" id="receiveableamount"  value="0"  class="form-control  receiveableamount"  />
 		  
     </div>  
 	
@@ -286,7 +286,6 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 			<th>কাস্টমার</th>
 			<th> গ্রোস প্রাইস </th>
 			<th>ডিস্কাউন্ট </th>
-			<th>রিসিভেবল প্রাইস  </th>
 			<th>পেইড এমাউন্ট  </th>
 			<th>টাইপ </th>
 			<th>কমেন্ট </th>
@@ -399,7 +398,6 @@ $("#accountant").select2();
 			  {data: 'amount', name: 'amount'},
 			  {data: 'discount', name: 'discount'},
 			  {data: 'amountafterdiscount', name: 'amountafterdiscount'},
-			  {data: 'paid', name: 'paid'},
 			  {data: 'type', name: 'type'},
             {data: 'comment', name: 'comment'},
 			   {data: 'entryby', name: 'entryby'},

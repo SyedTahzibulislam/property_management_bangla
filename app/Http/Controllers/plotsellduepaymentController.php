@@ -79,8 +79,18 @@ $plotsell=  plotsell::with('plot','Customer','user')->where('type', 2)->Orwhere(
 				
 				
 				
+			    ->addColumn('amount', function (plotsell $plotsell) {
+                    return convertToBangla($plotsell->amount) ;
+                })				
 				
-				
+			    ->addColumn('discount', function (plotsell $plotsell) {
+                    return convertToBangla($plotsell->discount) ;
+                })	
+			    ->addColumn('amountafterdiscount', function (plotsell $plotsell) {
+                    return convertToBangla($plotsell->amountafterdiscount) ;
+                })	
+
+
 			    ->addColumn('plotname', function (plotsell $plotsell) {
                     return $plotsell->plot->name;
                 })

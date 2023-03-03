@@ -30,7 +30,7 @@
 @endif
   </div>
 
-Customer Name:<select style="width:300px;"  name="customer_id" id="customer_id">
+কাস্টমার :<select style="width:300px;"  name="customer_id" id="customer_id">
 <option value=""></option>
 @foreach($customer as $c)
   <option value="{{$c->id}}">{{$c->name}} (Dealer:  {{$c->balance_of_business->shopname}}    )  </option>

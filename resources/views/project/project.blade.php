@@ -27,24 +27,25 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 col-sm-6" >
-    <h1>Projects </h1>
-    <a style="float:right; margin-bottom:20px;" class="btn btn-success" href="javascript:void(0)" id="create_record"> Add New </a>
+    <h1>প্রজেক্ট  </h1>
+    <a style="float:right; margin-bottom:20px;" class="btn btn-success" href="javascript:void(0)" id="create_record"> নতুন যোগ করেন  </a>
 	
 	
 	<div class="table-responsive">
     <table id="patient_table"  class="table  table-success table-striped data-tablem">
+        <h2>প্রজেক্ট লিস্টঃ</h2>
         <thead>
             <tr>
 	
-			<th>ID</th>
-			<th>Name</th>
-            <th>Opening Balance</th>  
+			<th>আইডি </th>
+			<th>নাম </th>
+            <th>ওপেনিং ব্যালেন্স </th>  
 				
 				
 				
 			     
              
-                <th width="300px">Action</th>
+                <th width="300px">একশন</th>
             </tr>
         </thead>
         <tbody   >
@@ -63,21 +64,21 @@
   <div class="modal-content">
    <div class="modal-header">
           <button type="button" id="close" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Add New Record</h4>
+          <h4 class="modal-title">নতুন প্রজেক্ট </h4>
         </div>
         <div class="modal-body">
          <span id="form_result"></span>
          <form method="post" id="sample_form" action="{{ route('project.store') }}" class="form-horizontal" enctype="multipart/form-data">
           @csrf
           <div class="form-group">
-            <label class="control-label col-md-4" > Name : </label>
+            <label class="control-label col-md-4" > নাম  : </label>
             <div class="col-md-8">
              <input type="text" name="name" id="name" autocomplete="off" class="form-control" />
             </div>
            </div>
            
            <div class="form-group">
-            <label class="control-label col-md-4" > Opening Balance: </label>
+            <label class="control-label col-md-4" > ওপেনিং ব্যালেন্স: </label>
             <div class="col-md-8">
              <input type="text" name="ob" id="ob" value="0" autocomplete="off" class="form-control" />
             </div>
@@ -105,7 +106,7 @@
                 <h2 class="modal-title">Confirmation</h2>
             </div>
             <div class="modal-body">
-                <h4 align="center" style="margin:0;">Are you sure you want to remove this data?</h4>
+                <h4 align="center" style="margin:0;">আপনি কি ডিলিট করতে চান ?</h4>
             </div>
             <div class="modal-footer">
              <button type="button" name="ok_button" id="ok_button" class="btn btn-danger">OK</button>
@@ -154,7 +155,7 @@ $(document).ready(function(){
         ajax: "{{ route('project.index') }}",
         columns: [
 		
-		 {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+		 {data: 'id', name: 'id'},
          
             {data: 'name', name: 'name'},
 			 
@@ -339,7 +340,7 @@ $('#sample_form').on('submit', function(event){
    dataType:"json",
    success:function(html){
     $('#name').val(html.data.name);
-   $('#ob').val(html.data.ob);
+   $('#ob').val(convertToBangla(html.data.ob));
    
 	$('#hidden_id').val(html.data.id);
     $('.modal-title').text("Edit New Record");

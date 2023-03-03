@@ -43,8 +43,20 @@ class projectcontroller extends Controller
                         $button .= '<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm">Delete</button>';
                         return $button;
                     })  
-
+                    ->addColumn('ob', function( project $data){ 
+   
+                   return convertToBangla($data->ob);
+                  }) 
 					
+                  ->addColumn('id', function( project $data){ 
+   
+                    return convertToBangla($data->id);
+                   }) 
+
+
+
+
+
 					
                     ->rawColumns(['action'])
                     ->make(true);
@@ -85,7 +97,7 @@ class projectcontroller extends Controller
             return response()->json(['errors' => $error->errors()->all()]);
         }
 
-       
+          $request->ob =  convertToEnglish($request->ob); 
 
         $form_data = array(
             'name'       =>   $request->name,
@@ -147,7 +159,7 @@ class projectcontroller extends Controller
             {
                 return response()->json(['errors' => $error->errors()->all()]);
             }
-       
+     $request->ob =  convertToEnglish($request->ob);
 
         $form_data = array(
             'name'       =>   $request->name,
