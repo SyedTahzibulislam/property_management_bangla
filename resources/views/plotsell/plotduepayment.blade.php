@@ -40,7 +40,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 
 
 		<div  class="container" style="background-color:#EEE8AA; "  >
-		<h2>Due Payment / Refund</h2>
+		<h2>বাকি শোধ/ রিফান্ড </h2>
   <span id="form_result"></span>
 	
 	
@@ -57,7 +57,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
   <div class="row">
 <!-- test_name -->
     <div class="col-6">
-	Project Name:
+	প্রজেক্ট:
  <select id="project_name"  class="form-control project_name"  name="project_name"     style='width: 170px;'>
     </select>
     </div>
@@ -66,7 +66,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
  
  
      <div class="col-6">
-	Customer Name:
+	কাস্টমার:
  <select id="customer"  class="form-control customer"  name="customer"     style='width: 170px;'>
     </select>
     </div>
@@ -77,7 +77,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
    <div class="row">
 <!-- test_name -->
     <div class="col-6">
-	Plot Name:
+	প্লট :
  <select id="plot_name"  class="form-control plot_name"  name="plot_name"     style='width: 170px;'>
     </select>
     </div>
@@ -85,7 +85,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 
 
     <div class="col-6">
-	Accountant Name:
+একাউন্টাট  : 
  <select id="accountant"  class="form-control accountant"  name="accountant"     style='width: 170px;'>
     </select>
     </div>
@@ -104,13 +104,13 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 	
       <div class="col-6">
       
-Customer This Plot's due :  <input type="text" name="plotdue" autocomplete="off" id="plotdue"  value="0"  class="form-control  plotdue"  />
+এই প্লটে কাস্টমারের বাকি :  <input type="text" name="plotdue" autocomplete="off" id="plotdue"  value="0"  class="form-control  plotdue"  />
 		  
     </div> 	
 	
       <div class="col-6">
       
-Customer Due :  <input type="text" autocomplete="off" name="customerdue" id="customerdue"  value="0"  class="form-control  customerdue"  />
+কাস্টমারের মোট বাকি :  <input type="text" autocomplete="off" name="customerdue" id="customerdue"  value="0"  class="form-control  customerdue"  />
 		  
     </div>
   
@@ -128,24 +128,24 @@ Customer Due :  <input type="text" autocomplete="off" name="customerdue" id="cus
   <p>
   <div class="row">
   
-  				 			 <div class="col-6">Adjust with<br>
+  				 			 <div class="col-6">এডজাস্ট <br>
 			 <input type="radio"  name="adjusttype" value="1"  required >
-<label for="html">  Owner's fund  </label><br>
+<label for="html">  মালিকের ফান্ড  </label><br>
 <input type="radio"  name="adjusttype" value="2"   required >
-<label for="css">  Accountant's fund  </label><br>
+<label for="css">  একাউন্টেটের ফান্ড </label><br>
 <input type="radio"  name="adjusttype" value="3"   required >
-<label for="css">  Project's fund  </label><br>
+<label for="css">  প্রজেক্টের ফান্ড  </label><br>
 			    
 			 </div>	
 			 
 			 
 			 
-			   				 			 <div class="col-6">Type<br>
+			   				 			 <div class="col-6">টাইপ<br>
 	
 <input type="radio"  name="type" value="2"   required >
-<label for="css">  Due Payment  </label><br>
+<label for="css">  বাকি শোধ </label><br>
 <input type="radio"  name="type" value="3"   required >
-<label for="css">  Refund </label><br>
+<label for="css">  রিফন্ড </label><br>
 			    
 			 </div>	
   
@@ -155,7 +155,7 @@ Customer Due :  <input type="text" autocomplete="off" name="customerdue" id="cus
   
       <div class="col-6">
       
- Gross Amount :  <input type="text" autocomplete="off" name="grossamount" id="grossamount"  value="0"  class="form-control  grossamount"  />
+ গ্রোস এমাউন্ট :  <input type="text" autocomplete="off" name="grossamount" id="grossamount"  value="0"  class="form-control  grossamount"  />
 		  
     </div> 
 	
@@ -163,7 +163,7 @@ Customer Due :  <input type="text" autocomplete="off" name="customerdue" id="cus
 	
       <div class="col-6">
       
- Discount :  <input type="text" name="discount" autocomplete="off" id="discount"  value="0"  class="form-control  discount"  />
+ডিস্কাউন্ট  :  <input type="text" name="discount" autocomplete="off" id="discount"  value="0"  class="form-control  discount"  />
 		  
     </div> 	
 	
@@ -174,7 +174,7 @@ Customer Due :  <input type="text" autocomplete="off" name="customerdue" id="cus
   <div class="row">
          <div class="col-6">
       
- Receiveable Amount :  <input type="text" autocomplete="off" name="receiveableamount" id="receiveableamount"  value="0"  class="form-control  receiveableamount"  />
+রিসিভেবল এমাউন্ট :  <input type="text" autocomplete="off" name="receiveableamount" id="receiveableamount"  value="0"  class="form-control  receiveableamount"  />
 		  
     </div>  
 	
@@ -190,12 +190,12 @@ Customer Due :  <input type="text" autocomplete="off" name="customerdue" id="cus
   
   <div class="row">
   <div class="col-6">
-Date:  <input type="date"  required id="datePicker" name="Date_of_Transition" class="form-control" />
+ডেট :  <input type="date"  required id="datePicker" name="Date_of_Transition" class="form-control" />
 </div>
   
       <div class="col-6">
 
-    <label for="history">Comment:</label>
+    <label for="history">কমেন্ট:</label>
     <textarea class="form-control" id="comment"  name="comment" rows="3"></textarea>
 </div>
   </div>
@@ -273,25 +273,25 @@ Date:  <input type="date"  required id="datePicker" name="Date_of_Transition" cl
 
 	
 	<div class="table-responsive">
-	<h4> Transition </h4>
+	<h4> ট্রাঞ্জেকশন  </h4>
     <table id="patient_table"  class="table  table-success table-striped data-tablem">
         <thead>
             <tr>
-<th>No</th>
+<th>নং </th>
 			
 			
 		    
-			<th>Plot Name</th>
-			<th>Project Name</th>
-			<th>Customer Name</th>
-			<th> Gross Amount</th>
-			<th>Discount</th>
-			<th>Receiveable Amount </th>
-			<th>Paid</th>
-			<th>Type</th>
-			<th>Comment</th>
-			<th>Entity by</th>
-			<th>Action</th>
+			<th>প্লট </th>
+			<th>প্রজেক্ট </th>
+			<th>কাস্টমার</th>
+			<th> গ্রোস প্রাইস </th>
+			<th>ডিস্কাউন্ট </th>
+			<th>রিসিভেবল প্রাইস  </th>
+			<th>পেইড এমাউন্ট  </th>
+			<th>টাইপ </th>
+			<th>কমেন্ট </th>
+			<th>এন্ট্রি বাই </th>
+			<th>একশন </th>
 				
 			
 				
@@ -634,7 +634,7 @@ $('.sample_form_for_doctorappointment').delegate('.customer , .project_name','ch
 
 var id = $('.project_name option:selected').attr("data-id");
 	
-var customer_due = $('.customer option:selected').attr("data-due");	
+var customer_due = convertToBangla($('.customer option:selected').attr("data-due"));	
 var customer_id = $('.customer option:selected').attr("data-id");
 	
 	
@@ -652,7 +652,9 @@ fetchtestcomponent(id,customer_id );
  $('.sample_form_for_doctorappointment').delegate('.plot_name','change',function(){
   
 
-	 var plot_due = $('.plot_name option:selected').attr("data-due");
+	 var plot_due = convertToBangla($('.plot_name option:selected').attr("data-due"));
+
+
 	$('#plotdue').val(plot_due); 
 
 });
@@ -672,9 +674,9 @@ $('.sample_form_for_doctorappointment').delegate('#grossamount,#discount','chang
 	
 	
 	
-var grossamount =  $("#grossamount").val();
+var grossamount = convertToEnglish( $("#grossamount").val());
 
-var discount = $("#discount").val();
+var discount = convertToEnglish($("#discount").val());
 
 var receiveableamount = grossamount - 	discount;
 
@@ -682,7 +684,7 @@ var receiveableamount = grossamount - 	discount;
 
 
 
-$("#receiveableamount").val(receiveableamount);
+$("#receiveableamount").val(convertToBangla(receiveableamount));
 
 
 

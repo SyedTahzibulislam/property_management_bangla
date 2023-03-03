@@ -265,7 +265,8 @@ $request->accountant = null;
 		
 		
 		
-      DB::transaction(function () use ($request) {
+try{
+    DB::beginTransaction();
 		
 		
   
@@ -274,6 +275,23 @@ $request->accountant = null;
 'project_name','customer','plot_name','accountant','adjusttype','grossamount','discount','receiveableamount','type',
 		
     ]);
+
+
+
+    $request->grossamount =  convertToEnglish($request->grossamount);
+    $request->discount =  convertToEnglish($request->discount);
+    $request->receiveableamount =  convertToEnglish($request->receiveableamount);
+   
+
+
+
+
+
+
+
+
+
+
 
 $plot_id = plotsell::findOrFail($request->plot_name)->plot_id;
 
@@ -369,29 +387,14 @@ plot::where('id', $plot_id )
 }
 
 
+DB::commit();
+return response()->json(['success' => 'Data Added successfully.']);
+} 
+catch (\Exception $e) {
+DB::rollback();
+return response()->json(['success' => 'Data Added failed.']);
 
-
-
-
-    });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-return response()->json([ 'success'=> "Data Added Successfully "]);
+}
 
 	}
 

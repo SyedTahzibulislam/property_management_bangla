@@ -32,19 +32,19 @@
 <div class="container"   style="background-color:#EEE8AA; "  >
 
   
-  <h2> Create Customer </h2>
+  <h2> কাস্টমার তৈরি </h2>
           <form  method="post" id="sample_form"  action="{{route('customer.entry.store')}}" class="form-horizontal" enctype="multipart/form-data"  >
 		
 		@csrf
 	
 	  <div class="row">
     <div class="col-4">
-    AreaCode 	<select id="areacode"  class="form-control "  name="areacode"  required   style='width: 270px;'>
+    এরিয়া কোড 	<select id="areacode"  class="form-control "  name="areacode"  required   style='width: 270px;'>
   
    </select>
     </div>
     <div class="col-4">
-      Customer Name:			  
+      কাস্টমার নাম :			  
 			  <input type="text" class="form-control register_form " name="name" id="name"  placeholder="Enter Name" autocomplete="off">
            
     </div>
@@ -54,14 +54,14 @@
 
   <div class="row">
     <div class="col-4">
-     Mobile:  <input type="text" class="form-control register_form " name="mobile" id="mobile" placeholder="Mobile"  autocomplete="off" >
+     মোবাইল:  <input type="text" class="form-control register_form " name="mobile" id="mobile" placeholder="Mobile"  autocomplete="off" >
     </div>
     <div class="col-4">
-     Address :   <input type="text" class="form-control register_form " name="address" id="address" placeholder="Address"  autocomplete="off" >
+     ঠিকানা :   <input type="text" class="form-control register_form " name="address" id="address" placeholder="Address"  autocomplete="off" >
     </div>
 
     <div class="col-4">
-      Date:  <input type="date"  required id="datePicker" name="Date_of_Transition" class="form-control" />
+      ডেট :  <input type="date"  required id="datePicker" name="Date_of_Transition" class="form-control" />
       </div>
   </div>
 
@@ -70,20 +70,20 @@
 
   <div class="row">
     <div class="col-4">
-   Previous Due Amount:  <input type="text" value="0" class="form-control register_form " name="openingbalance" id="openingbalance" placeholder="Balance"  autocomplete="off" >
+   পূর্বের বাকি:  <input type="text" value="0" class="form-control register_form " name="openingbalance" id="openingbalance" placeholder="Balance"  autocomplete="off" >
     </div>
 
 
 
 
     <div class="col-4">
-  Email:  <input type="text" class="form-control register_form " name="email" id="email" placeholder="Email"  autocomplete="off" >  
+  ইমেইল :  <input type="text" class="form-control register_form " name="email" id="email" placeholder="Email"  autocomplete="off" >  
 </div>
 
 
 
     <div class="col-4">
-  Password:  <input type="text" class="form-control register_form " name="password" id="password" placeholder="password"  autocomplete="off" >
+  পাসওয়ার্ড:  <input type="text" class="form-control register_form " name="password" id="password" placeholder="password"  autocomplete="off" >
     </div>
 
   </div>
@@ -91,7 +91,7 @@
 		
   <div class="row">
     <div class="col-4">
- Project Name 	<select id="project"  class="form-control "  name="project_name"     style='width: 270px;'>
+ প্রজেক্ট নামঃ 	<select id="project"  class="form-control "  name="project_name"     style='width: 270px;'>
   
   </select>
     </div>
@@ -100,13 +100,13 @@
 
 
     <div class="col-4">
-  Plot Name:  <input type="text" class="form-control register_form " name="plot" id="plot" placeholder="Plot Name"  autocomplete="off" >
+  প্লট নম্বর:  <input type="text" class="form-control register_form " name="plot" id="plot" placeholder="Plot Name"  autocomplete="off" >
     </div>
 
 
 
     <div class="col-4">
-  Land Amount (Decimal ):  <input type="text" class="form-control register_form " name="amount" id="amount" placeholder="Land Amount"  autocomplete="off" >
+  জমির পরিমাণ (শতক ):  <input type="text" class="form-control register_form " name="amount" id="amount" placeholder="Land Amount"  autocomplete="off" >
     </div>
 
 
@@ -117,15 +117,15 @@
   <div class="row">
 
     <div class="col-4">
-      Plot Description :  <input type="text" class="form-control register_form " name="description" id="description" placeholder="Description "  autocomplete="off" >
+      প্লটের বিবরণ :  <input type="text" class="form-control register_form " name="description" id="description" placeholder="Description "  autocomplete="off" >
         </div>
 
     <div class="col-4">
-    Gross Amount:  <input type="text" class="form-control register_form " name="gross_amount" id="payment" placeholder="Groos Amount"  autocomplete="off" >
+    গ্রোস প্রাইস:  <input type="text" class="form-control register_form " name="gross_amount" id="payment" placeholder="Groos Amount"  autocomplete="off" >
     </div>
 
     <div class="col-4">
-    paid Amount:  <input type="text" class="form-control register_form " name="paid" id="paid" placeholder="Paid"  autocomplete="off" >
+    পেইড :  <input type="text" class="form-control register_form " name="paid" id="paid" placeholder="Paid"  autocomplete="off" >
     </div>
 
   </div>
@@ -176,7 +176,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 col-sm-6" >
-    <h1>Customer List</h1>
+    <h1>কাস্টমার লিস্টঃ</h1>
     <a style="float:right; margin-bottom:20px;" class="btn btn-success  " href="{{url('customer/entry/fulllist')}}" id=""> Show Lists of Customers </a>
 	
 	
@@ -184,18 +184,17 @@
     <table id="patient_table"  class="table  table-success table-striped data-tablem">
         <thead>
             <tr>
-<th>No</th>
-			<th>ID</th>
-				<th>Area Code</th>
-	<th>Name</th>
-             <th>Customer Code</th>
-			 <th> Mobile </th>
-				<th>Address</th>
-  
-	 <th>OB</th>			
-	 <th>Balance</th>				
+
+			<th>আইডি</th>
+				<th>এরিয়া কোড</th>
+	<th>নাম</th>
+             <th>কাস্টমার কোড</th>
+			 <th> মোবাইল </th>
+				<th>ঠিকানা</th>
+		
+	 <th> বর্তমান বাকি </th>				
 			     
-       <th>Action</th>	      
+       <th>একশন </th>	      
                 
             </tr>
         </thead>
@@ -337,9 +336,6 @@ jQuery("input").on('keyup', function(event) {
 	
         columns: [
 		
-		 
-		 
-		  {data: 'DT_RowIndex', name: 'DT_RowIndex'},
             {data: 'id', name: 'id'},
 			 {data: 'areacode', name: 'areacode'},
             {data: 'name', name: 'name'},
@@ -347,7 +343,7 @@ jQuery("input").on('keyup', function(event) {
 			 {data: 'mobile', name: 'mobile'},
 			 {data: 'address', name: 'address'},
 
-			 {data: 'openingbalance', name: 'openingbalance'},
+	
 			
 			 {data: 'presentduebalance', name: 'presentduebalance'}, 
 			 
@@ -355,7 +351,11 @@ jQuery("input").on('keyup', function(event) {
  {data: 'action', name: 'action', orderable: false, searchable: false},
 			    
            
-        ]
+        ],
+
+           order: [
+        [0, 'desc']
+    ] 
     });
 
 

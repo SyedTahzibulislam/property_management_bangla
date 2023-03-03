@@ -348,7 +348,7 @@ $("#accountant").select2();
 		
 		 
 		 
-		  {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+		  {data: 'id', name: 'id'},
 
 			  {data: 'plotname', name: 'plotname'},
 			 {data: 'projectname', name: 'projectname'},
@@ -367,7 +367,12 @@ $("#accountant").select2();
 
 			    
            
-        ]
+        ],
+
+
+        order: [
+        [0, 'desc']
+    ]
     });
 
 

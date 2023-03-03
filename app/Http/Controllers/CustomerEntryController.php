@@ -50,6 +50,31 @@ class CustomerEntryController extends Controller
 					//return "c";
                 })
 					
+                ->addColumn('presentduebalance', function (Customer $Customer) {
+						  
+                    
+              return convertToBangla($Customer->presentduebalance);
+              
+              
+          })
+
+
+          ->addColumn('id', function (Customer $Customer) {
+						  
+                    
+            return convertToBangla($Customer->id);
+            
+            
+        })
+
+
+
+
+
+
+
+
+
 					
                     ->rawColumns(['action'])
                     ->make(true);

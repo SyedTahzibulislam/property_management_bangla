@@ -46,7 +46,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 	
 	
 		<div  class="container" style="background-color:#EEE8AA; "  >
-		<h2>Create Plot </h2>
+		<h2> প্লট তৈরি  </h2>
   <span id="form_result"></span>
 	
 		<form method="post" action="{{ route('duecollection.store') }}"   id="sample_form" class="form-horizontal" enctype="multipart/form-data">
@@ -62,14 +62,14 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 			 
 	           
             <div class="col-6">
-	       Project Name  :   <select id="project"  class="form-control "  name="project"     style='width: 170px;'>  
+	     প্রজেক্ট  :   <select id="project"  class="form-control "  name="project"     style='width: 170px;'>  
            
 			
 			</select>
              </div>		
              
              <div class="col-6">
-                Land's amount (Decimal) :  <input type="text" class="form-control register_form " name="amount" id="amount" placeholder="Land Amount"  autocomplete="off" >
+                জমির পরিমাণ (শতক ) :  <input type="text" class="form-control register_form " name="amount" id="amount" placeholder="Land Amount"  autocomplete="off" >
    
                   </div>		          
 
@@ -125,7 +125,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 
 				     <div class="col-6">
       
-  Name :  <input type="text" name="name" id="name" autocomplete="off"    class="form-control  amount" required />
+  প্লটের নাম/নং :  <input type="text" name="name" id="name" autocomplete="off"    class="form-control  amount" required />
 		  
     </div>
 
@@ -134,7 +134,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 	
 	    <div class="col-6">
        
-Description:  <textarea class="form-control"  name="description" rows="3"></textarea>
+বিবরণ:  <textarea class="form-control"  name="description" rows="3"></textarea>
 		  
     </div>
 	
@@ -190,28 +190,27 @@ Description:  <textarea class="form-control"  name="description" rows="3"></text
 
 	
 
-	
+	<h2>প্লট লিস্ট </h2> 
 		<div class="table-responsive">
     <table id="patient_table"  class="table  table-success table-striped data-tablem">
         <thead>
             <tr>
-	
-			<th>Serial NO.</th>
-			<th>Orer NO.</th>
+
+			<th>অর্ডার নং .</th>
 		
-                <th>Plot No.</th>
+                <th>প্লট নং</th>
 				
-				<th>Project No.</th>
-			<th>Description</th> 
-			<th>Amn(Decimal)</th> 	
-			<th>Status.</th>
+				<th>প্রজেক্ট </th>
+			<th>বিবরণ</th> 
+			<th>পরিমাণ (শতক)</th> 	
+			<th>স্টাটাস</th> 
 		
-<th>Custommer</th> 
+<th>কাস্টমার</th> 
 			
 
-<th>Date</th>		
-<th>Entryby</th>		     
- <th>Action</th>            
+<th>ডেট</th>		
+<th>এন্ট্রি বাই</th>		     
+ <th>একশন</th>            
       
   
             </tr>
@@ -284,48 +283,27 @@ $(document).ready(function(){
 	//////////////////////////// Show record 
 
     var table = $('#patient_table').DataTable({
-		
-	
-		
-        processing: true,
-        serverSide: true,
-		responsive: true,
-	
-        ajax: "{{ route('allocateplot.index') }}",
-        columns: [
-		
-		 {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-		 
-		 
-		
-            
-			
-			
-			{data: 'id', name: 'id'},
-            {data: 'name', name: 'name'},
+    processing: true,
+    serverSide: true,
+    responsive: true,
+    ajax: "{{ route('allocateplot.index') }}",
+    columns: [
+        {data: 'id', name: 'id', type: 'num'},
+        {data: 'name', name: 'name'},
+        {data: 'project_id', name: 'project_id'},
+        {data: 'description', name: 'description'},
+        {data: 'amount', name: 'amount'},
+        {data: 'status', name: 'status'},
+        {data: 'customer_id', name: 'customer_id'},
+        {data: 'created', name: 'created'},
+        {data: 'entryby', name: 'entryby'},
+        {data: 'action', name: 'action'}, 
+    ],
+    order: [
+        [0, 'desc']
+    ]
+});
 
-			  {data: 'project_id', name: 'project_id'},
- {data: 'description', name: 'description'},
- {data: 'amount', name: 'amount'},
-	  {data: 'status', name: 'status'},
-
-		 {data: 'customer_id', name: 'customer_id'},			
-               {data: 'created', name: 'created'}, 
-			     {data: 'entryby', name: 'entryby'},
-			    {data: 'action', name: 'action'}, 
-				
-             			
-			
-								
-
-				
-				
-				
-				
-				
-				
-        ]
-    });
 
 
 	

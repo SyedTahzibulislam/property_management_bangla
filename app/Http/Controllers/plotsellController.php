@@ -75,7 +75,13 @@ $plotsell=  plotsell::with('plot','Customer','user')->where('type', 1)->orderBy(
                     return $plotsell->project->name;
                 })
 				
-				
+		
+                ->addColumn('id', function (plotsell $plotsell) {
+                    return convertToBangla($plotsell->id);
+                }) 
+
+
+
 			    ->addColumn('plotname', function (plotsell $plotsell) {
                     return $plotsell->plot->name;
                 })

@@ -37,13 +37,13 @@ class plotController extends Controller
 		
 
 		
-                  $plot =  plot::where('softdelete',0)->latest()->get();
+                  $plot =  plot::where('softdelete',0)->orderByDesc('id')->get();
 	  
-	
+
 	  
 	        if ($request->ajax()) {
 				
-                  $plot =  plot::where('softdelete',0)->latest()->get();
+                  $plot =  plot::where('softdelete',0)->orderByDesc('id')->get();
             
 			
 			
@@ -88,20 +88,36 @@ return $user;
 
 
 
+
+   			
+                                    ->addColumn('id', function (plot $plot) {
+
+
+
+                                        $id =  convertToBangla($plot->id); 
+                                        
+                                        
+                                        return $id;
+                                        
+                                                         
+                                                        })                                  
+
+
+
 							  ->addColumn('status', function (plot $plot) {
                      if ( $plot->status == 0 )
 					 {
 						 
-					return "Vacant";	 
+					return "খালি";	 
 					 }
 					 else if ( $plot->status == 1 )
 					 {
-						return "Booked";	  
+						return "বুকড";	  
 						 
 					 }
 					 else if ( $plot->status == 2 )
 					 {
-						return "Sold";	   
+						return "বিক্রি";	   
 						 
 					 }
 
