@@ -40,12 +40,12 @@
 	  <div class="row">
 
     <div class="col-6">
-       Name:			  
+       নাম:			  
 			  <input type="text" class="form-control register_form " name="name" id="name"  placeholder="Enter Name" autocomplete="off">
            
     </div>
     <div class="col-6">
-   Address:     
+   ঠিকানা :     
 			   <input type="text" class="form-control register_form " name="address" id="address" placeholder="address" autocomplete="off">
     </div>
   </div>
@@ -53,10 +53,10 @@
 
   <div class="row">
     <div class="col-6">
-     Mobile:  <input type="text" class="form-control register_form " name="mobile" id="mobile" placeholder="Mobile"  autocomplete="off" >
+    মোবাইল :  <input type="text" class="form-control register_form " name="mobile" id="mobile" placeholder="Mobile"  autocomplete="off" >
     </div>
     <div class="col-6">
-  Present Due Amount:   <input type="text" class="form-control register_form " name="due" id="due" placeholder="Due Amount"  autocomplete="off" >
+বর্তমান বাকি:   <input type="text" class="form-control register_form " name="due" id="due" placeholder="Due Amount"  autocomplete="off" >
     </div>
 
   </div>
@@ -117,7 +117,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 col-sm-6" >
-    <h1>Company/ Supplier List</h1>
+    <h1>কোম্পানি/ সাপ্লাইয়ার </h1>
     
 
 	
@@ -125,15 +125,15 @@
     <table id="patient_table"  class="table  table-success table-striped data-tablem">
         <thead>
             <tr>
-<th>No</th>
-			<th>ID</th>
-				<th>Name</th>
-	<th>Address</th>
-             <th>Mobile</th>
-			 <th> Due Amnt.</th>
+
+			<th>আইডি</th>
+				<th>নাম</th>
+	<th>ঠিকানা</th>
+             <th>মোবাইল</th>
+			 <th> বাকি</th>
 			
 			     
-       <th>Action</th>	      
+       <th>একশন </th>	      
                 
             </tr>
         </thead>
@@ -267,7 +267,7 @@ jQuery("input").on('keyup', function(event) {
 		
 		 
 		 
-		  {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+		 
             {data: 'id', name: 'id'},
 			 {data: 'name', name: 'name'},
             {data: 'address', name: 'address'},
