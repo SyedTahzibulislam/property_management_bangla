@@ -27,8 +27,8 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 col-sm-6" >
-    <h1>Unit  Conversion </h1>
-    <a style="float:right; margin-bottom:20px;" class="btn btn-success" href="javascript:void(0)" id="create_record"> Add New </a>
+    <h1>ইউনিট কনভার্সন  </h1>
+    <a style="float:right; margin-bottom:20px;" class="btn btn-success" href="javascript:void(0)" id="create_record">নতুন যুক্ত করেন  </a>
 	
 	
 	<div class="table-responsive">
@@ -36,16 +36,16 @@
         <thead>
             <tr>
 	
-			<th>ID</th>
-			<th>Name</th>
+	
+			<th>নামে </th>
 
-                <th>Conversion unit </th>
+                <th>কনভার্সন ইউনিট  </th>
 				
-			<th>Base Unit</th>				
+			<th>বেস ইউনিট </th>				
 				
 			     
              
-                <th width="300px">Action</th>
+                <th width="300px">একশন </th>
             </tr>
         </thead>
         <tbody   >
@@ -64,14 +64,14 @@
   <div class="modal-content">
    <div class="modal-header">
           <button type="button" id="close" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Add New Record</h4>
+          <h4 class="modal-title">নতুন রেকর্ড যুক্ত </h4>
         </div>
         <div class="modal-body">
          <span id="form_result"></span>
          <form method="post" id="sample_form" class="form-horizontal" enctype="multipart/form-data">
           @csrf
           <div class="form-group">
-            <label class="control-label col-md-4" > Unit Name : </label>
+            <label class="control-label col-md-4" > ইউনিট নেম  : </label>
             <div class="col-md-8">
              <input type="text" name="name" id="name" autocomplete="off" class="form-control" />
             </div>
@@ -79,7 +79,7 @@
            ==
 		   
 	          <div class="form-group">
-            <label class="control-label col-md-4" > Convertion rate: </label>
+            <label class="control-label col-md-4" > কনভার্সন রেট : </label>
             <div class="col-md-8">
              <input type="text" name="coversionamount" id="coversionamount" autocomplete="off" class="form-control" />
             </div>
@@ -89,7 +89,7 @@
 		   
 		   
 	<div class="form-group">
-    <label class="control-label col-md-4"> Basic Unit  : </label>
+    <label class="control-label col-md-4"> বেস ইউনিট   : </label>
     <div class="col-md-8">
 	
 	<select id="basicunit"  class="form-control "  name="basicunit"  required   style='width: 270px;'>
@@ -117,10 +117,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="closedelete" data-dismiss="modal">&times;</button>
-                <h2 class="modal-title">Confirmation</h2>
+                <h2 class="modal-title">কনফার্মসন </h2>
             </div>
             <div class="modal-body">
-                <h4 align="center" style="margin:0;">Are you sure you want to remove this data?</h4>
+                <h4 align="center" style="margin:0;">আপনি কি ডিলিট করতে চান ?</h4>
             </div>
             <div class="modal-footer">
              <button type="button" name="ok_button" id="ok_button" class="btn btn-danger">OK</button>
@@ -169,7 +169,7 @@ $(document).ready(function(){
         ajax: "{{ route('unitconversion.index') }}",
         columns: [
 		
-		 {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+
          
             {data: 'name', name: 'name'},
 

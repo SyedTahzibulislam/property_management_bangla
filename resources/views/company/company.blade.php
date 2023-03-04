@@ -389,7 +389,7 @@ $('#sample_form').on('submit', function(event){
     $('#address').val(html.data.address);
     $('#name').val(html.data.name);
 	$('#mobile').val(html.data.mobile);
-    $('#due').val(html.data.due);
+    $('#due').val(convertToBangla(html.data.due));
       
 	$('#hidden_id').val(html.data.id);
     $('.modal-title').text("Edit New Record");

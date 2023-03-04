@@ -46,7 +46,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 	
 	
 		<div  class="container" style="background-color:#EEE8AA; "  >
-		<h2> Product (Buying For Go-Down Stock:) </h2>
+		<h2> প্রডাক্ট </h2>
   <span id="form_result"></span>
 	
 		<form method="post" action="{{ route('Product.store') }}"   id="sample_form" class="form-horizontal" enctype="multipart/form-data">
@@ -57,12 +57,12 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 
 	  <div class="row"> 
     <div class="col-4">
-    Category 	<select id="category"  class="form-control "  name="category"  required   style='width: 270px;'>
+    ক্যাটাগরিঃ  	<select id="category"  class="form-control "  name="category"  required   style='width: 270px;'>
   
    </select>
     </div>
     <div class="col-4">
-    Company/ Supplier	<select id="company"  class="form-control "  name="company"  required   style='width: 270px;'>
+    কোম্পানি/ সাপ্লাইয়ার 	<select id="company"  class="form-control "  name="company"  required   style='width: 270px;'>
   
    </select>
     </div>
@@ -70,7 +70,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 	
 	
 		   <div class="col-4">
-Go-Down Stock  Unit	<select id="sellingunit"  class="form-control "  name="sellingunit"  required   style='width: 270px;'>
+স্টক ইউনিটঃ 	<select id="sellingunit"  class="form-control "  name="sellingunit"  required   style='width: 270px;'>
   
    </select>
     </div>
@@ -80,7 +80,7 @@ Go-Down Stock  Unit	<select id="sellingunit"  class="form-control "  name="selli
 	
 	
 	    <div class="col-4">
-  Product Name:      
+প্রডাক্টের নাম :      
 			   <input type="text" class="form-control register_form " name="name" id="name" placeholder="name" autocomplete="off">
     </div>
     <div class="col-4">
@@ -122,16 +122,16 @@ Go-Down Stock  Unit	<select id="sellingunit"  class="form-control "  name="selli
     <table id="patient_table"  class="table  table-success table-striped data-tablem">
         <thead>
             <tr>
-<th>No</th>
-			<th>ID</th>
-				<th>Category</th>
-	<th>Company</th>
-             <th>Product Name</th>
-			 <th> Product Code </th>
+
+			
+				<th>ক্যাটাগরি </th>
+	<th>কোম্পানি/সাপ্লাইয়ার </th>
+             <th>প্রডাক্ট </th>
+			
 
 				
 			     
-       <th>Action</th>	      
+       <th>একশন </th>	      
                 
             </tr>
         </thead>
@@ -164,10 +164,10 @@ Go-Down Stock  Unit	<select id="sellingunit"  class="form-control "  name="selli
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="closedelete" data-dismiss="modal">&times;</button>
-                <h2 class="modal-title">Confirmation</h2>
+                <h2 class="modal-title">কনফার্ম করেন </h2>
             </div>
             <div class="modal-body">
-                <h4 align="center" style="margin:0;">Are you sure you want to remove this data?</h4>
+                <h4 align="center" style="margin:0;">আপনি কি ডিলিট করতে চান ?</h4>
             </div>
             <div class="modal-footer">
              <button type="button" name="ok_button" id="ok_button" class="btn btn-danger">OK</button>
@@ -262,13 +262,11 @@ jQuery("input").on('keyup', function(event) {
         columns: [
 		
 		 
-		 
-		  {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-            {data: 'id', name: 'id'},
+
 			 {data: 'productcategory', name: 'productcategory'},
             {data: 'productcompany', name: 'productcompany'},
 			 {data: 'name', name: 'name'},
-			 {data: 'productcode', name: 'productcode'},
+
 
 			
 			 

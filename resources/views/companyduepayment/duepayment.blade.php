@@ -46,7 +46,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 	
 	
 		<div  class="container" style="background-color:#EEE8AA; "  >
-		<h2>Pay Due/ Receive Money  From the Company </h2>
+		<h2>কোম্পানি/ সাপ্লাইয়ারে টাকা শোধ/ টাকা ফেরত নেয়া  </h2>
   <span id="form_result"></span>
 	
 		<form method="post" action="{{ route('productcompanduetra.store') }}"   id="sample_form" class="form-horizontal" enctype="multipart/form-data">
@@ -56,7 +56,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 		
            
             <div class="col-6">
-	   Company Name  :       <select id="company_Id"  class="form-control "  name="company_Id"  required   style="width:170px;">  
+	   কোম্পানি/ সাপ্লাইয়ার  :       <select id="company_Id"  class="form-control "  name="company_Id"  required   style="width:170px;">  
            
 			
 			</select>
@@ -64,8 +64,8 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 			 
 			
 	            <div class="col-6">
-	   Project Name :    <select id="project_id"  class="form-control "  name="project_id"  required   style="width:170px;">  
-           
+	   প্রজেক্ট :    <select id="project_id"  class="form-control "  name="project_id"  required   style="width:170px;">  
+            
 			
 			</select>
              </div>		 
@@ -79,13 +79,13 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 
 	<div class="row">
 
-				 			 <div class="col-6">Adjust with<br>
+				 			 <div class="col-6">এডজাস্ট <br>
 			 <input type="radio"  name="adjusttype" value="1"  required >
-<label for="html">  Owner's fund  </label><br>
+<label for="html"> মালিকের ফান্ড   </label><br>
 <input type="radio"  name="adjusttype" value="2"   required >
-<label for="css">  Accountant's fund  </label><br>
+<label for="css"> একাউন্টেণ্ট ফান্ড  </label><br>
 <input type="radio"  name="adjusttype" value="3"   required >
-<label for="css">  Project's fund  </label><br>
+<label for="css">  প্রজেক্ট ফান্ড   </label><br>
 			    
 			 </div>	
 			 
@@ -106,7 +106,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 
         <div class="row">
             <div class="col-6">
-	   Accountant Name  :    <select id="accountant"  class="form-control "  name="accountant"  required  style="width:170px;">  
+	   একাউন্টেন্ট   :    <select id="accountant"  class="form-control "  name="accountant"  required  style="width:170px;">  
            
 			
 			</select>
@@ -114,7 +114,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 			 
 			 
             <div class="col-6">
-	  Supervisor Name  :    <select id="supervisor"  class="form-control "  name="supervisor"  required  style="width:170px;">  
+	 সুপারভাইজার   :    <select id="supervisor"  class="form-control "  name="supervisor"  required  style="width:170px;">  
            
 			
 			</select>
@@ -135,7 +135,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 <div class="row">
 
 				 <div class="col-6">
-Date:  <input type="date"  required id="datePicker" name="Date_of_Transition" class="form-control" />
+ডেট :  <input type="date"  required id="datePicker" name="Date_of_Transition" class="form-control" />
 </div>	
 
 
@@ -187,7 +187,7 @@ Date:  <input type="date"  required id="datePicker" name="Date_of_Transition" cl
 	<p>	   
   <div class="row">
  			 <div class="col-4" >
-			Present Balance   <input type="text"  value="0" name="balance" id="balance" class="form-control numbers  balance" required readonly  />
+			বর্তমান বাকিঃ   <input type="text"  value="0" name="balance" id="balance" class="form-control numbers  balance" required readonly  />
 			 </div>
 	
 
@@ -196,7 +196,7 @@ Date:  <input type="date"  required id="datePicker" name="Date_of_Transition" cl
 	
 	    <div class="col-4">
        
-Descripton:  <textarea class="form-control"  name="comment" rows="3"></textarea>
+বিবরণ :  <textarea class="form-control"  name="comment" rows="3"></textarea>
 		  
     </div>
 	
@@ -208,22 +208,21 @@ Descripton:  <textarea class="form-control"  name="comment" rows="3"></textarea>
   		     <div class="row">
 			     <div class="col-4">
       
- Gross Amount :  <input type="text" name="grossamount" autocomplete="off" id="grossamount"    class="form-control  grossamount" required />
+গ্রোস প্রাইস  :  <input type="text" name="grossamount" autocomplete="off" id="grossamount"    class="form-control  grossamount" required />
 		  
     </div>
 			 
-    <div id="dis2"   class="col-4 ">
-      
-	Percentage of Discount:  <input type="text" name="percentofdicountontaotal" id="percentofdicountontaotal"  value="0"  class="form-control  percentofdicountontaotal"  />
+   
+ <input type="hidden" name="percentofdicountontaotal" id="percentofdicountontaotal"  value="0"  class="form-control  percentofdicountontaotal"  />
 		  
-    </div>
+
 
 	
-	    <div class="col-4">
+	
       
- Discount Amount :  <input type="text" name="discountatend" id="discountatend"  value="0"  class="form-control  discountatend" readonly  />
+ <input type="hidden" name="discountatend" id="discountatend"  value="0"  class="form-control  discountatend" readonly  />
 		  
-    </div>
+  
 	
 	
 	
@@ -233,8 +232,7 @@ Descripton:  <textarea class="form-control"  name="comment" rows="3"></textarea>
   <div class="row">
 
     <div class="col-4">
-       
-	Payable Amount:	   <input type="text" name="paid" id="paid"  value="0" autocomplete="off"  class="form-control numbers totalamount"  />
+ 	   <input type="hidden" name="paid" id="paid"  value="0" autocomplete="off"  class="form-control numbers totalamount"  />
 		  
     </div>
   </div>
@@ -287,26 +285,29 @@ Descripton:  <textarea class="form-control"  name="comment" rows="3"></textarea>
         <thead>
             <tr>
 	
-			<th>Serial NO.</th>
-			<th>Orer NO.</th>
-		
-                <th>Name</th>
-				
-				<th>Amount</th>
 			
+			<th>অর্ডার নং </th>
+		
+                <th>নাম </th>
 				
-			<th>Comment</th>
-			<th>Debit</th>
-<th>Credit</th>
+				<th>টাকার পরিমাণ </th>
+                <th>প্রদান </th>
+                <th>গ্রহণ </th>
+
+			<th>কমেন্ট</th>
+		
 			
 
-<th>Date</th>
-<th> Adjusted with</th>		
-<th>Entryby</th>
- <th>Action</th> 
-<th>Project</th>	
-<th>supervisors</th>
-<th>Accountant</th>	     
+<th>ডেট</th>
+<th> এডজাস্ট </th>		
+<th>এন্টি </th>
+
+<th>প্রজেক্ট<th>	
+  	
+
+
+ <th>একশন </th> 
+     
            
                
             </tr>
@@ -407,31 +408,28 @@ $('#datePicker').val(new Date().toDateInputValue());
         ajax: "{{ route('productcompanduetra.index') }}",
         columns: [
 		
-		 {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-		 
-		 
-		
-            
+
 			
 			
 			{data: 'id', name: 'id'},
             {data: 'companyname', name: 'companyname'},
 
 			  {data: 'amount', name: 'amount'},
- 
-	  {data: 'comment', name: 'comment'},
-	  	  {data: 'debit', name: 'debit'},
+              
 		  	  {data: 'credit', name: 'credit'},
+                {data: 'debit', name: 'debit'},
+	  {data: 'comment', name: 'comment'},
+
 
 			
                {data: 'created', name: 'created'}, 
 			   
 			     {data: 'adjustby', name: 'adjustby'},
 			     {data: 'entryby', name: 'User.name'},
+                 {data: 'project', name: 'project'}, 
+
 			    {data: 'action', name: 'action'}, 
-						 {data: 'project', name: 'project'}, 
-				 {data: 'superviser', name: 'superviser'},	
-				 {data: 'accountant', name: 'accountant'},
+	
         ]
     });
 

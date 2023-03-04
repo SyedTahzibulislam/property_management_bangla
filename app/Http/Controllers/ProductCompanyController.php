@@ -48,7 +48,16 @@ class ProductCompanyController extends Controller
                         return $button;
                     })  
 
-					
+                    ->addColumn('due', function( Productcompany $data){ 
+
+                      return convertToBangla($data->due);
+                  }) 	
+                  
+                  
+                  ->addColumn('id', function( Productcompany $data){ 
+
+                    return convertToBangla($data->id);
+                }) 
 					
                     ->rawColumns(['action'])
                     ->make(true);
@@ -109,7 +118,7 @@ class ProductCompanyController extends Controller
             return response()->json(['errors' => $error->errors()->all()]);
         }
 
-       
+        $request->due= convertToEnglish($request->due);
 
         $form_data = array(
             'name'        =>  $request->name,
@@ -204,7 +213,7 @@ class ProductCompanyController extends Controller
             {
                 return response()->json(['errors' => $error->errors()->all()]);
             }
-       
+              $request->due= convertToEnglish($request->due);
 
         $form_data = array(
             'name'        =>  $request->name,

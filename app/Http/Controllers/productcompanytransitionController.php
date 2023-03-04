@@ -77,13 +77,24 @@ class productcompanytransitionController extends Controller
                               
 
 
-							  ->addColumn('companyname', function (productcompanyorder $productcompanyorder) {
-                    return $productcompanyorder->Productcompany->name;
-                })
-				
-				
-				
-							  ->addColumn('adjustby', function (productcompanyorder $productcompanyorder) {
+->addColumn('id', function (productcompanyorder $productcompanyorder) {
+return  convertToBangla($productcompanyorder->id);
+})
+->addColumn('amount', function (productcompanyorder $productcompanyorder) {
+return convertToBangla($productcompanyorder->amount);
+})
+
+->addColumn('debit', function (productcompanyorder $productcompanyorder) {
+return convertToBangla($productcompanyorder->debit);
+})
+->addColumn('credit', function (productcompanyorder $productcompanyorder) {
+return convertToBangla($productcompanyorder->credit);
+})
+
+->addColumn('companyname', function (productcompanyorder $productcompanyorder) {
+return $productcompanyorder->Productcompany->name;
+})
+->addColumn('adjustby', function (productcompanyorder $productcompanyorder) {
                      if ( $productcompanyorder->adjusttype == 1 )
 					 {
 						 
@@ -153,7 +164,7 @@ if ($productcompanyorder->project_id)
 
                  ->editColumn('created', function(productcompanyorder $data) {
 					
-					 return date('d/m/y', strtotime($data->created_at) );
+					 return convertToBangla(date('d/m/y', strtotime($data->created_at) ));
                     
                 })
 				
@@ -229,23 +240,9 @@ if ($productcompanyorder->project_id)
      */
     public function store(Request $request)
     {
-		
-		
-		
 
-		
-		
-		
-		
-		
-		
-		
-		
-		
       DB::transaction(function () use ($request) {
-		
-		
-  
+
 	$validated = $request->validate([
 	
 	 	'company_Id',
@@ -273,6 +270,20 @@ if ($productcompanyorder->project_id)
 	'project_id',	
 		
     ]);
+
+$request->unit_price =  convertToEnglish($request->unit_price);
+$request->quantity =  convertToEnglish($request->quantity);
+$request->paid =  convertToEnglish($request->paid);
+$request->grossamount =  convertToEnglish($request->grossamount);
+$request->amount =  convertToEnglish($request->amount);
+$request->totalamount =  convertToEnglish($request->totalamount);
+$request->due =  convertToEnglish($request->due);
+$request->discountatend =  convertToEnglish($request->discountatend);
+$request->percentofdicountontaotal =  convertToEnglish($request->percentofdicountontaotal);
+$request->adjust =  convertToEnglish($request->adjust);
+$request->discount =  convertToEnglish($request->discount);
+$request->totaldiscount =  convertToEnglish($request->totaldiscount);
+
 
 
 
@@ -487,9 +498,6 @@ $cashtransition->save();
     for ($product_id = 0; $product_id < count($request->medicine_name); $product_id++ ) 
 
 	{
-
-		
-		
 		
 		       
 		
@@ -793,10 +801,6 @@ Productcompany::where('id', $request->company_Id )
 		
 		
 		
-		       
-		
-		
-		
        $producttransition = new productcompanytransition; 
 	   $producttransition->productcompanyorder_id = $order_id;
 	    $producttransition->productcompany_id = $request->company_Id;
@@ -942,7 +946,38 @@ if ($status == 1)
 
 
 
-    }
+  
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	}
 
     /**
      * Display the specified resource.
@@ -1159,10 +1194,6 @@ $product = product::with('productpriceaccunit')->where('balance_of_business_id',
      */
    public function destroy($id)
     {
-		
-		
-			DB::transaction(function () use ($id) {
-		
                  $data = productcompanyorder::with('productcompanytransition','Productcompany','user')->findOrFail($id);
 
 
@@ -1228,7 +1259,7 @@ $presentdue = Productcompany::findOrFail($data->productcompany_id)->due;
         
 		$data->delete();
 	   
-	   });
+	   
 	   
 
 	   

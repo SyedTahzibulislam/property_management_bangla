@@ -229,23 +229,9 @@ if ($productcompanyorder->project_id)
      */
     public function store(Request $request)
     {
-		
-		
-		
 
-		
-		
-		
-		
-		
-		
-		
-		
-		
       DB::transaction(function () use ($request) {
-		
-		
-  
+
 	$validated = $request->validate([
 	
 	 	'company_Id',
@@ -274,8 +260,11 @@ if ($productcompanyorder->project_id)
 		
     ]);
 
-
-
+$request->unit_price =  convertToEnglish($request->unit_price);
+$request->quantity =  convertToEnglish($request->quantity);
+$request->paid =  convertToEnglish($request->paid);
+$request->grossamount =  convertToEnglish($request->grossamount);
+$request->amount =  convertToEnglish($request->amount);
 
 $role = Auth()->user()->role;
 
@@ -942,7 +931,38 @@ if ($status == 1)
 
 
 
-    }
+  
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	}
 
     /**
      * Display the specified resource.

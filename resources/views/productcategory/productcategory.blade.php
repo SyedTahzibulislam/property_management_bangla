@@ -40,7 +40,7 @@
 	  <div class="row">
 
     <div class="col-6">
-       Name:			  
+     নাম :			  
 			  <input type="text" class="form-control register_form " name="name" id="name"  placeholder="Enter Name" autocomplete="off">
            
     </div>
@@ -106,7 +106,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 col-sm-6" >
-    <h1>Product Category</h1>
+    <h1>প্রডাক্ট ক্যাটাগরি </h1>
     
 
 	
@@ -114,13 +114,13 @@
     <table id="patient_table"  class="table  table-success table-striped data-tablem">
         <thead>
             <tr>
-<th>No</th>
-			<th>ID</th>
-				<th>Name</th>
+
+
+				<th>নাম</th>
 
 			
 			     
-       <th>Action</th>	      
+       <th> একশন </th>	      
                 
             </tr>
         </thead>
@@ -142,7 +142,7 @@
   <div class="modal-content">
    <div class="modal-header">
           <button type="button" id="close" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Add New Record</h4>
+          <h4 class="modal-title">নতুন রেকর্ড এড করেন </h4>
         </div>
         <div class="modal-body">
          <span id="form_result"></span>
@@ -168,10 +168,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="closedelete" data-dismiss="modal">&times;</button>
-                <h2 class="modal-title">Confirmation</h2>
+                <h2 class="modal-title">কনফার্ম করেন </h2>
             </div>
             <div class="modal-body">
-                <h4 align="center" style="margin:0;">Are you sure you want to remove this data?</h4>
+                <h4 align="center" style="margin:0;">আপনি কি ডিলিট করতে চান ?</h4>
             </div>
             <div class="modal-footer">
              <button type="button" name="ok_button" id="ok_button" class="btn btn-danger">OK</button>
@@ -252,10 +252,7 @@ jQuery("input").on('keyup', function(event) {
 	
         columns: [
 		
-		 
-		 
-		  {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-            {data: 'id', name: 'id'},
+
 			 {data: 'name', name: 'name'},
   
 			

@@ -52,7 +52,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 
 	  <div class="row">
     <div class="col-4">
-    Category 	<select id="category"  class="form-control "  name="category"  required   style='width: 270px;'>
+    ক্যাটাগরি  	<select id="category"  class="form-control "  name="category"  required   style='width: 270px;'>
    <option value="{{$product->productcategory->id}}" > {{$product->productcategory->name}} <option>
   
   @foreach($category as $c)
@@ -66,7 +66,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 	
 	
 	<div class="col-4">
-    Company 	<select id="company"  class="form-control "   name="company"  required   style='width: 270px;'>
+   কোম্পানি  	<select id="company"  class="form-control "   name="company"  required   style='width: 270px;'>
  
   <option value="{{$product->Productcompany_id}}" > {{$selectedcomapny}} <option>  
   @foreach($productcompany as $p)
@@ -76,7 +76,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
    </select>
     </div>
     <div class="col-4">
-     Product Code:  <input type="text" class="form-control register_form " value="{{$product->productcode}}" name="productcode" id="productcode" placeholder="productcode" required autocomplete="off" >
+     প্রডাক্ট কোড :  <input type="text" class="form-control register_form " value="{{$product->productcode}}" name="productcode" id="productcode" placeholder="productcode" required autocomplete="off" >
     </div>
   </div>
 	
@@ -87,7 +87,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 	
 	
 		   <div class="col-4">
-Product Name	
+প্রডাক্ট নামঃ 	
 
 <input type="text" class="form-control register_form " name="name" value="{{$product->name}}" id="name" placeholder="Name" required autocomplete="off" >
 
@@ -96,7 +96,7 @@ Product Name
 
 	
 			   <div class="col-4">
-Go-down Stock	<input type="text" class="form-control register_form " value="{{$product->stock}}"      name="godownstock" id="Fo-down Stock" placeholder="godownstock" required autocomplete="off" >
+স্টক 	<input type="text" class="form-control register_form " value="{{$product->stock}}"      name="godownstock" id="Fo-down Stock" placeholder="godownstock" required autocomplete="off" >
 
     </div>
 	
@@ -127,9 +127,9 @@ Go-down Stock	<input type="text" class="form-control register_form " value="{{$p
                 <thead>
                     <tr>
                    
-						<th>Unit</th>
-                        <th  style="width:100px;"  >Unit Price</th>
-						<th style="width:150px;" >Qun. </th>
+						<th>ইউনিট </th>
+                        <th  style="width:100px;"  > প্রাইস </th>
+						<th style="width:150px;" > পরিমাণ . </th>
 				
 
 					

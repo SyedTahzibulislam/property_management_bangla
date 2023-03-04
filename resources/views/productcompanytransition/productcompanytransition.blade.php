@@ -46,7 +46,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 	
 	
 		<div  class="container" style="background-color:#EEE8AA; "  >
-		<h2>Buy/Return Product / Lands </h2>
+		<h2> ক্রয়/ ফেরত প্রডাক্ট  </h2>
   <span id="form_result"></span>
 	
 		<form method="post" action="{{ route('productcompanytrans.store') }}"   id="sample_form" class="form-horizontal" enctype="multipart/form-data">
@@ -56,7 +56,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 		   <div  id="cusid"  class="form-group">
         <div class="row">
             <div class="col-6">
-	    Company Name  :    <select id="company_Id"  class="form-control "  name="company_Id"  required  style="width:170px;">  
+	   কোম্পানি/সাপ্লাইয়ার   :    <select id="company_Id"  class="form-control "  name="company_Id"  required  style="width:170px;">  
            
 			
 			</select>
@@ -64,7 +64,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 			 
 			 
 	            <div class="col-6">
-	   Project Name :    <select id="project_id"  class="form-control "  name="project_id"  required  style="width:170px;" >  
+	  প্রজেক্ট  :    <select id="project_id"  class="form-control "  name="project_id"  required  style="width:170px;" >  
            
 			
 			</select>
@@ -77,7 +77,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 			 
         <div class="row">
             <div class="col-6">
-	   Accountant Name  :    <select id="accountant"  class="form-control "  name="accountant"  required  style="width:170px;">  
+	   একাউন্টেন্ট  :    <select id="accountant"  class="form-control "  name="accountant"  required  style="width:170px;">  
            
 			
 			</select>
@@ -85,7 +85,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 			 
 			 
             <div class="col-6">
-	  Supervisor Name  :    <select id="supervisor"  class="form-control "  name="supervisor"  required  style="width:170px;">  
+	  সুপারভাইজার  :    <select id="supervisor"  class="form-control "  name="supervisor"  required  style="width:170px;">  
            
 			
 			</select>
@@ -97,13 +97,13 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 		<p>	 
 	<div class="row">
 
-				 			 <div class="col-6">Adjust with<br>
+				 			 <div class="col-6">এডজাস্ট <br>
 			 <input type="radio"  name="adjusttype" value="1"  required >
-<label for="html">  Owner's fund  </label><br>
+<label for="html">  মালিকের ফান্ড </label><br>
 <input type="radio"  name="adjusttype" value="2"   required >
-<label for="css">  Accountant's fund  </label><br>
+<label for="css">  একাউন্টেন্টের ফান্ড   </label><br>
 <input type="radio"  name="adjusttype" value="3"   required >
-<label for="css">  Project's fund  </label><br>
+<label for="css">  প্রজেক্টের ফান্ড   </label><br>
 			    
 			 </div>	
 			 
@@ -111,9 +111,9 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 			 
 			 			 			 <div class="col-6">
 			 <input type="radio"  name="type" value="1"  required >
-<label for="html"> Buy Products/ Lands   </label><br>
+<label for="html"> ক্রয়  </label><br>
 <input type="radio"  name="type" value="3"   required >
-<label for="css"> Return Products/ Lands  </label><br>
+<label for="css"> ফেরত   </label><br>
 
 			    
 			 </div>
@@ -139,7 +139,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 			 <P><p>
 			 <div class="row">
 				 <div class="col-6">
-Date:  <input type="date"  required id="datePicker" name="Date_of_Transition" class="form-control" />
+ডেট :  <input type="date"  required id="datePicker" name="Date_of_Transition" class="form-control" />
 </div>		 
 			 
 
@@ -157,7 +157,7 @@ Date:  <input type="date"  required id="datePicker" name="Date_of_Transition" cl
 			 
 			 
 			 <div class="col-4" >
-			Present Balance   <input type="text"  value="0" name="balance" id="balance" class="form-control numbers  balance" required readonly  />
+			বর্তমান বাকিঃ    <input type="text"  value="0" name="balance" id="balance" class="form-control numbers  balance" required readonly  />
 			 </div>
 			 
 			 </div>
@@ -166,15 +166,11 @@ Date:  <input type="date"  required id="datePicker" name="Date_of_Transition" cl
 			 <table class="table" id="products_table">
                 <thead>
                     <tr>
-                        <th>Product</th>
-						 <th  style="width:200px;"  >Unit</th>
-                        <th  style="width:200px;"  >Unit Price</th>
-										<th style="width:80px;" >Quan<br>tity</th>		
-				<th style="width:150px;" >Dis(%)</th>
-				<th style="width:150px;" >Discount</th>	
-
-					
-						<th style="width:200px;" >Adjusted<br>Price</th>
+                        <th>প্রডাক্ট </th>
+						 <th  style="width:200px;"  >ইউনিট </th>
+                        <th  style="width:200px;"  >প্রাইস </th>
+										<th style="width:80px;" >পরিমাণ </th>		
+		
 							
                     </tr>
                 </thead>
@@ -209,13 +205,13 @@ Date:  <input type="date"  required id="datePicker" name="Date_of_Transition" cl
 						
 						
 					<td>
-						<input type="text" name="discount[]" value="0" id="discount" class="form-control numbers discount" />
+						<input type="hidden" readonly name="discount[]" value="0" id="discount" class="form-control numbers discount" />
 					
 						</td>
 						
 						
 			          <td >
-						<input style="width:150px;" type="text" name="totaldiscount[]" value="0" id="totaldiscount" class="form-control numbers totaldiscount" readonly />
+						<input style="width:150px;" type="hidden" name="totaldiscount[]" value="0" id="totaldiscount" class="form-control numbers totaldiscount" readonly />
 						</td>
 			             
 						
@@ -224,7 +220,7 @@ Date:  <input type="date"  required id="datePicker" name="Date_of_Transition" cl
 						<input type="hidden" name="amount[]" value="0" id="amount" class="form-control numbers amount" readonly style='width: 100px;' />
 						
 						<td>
-						<input type="text" style="width:200px;"  autocomplete="off" name="adjust[]" value="0" id="adjust" class="form-control numbers adjust" style='width: 100px;' />
+						<input type="hidden" readonly style="width:200px;"  autocomplete="off" name="adjust[]" value="0" id="adjust" class="form-control numbers adjust" style='width: 100px;' />
 						</td> 
 						
 						<td>
@@ -250,7 +246,7 @@ Date:  <input type="date"  required id="datePicker" name="Date_of_Transition" cl
 		   </div>
 		   
 		   
-		   <button type="button" id="add_row" class="btn btn-primary">ADD Product</button>
+		   <button type="button" id="add_row" class="btn btn-primary">আরো প্রডাক্ট </button>
 		   
 		   <div class="container">
 		   
@@ -263,19 +259,19 @@ Date:  <input type="date"  required id="datePicker" name="Date_of_Transition" cl
 		   
 	<p>	   
   <div class="row">
-    <div id="paidid" class="col-4">
+    <div id="paidid" class="col-6">
       
-		Paid:  <input type="text" name="paid" id="paid"  value="0"  autocomplete="off"   class="form-control numbers paid"  />
+		পেইড :  <input type="text" name="paid" id="paid"  value="0"  autocomplete="off"   class="form-control numbers paid"  />
 		  
     </div>
-    <div id="due" class="col-4">
+    
       
-		Due:   <input type="text" name="due" id="due_at_the_time_of_selling" value="0" class="form-control numbers due" readonly />
+		   <input type="hidden" name="due" id="due_at_the_time_of_selling" value="0" class="form-control numbers due" readonly />
 		   
-    </div>
-    <div class="col-4">
+
+    <div class="col-6">
        
-Amount :  <input type="text" name="grossamount" id="grossamount"  value="0"  class="form-control  grossamount"  />
+গ্রোস প্রাইস  :  <input type="text" readonly name="grossamount" id="grossamount"  value="0"  class="form-control  grossamount"  />
 		  
     </div>
   </div>
@@ -283,21 +279,19 @@ Amount :  <input type="text" name="grossamount" id="grossamount"  value="0"  cla
   
   
     <div class="row">
-    <div id="dis2"   class="col-4 ">
+    
+     <input type="hidden" name="percentofdicountontaotal" id="percentofdicountontaotal"  value="0"  class="form-control  percentofdicountontaotal"  />
+		  
+
+	  
       
-	 Discount on Total:  <input type="text" name="percentofdicountontaotal" id="percentofdicountontaotal"  value="0"  class="form-control  percentofdicountontaotal"  />
+  <input type="hidden" name="discountatend" id="discountatend"  value="0"  class="form-control  discountatend" readonly  />
 		  
-    </div>
-	    <div class="col-4">
-      
- Discount :  <input type="text" name="discountatend" id="discountatend"  value="0"  class="form-control  discountatend" readonly  />
+    
+  
+   <input type="hidden" name="totalamount" id="totalamount"  value="0" autocomplete="off"  class="form-control numbers totalamount"  />
 		  
-    </div>
-    <div class="col-4"> 
-       
-Payable Amount	   <input type="text" name="totalamount" id="totalamount"  value="0" autocomplete="off"  class="form-control numbers totalamount"  />
-		  
-    </div>
+ 
   </div>
   
   
@@ -321,7 +315,7 @@ Payable Amount	   <input type="text" name="totalamount" id="totalamount"  value=
 
     <div class="col-4">
        
-Descripton:  <textarea class="form-control"  name="comment" rows="3"></textarea>
+বিবরণ :  <textarea class="form-control"  name="comment" rows="3"></textarea>
 		  
     </div>
   </div>
@@ -359,25 +353,24 @@ Descripton:  <textarea class="form-control"  name="comment" rows="3"></textarea>
         <thead>
             <tr>
 	
-			<th>Serial NO.</th>
-			<th>Orer NO.</th>
 		
-                <th>Name</th>
+			<th>অর্ডার নং </th>
+		
+                <th>নাম </th>
 				
-				<th>Amount</th>
+				<th>প্রাইস </th>
 			
 				
-			<th>Comment</th>
-			<th>Debit</th>
-<th>Credit</th>
-	<th>Date</th>		
-<th>Adjusted BY</th>
+			<th>কমেন্ট</th>
+			<th>বাকি</th>
+<th>জমা</th>  
+	<th>ডেট </th>		
+
 		
-<th>Entryby</th>		     
- <th>Action</th> 
- <th>Project</th>  
- <th>Supervisor</th> 
-  <th>Accountant</th> 
+<th> এন্ট্রি </th>	
+<th> প্রজেক্ট </th>		      
+ <th>একশন</th> 
+
    
             </tr>
         </thead>
@@ -465,12 +458,7 @@ $('#datePicker').val(new Date().toDateInputValue());
         ajax: "{{ route('productcompanytrans.index') }}",
         columns: [
 		
-		 {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-		 
-		 
-		
-            
-			
+
 			
 			{data: 'id', name: 'id'},
             {data: 'companyname', name: 'companyname'},
@@ -481,17 +469,22 @@ $('#datePicker').val(new Date().toDateInputValue());
 	  	  {data: 'debit', name: 'debit'},
 		  	  {data: 'credit', name: 'credit'},
 
-			
+      
                {data: 'created', name: 'created'}, 
-			    {data: 'adjustby', name: 'adjustby'}, 
+         			
+
+               
 			     {data: 'entryby', name: 'User.name'},
-			    {data: 'action', name: 'action'}, 
+			   
 				 {data: 'project', name: 'project'}, 
-				 {data: 'superviser', name: 'superviser'},	
-				 {data: 'accountant', name: 'accountant'},				 
+                 {data: 'action', name: 'action'}, 	 
 				 
 				 
-        ]
+        ],
+
+        order: [
+        [0, 'desc']
+    ] 
     });
 
 
@@ -522,11 +515,9 @@ $("#paidid").hide();
 	
 /////////////////////////////// Replace non deimal number 
 /////////////////////////////// Replace non deimal number 
-$('.addmoreproduct').delegate('.numbers','change',function(){
-
-
-    this.value = this.value.replace(/[^0-9\.]/g,'');
-});	
+$('.addmoreproduct').delegate('.numbers', 'input', function() {
+  this.value = this.value.replace(/[^0-9\u09E6-\u09EF\.]/g, '');
+});
 	
 fetch();
 
@@ -937,7 +928,7 @@ $('#sample_form').delegate('#company_Id','change',function(){
 
 
 	
-		$('#balance').val(presentdue);
+		$('#balance').val(convertToBangla(presentdue));
 		
 totalamount();
 
@@ -959,8 +950,8 @@ $('.addmoreproduct').delegate('.medicine_name','change',function(){
 	tr.find('.stock').val(stock);
 	
 	
-	var price = parseFloat(tr.find('.unit_price').val()); // 2y bar price neya hoyeche karon jodi pore user pirce poriboron kore
-var qun = parseFloat(tr.find(".quantity").val());
+	var price = parseFloat( convertToEnglish(tr.find('.unit_price').val()) ); // 2y bar price neya hoyeche karon jodi pore user pirce poriboron kore
+var qun = parseFloat( convertToEnglish(tr.find(".quantity").val()));
 
 
 
@@ -990,8 +981,8 @@ tr.find('.vattk').val(vattk);
 
 total= total+ (total * ( Number(vat)/100));
 	
-		tr.find('.amount').val(total);
-tr.find('.adjust').val(total);
+		tr.find('.amount').val(convertToBangla(total));
+tr.find('.adjust').val(convertToBangla(total));
 	totalamount();
 	
 
@@ -1015,14 +1006,14 @@ $('.addmoreproduct').delegate('.unit_price, .quantity, .discount ,.vat','change'
 
 
 	var tr= $(this).parent().parent();
-	var price = parseFloat(tr.find('.unit_price').val());
-var qun = parseFloat(tr.find(".quantity").val());
+	var price = parseFloat(convertToEnglish(tr.find('.unit_price').val()));
+var qun = parseFloat(convertToEnglish(tr.find(".quantity").val()));
 
-var discount = (tr.find(".discount").val());
-var vat = (tr.find(".vat").val());
+var discount = convertToEnglish((tr.find(".discount").val()));
+var vat = convertToEnglish((tr.find(".vat").val()));
 
-var adjust = (tr.find(".adjust").val());
-var stock =parseFloat(tr.find('.stock').val());
+var adjust = convertToEnglish((tr.find(".adjust").val()));
+var stock =parseFloat(convertToEnglish(tr.find('.stock').val()));
 var productname= tr.find('.medicine_name option:selected').html();
 
 
@@ -1035,13 +1026,13 @@ calculationforinputfield();
 
 function calculationforinputfield(){
 
-qun = tr.find(".quantity").val();
+qun = convertToEnglish(tr.find(".quantity").val());
 
 var total = Number(price) * Number(qun);
 var grossprice = total;
 //////////////////
  var totaldiscount = ((total * ( Number(discount)/100)));
- tr.find('.totaldiscount').val(totaldiscount);
+ tr.find('.totaldiscount').val(convertToBangla(totaldiscount));
 //////////////////////// After Discount///////////////////////
 total= total- totaldiscount;
 
@@ -1055,8 +1046,8 @@ total= total+ (total * ( Number(vat)/100));
 total=total.toFixed(2);
 	console.log(total);
 	
-		tr.find('.amount').val(grossprice);
-		tr.find('.adjust').val(total);
+		tr.find('.amount').val(convertToBangla(grossprice));
+		tr.find('.adjust').val((total));
 totalamount();
 }
 
@@ -1080,14 +1071,14 @@ totalamount();
 $('.addmoreproduct').delegate('.adjust','change',function(){
 
 var tr= $(this).parent().parent();
-var adjust = parseFloat( tr.find(".adjust").val());
+var adjust = parseFloat( convertToEnglish(tr.find(".adjust").val()));
 
-var total = parseFloat(tr.find('.amount').val());
-var vat =parseFloat( tr.find(".vat").val());
+var total = parseFloat( convertToEnglish(tr.find('.amount').val()));
+var vat =parseFloat( convertToEnglish(tr.find(".vat").val()));
 
-var price = parseFloat(tr.find('.unit_price').val());
-var qun = parseFloat(tr.find(".quantity").val());
-var discount = parseFloat(tr.find(".discount").val());
+var price = parseFloat(convertToEnglish(tr.find('.unit_price').val()));
+var qun = parseFloat(convertToEnglish(tr.find(".quantity").val()));
+var discount = parseFloat(convertToEnglish(tr.find(".discount").val()));
 
 
 
@@ -1165,29 +1156,29 @@ totalamount();
 function totalamount(){
 	
 	
-	var percentage_discount_on_total = $('#percentofdicountontaotal').val();
+	var percentage_discount_on_total = convertToEnglish($('#percentofdicountontaotal').val());
 	
 		if ( (percentage_discount_on_total == 0 ) || (percentage_discount_on_total == '' ) )
 	{
 		$('#percentofdicountontaotal').val(0);
 	var totalamount =0;
 	$('.adjust').each(function(i,e){
-		var amount = $(this).val()-0;
+		var amount = convertToEnglish($(this).val())-0;
 		totalamount+=amount;
 		
 	});
 	
 	var grosstotalamount=0
 		$('.amount').each(function(i,e){
-		var amountgross = $(this).val()-0;
+		var amountgross = convertToEnglish($(this).val())-0;
 		
 		grosstotalamount+=amountgross;
 	
 	});
 var a = grosstotalamount - totalamount;
 	$("#discountatend").val(a);
-	$("#grossamount").val(grosstotalamount);
-	$("#totalamount").val(totalamount);
+	$("#grossamount").val(convertToBangla(grosstotalamount));
+	$("#totalamount").val(convertToBangla(totalamount));
 	$('#dicountontaotal').val(0);
 }
 else 
@@ -1195,7 +1186,7 @@ else
 	
 	var totalamount =0;
 	$('.amount').each(function(i,e){
-		var amount = $(this).val()-0;
+		var amount = convertToEnglish($(this).val())-0;
 		console.log(amount);
 		totalamount+=amount;
 	
@@ -1205,14 +1196,14 @@ else
 		var a = (totalamount * (percentage_discount_on_total/100));
 	  totalamount = totalamount - a ;
 	  $('#dicountontaotal').val(a);
-		$("#totalamount").val(totalamount);
+		$("#totalamount").val(convertToBangla(totalamount));
 	$("#grossamount").val(b);
 	
 	$("#discountatend").val(a);
 }	
 	
 
-	  	var paid = $("#paid").val();
+	  	var paid = convertToEnglish($("#paid").val());
 	var due = totalamount- Number(paid);
 	
 

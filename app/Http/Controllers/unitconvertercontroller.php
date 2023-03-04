@@ -38,8 +38,18 @@ class unitconvertercontroller extends Controller
                         return $button;
                     })  
 
-					
-					
+			
+                    
+                    ->addColumn('coversionamount', function( unitcoversion $data){ 
+
+                      return convertToBangla($data->coversionamount);
+                  }) 
+
+
+
+
+
+                    		
                     ->rawColumns(['action'])
                     ->make(true);
         }
@@ -79,7 +89,7 @@ class unitconvertercontroller extends Controller
             return response()->json(['errors' => $error->errors()->all()]);
         }
 
-       
+        $request->coversionamount = convertToEnglish($request->coversionamount) ;
 
         $form_data = array(
             'name'       =>   $request->name,
@@ -153,7 +163,7 @@ $basicunit = basicunit::where('softdelete',0)->orderBy('name')->get();
   
         
             $rules = array(
-                'conversionunit'    =>  'required',
+                'coversionamount'    =>  'required',
                 'name'    =>  'required',
 				'basicunit'=>  'required',
             );
@@ -165,11 +175,11 @@ $basicunit = basicunit::where('softdelete',0)->orderBy('name')->get();
             return response()->json(['errors' => $error->errors()->all()]);
         }
 
-       
+        $request->coversionamount = convertToEnglish($request->coversionamount) ;   
 
         $form_data = array(
             'name'       =>   $request->name,
-			'coversionamount'       =>   $request->conversionunit,
+			'coversionamount'       =>   $request->coversionamount,
 			'basicunit_id' =>   $request->basicunit
             
         );
