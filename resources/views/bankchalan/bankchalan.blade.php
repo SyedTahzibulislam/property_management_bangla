@@ -46,14 +46,14 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 	
 	
 		<div  class="container" style="background-color:#EEE8AA; "  >
-		<h2>Pay Due/ Receive Money  through Bank </h2>
+		<h2> ব্যাংকে জমা/ উত্তোলন  </h2>
   <span id="form_result"></span>
 	
 		<form method="post" action="{{ route('banktransition.store') }}"   id="sample_form" class="form-horizontal" enctype="multipart/form-data">
           @csrf
 		   
 		   
-		   <div class="row">
+        <div class="row"> 
 		   			 			 <div class="col-4">
 <br><input type="radio"  name="transtype" value="0"  required >
 			
@@ -64,7 +64,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 			    
 			 </div>
 			 
-		   		কে জমা দিচ্ছে বা উত্তোলন করছে 	 			 <div class="col-4">
+ কে জমা দিচ্ছে বা উত্তোলন করছে 	 			 <div class="col-4">
 
 <input type="radio"  name="whom" value="2"   required >
 <label for="css"> কোম্পানি  </label><br>
@@ -92,7 +92,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 		
            
             <div id="com" class="col-4">
-	       Company Name  :   <select id="company_Id"  class="form-control "  name="company"     style='width: 270px;'>  
+	       কোম্পানি/ সাপ্লাইয়ার   : <span class="star" >*</span>    <select id="company_Id"  class="form-control "  name="company"     style='width: 270px;'>  
            
 			
 			</select>
@@ -100,7 +100,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 			 
 			           
             <div id="cus" class="col-4">
-	      Customer Name  :    <select id="customer"  class="form-control "  name="customer"     style='width: 270px;'>  
+	      ক্রেতা   :  <span class="star" >*</span>    <select id="customer"  class="form-control "  name="customer"     style='width: 270px;'>  
            
 			
 			</select>
@@ -111,13 +111,13 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 			<div class="row">
 			 			          
             <div id="part" class="col-4">
-	       Partner Name  :    <select id="partner"  class="form-control "  name="partner"     style='width: 270px;'>  
+	     পার্টনার   :  <span class="star" >*</span>    <select id="partner"  class="form-control "  name="partner"     style='width: 270px;'>  
            
 			
 			</select>
              </div> 
 			             <div id="part" class="col-4">
-	       Bank Name  :    <select id="Bank"  class="form-control "  name="Bank"   required  style='width: 270px;'>  
+	      ব্যাংক  : <span class="star" >*</span>     <select id="Bank"  class="form-control "  name="Bank"   required  style='width: 270px;'>  
            
 			
 			</select>
@@ -125,7 +125,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 			 
 			 
 				             <div id="part" class="col-4">
-	       Project Name  :    <select id="project"  class="form-control "  name="project"     style='width: 270px;'>  
+	    প্রজেক্ট   :<span class="star" >*</span>     <select id="project"  class="form-control "  name="project"     style='width: 270px;'>  
            
 			
 			</select>
@@ -171,19 +171,19 @@ tr:nth-child(even) {background-color: #f2f2f2;}
   <div class="row">
 			     <div class="col-4">
       
- Amount :  <input type="text" name="grossamount" id="grossamount" autocomplete="off"   class="form-control  grossamount" required />
+ টাকার পরিমাণ  :<span class="star" >*</span>   <input type="text" name="grossamount" id="grossamount" autocomplete="off"   class="form-control  grossamount" required />
 		  
     </div>
 	
     <div class="col-4">
-      Date:<input type="date" id="date" name="transdate" required>
+      ডেট : <span class="star" >*</span>  <input type="date" id="date" name="transdate" required>
     </div>
 
 	
 	
 	    <div class="col-4">
        
-Descripton:  <textarea class="form-control"  name="comment" rows="3"></textarea>
+বিবরণ :  <textarea class="form-control"  name="comment" rows="3"></textarea>
 		  
     </div>
 	
@@ -244,18 +244,18 @@ Descripton:  <textarea class="form-control"  name="comment" rows="3"></textarea>
         <thead>
             <tr>
 	
-			<th>Serial NO.</th>
-			<th>Orer NO.</th>
+			
+			<th>অর্ডার </th>
 		
                
-				<th>Amnt(TK)</th>
-			<th>Type</th>
-			<th>Trans By</th>
-	<th>Entry By</th>
+				<th>টাকার পরিমাণ </th>
+			<th>টাইপ </th>
+			<th>ট্রান্সজেশন </th>
+	<th>এন্ট্রি </th>
 	
-<th>Date</th>	
-<th>Print</th>	
- <th>Action</th>            
+<th>ডেট </th>	
+	
+ <th>একশন </th>            
                
             </tr>
         </thead>
@@ -285,10 +285,10 @@ Descripton:  <textarea class="form-control"  name="comment" rows="3"></textarea>
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h2 class="modal-title">Confirmation</h2>
+                <h2 class="modal-title">কনফার্মসেন </h2>
             </div>
             <div class="modal-body">
-                <h4 align="center" style="margin:0;">Are you sure you want to remove this data?</h4>
+                <h4 align="center" style="margin:0;">আপনি কি ডিলিট করতে চান ?</h4>
             </div>
             <div class="modal-footer">
              <button type="button" name="ok_button" id="ok_button" class="btn btn-danger">OK</button>
@@ -404,7 +404,7 @@ fetch();
         ajax: "{{ route('banktransition.index') }}",
         columns: [
 		
-		 {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+
 		 
 		 
 		
@@ -418,7 +418,7 @@ fetch();
   {data: 'whom', name: 'whom'},
 			{data: 'entryby', name: 'entryby'},
 			{data: 'created', name: 'created'},
-	{data: 'pdf', name: 'pdf'},
+
 			    {data: 'action', name: 'action'}, 
         ]
     });

@@ -307,7 +307,7 @@ $username = user::findOrFail($Bankchalan->User_id)->name;
 		
     ]);
 	
-	
+	$request->grossamount= convertToEnglish($request->grossamount);
 
 	if ( ($request->whom != 0   ) && ($request->customer == "") && ($request->company == "") && ($request->partner == "") )
 	{
