@@ -60,12 +60,12 @@ class userproductController extends Controller
      */
 	       public function index(Request $request)
     {
-      $useproduct=  useproduct::latest()->get();
+      $useproduct=  useproduct::orderBy('id', 'DESC')->get();
 	  
 	
 	  
 	        if ($request->ajax()) {
-      $useproduct=  useproduct::latest()->get();
+      $useproduct=  useproduct::orderBy('id', 'DESC')->get();
             return Datatables::of($useproduct)
                    ->addIndexColumn()
                     ->addColumn('action', function( useproduct $data){ 
@@ -87,9 +87,14 @@ class userproductController extends Controller
                 })
 					
 
+
+									  ->addColumn('amount', function (useproduct $useproduct) {
+                    return convertToBangla($useproduct->amount);
+                })
+
                  ->editColumn('created', function(useproduct $data) {
 					
-					 return date('d/m/y', strtotime($data->created_at) );
+					 return convertToBangla(date('d/m/y', strtotime($data->created_at) ));
                     
                 })
 				
@@ -242,7 +247,10 @@ $useproduct=  useproduct::with('useproducttransition')->where('project_id', $req
 		
     ]);
 	
-			$supervisor_id = Auth()->user()->superviser_id;
+		
+$request->quantity = convertToEnglish($request->quantity);
+
+		$supervisor_id = Auth()->user()->superviser_id;
 
 if ($supervisor_id != 1)		
 {

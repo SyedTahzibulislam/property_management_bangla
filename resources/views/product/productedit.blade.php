@@ -96,7 +96,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 
 	
 			   <div class="col-4">
-স্টক 	<input type="text" class="form-control register_form " value="{{$product->stock}}"      name="godownstock" id="Fo-down Stock" placeholder="godownstock" required autocomplete="off" >
+ 	<input type="hidden" class="form-control register_form " value="{{$product->stock}}"      name="godownstock" id="Fo-down Stock" placeholder="godownstock" required autocomplete="off" >
 
     </div>
 	
@@ -129,7 +129,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
                    
 						<th>ইউনিট </th>
                         <th  style="width:100px;"  > প্রাইস </th>
-						<th style="width:150px;" > পরিমাণ . </th>
+					
 				
 
 					
@@ -156,7 +156,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 					 <td>	  <input type="text" style="width:150px;" autocomplete="off" name="unitprice[]" value="{{$u->unitprice }}" class="form-control numbers  unit_price" required style='width: 100px;' />   </td>
                         
 
-					 <td>	  <input type="text" style="width:150px;" autocomplete="off" name="stock[]"  value="{{$u->stock }}" class="form-control numbers  unit_price" required style='width: 100px;' />   </td>
+					 <td>	  <input type="hidden" style="width:150px;" autocomplete="off" name="stock[]"  value="{{$u->stock }}" class="form-control numbers  unit_price" required style='width: 100px;' />   </td>
                         						
 
                     </tr>

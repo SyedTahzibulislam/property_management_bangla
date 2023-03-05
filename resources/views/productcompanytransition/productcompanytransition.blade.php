@@ -460,7 +460,7 @@ $('#datePicker').val(new Date().toDateInputValue());
 		
 
 			
-			{data: 'id', name: 'id'},
+        {data: 'id', name: 'id', type: 'num'},
             {data: 'companyname', name: 'companyname'},
 
 			  {data: 'amount', name: 'amount'},

@@ -30,7 +30,7 @@
 @endif
   </div>
 
-Project Name:<select style="width:300px;"  name="business" id="business">
+প্রজেক্ট নাম :<select style="width:300px;"  name="business" id="business">
  <option value=""></option>
  <option value="999999999999999">All</option>
 <option value=""></option>
@@ -44,7 +44,7 @@ Project Name:<select style="width:300px;"  name="business" id="business">
 <p>
 
 
-Accountant Name:<select style="width:300px;"  name="accountant" id="accountant">
+একাউন্টেন্ট নাম :<select style="width:300px;"  name="accountant" id="accountant">
  <option value=""></option>
 
 <option value=""></option>

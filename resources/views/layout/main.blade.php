@@ -572,7 +572,7 @@ $(document).ready(function(){
 <a target="_blank" class="collapse-item" href="{{ url('projectsupervisor') }}"> প্রজেক্টে সুপারভাইজার যুক্ত   </a><p><br>
 <a target="_blank" class="collapse-item" href="{{ url('moneyexchange') }}"> প্রজেক্টে টাকা প্রদান/গ্রহণ   </a><p><br>
 
-<a target="_blank" class="collapse-item" href="{{ url('moneyexchangeacc') }}"> একাউন্টান্টকে টাকা প্রদান/গ্রহণ   </a><p><br>
+
 
 <a target="_blank" class="collapse-item" href="{{ url('allocateplot') }}"> প্লট তৈরি   </a><p><br>
 
@@ -1075,7 +1075,6 @@ $(document).ready(function(){
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" href="{{url('productcompany')}}"> বিক্রেতা লিস্ট </a>
-    <a class="dropdown-item" href="{{url('Product')}}">প্রডাক্ট তৈরি </a>
     <a class="dropdown-item"  href="{{url('productcompanytrans')}}">ক্রয়/ফেরত </a> 
     <a class="dropdown-item" href="{{url('productcompanduetra')}}" > বাকি শোধ/ রিফান্ড   </a>  
     <a class="dropdown-item" href="{{url('balancesheetforcompany')}}" > ব্যালেন্স সিট  </a> 
@@ -1089,7 +1088,22 @@ $(document).ready(function(){
   </script>
 </div>
 
+<div class="dropdown  hide-in-mobile">
+  <button class="btn button  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   প্রডাক্ট   
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="{{url('Product')}}">প্রডাক্ট তৈরি </a>
+    <a class="dropdown-item"  href="{{url('useproduct')}}">প্রডাক্ট ব্যবহার </a>    
+  </div>
+  
 
+  <script>
+    $(document).ready(function() {
+      $('.dropdown-toggle').dropdown();
+    });
+  </script>
+</div>
 
 
 

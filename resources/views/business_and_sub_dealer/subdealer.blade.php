@@ -41,13 +41,13 @@
 
 <div class="row">
 		   <div class="col-4">
-	Customer Name:      <input type="text" class="form-control register_form " name="name" id="name" placeholder="Emial"  autocomplete="off" >
+	 প্রতিষ্ঠানের নাম :      <input type="text" class="form-control register_form " name="name" id="name" placeholder="Emial"  autocomplete="off" >
            
 			
 			</select>
              </div>
 	    <div class="col-4">
-Mobile:   <input type="text" class="form-control register_form " name="mobile" id="mobile" placeholder="Mobile"  autocomplete="off" >
+মোবাইল :   <input type="text" class="form-control register_form " name="mobile" id="mobile" placeholder="Mobile"  autocomplete="off" >
     </div>			 
 
 </div>
@@ -66,14 +66,14 @@ Mobile:   <input type="text" class="form-control register_form " name="mobile" i
 	
 	
     <div class="col-4">
-Address:   <input type="text" class="form-control register_form " name="address" id="address" placeholder="Address"  autocomplete="off" >
+এড্রেস :   <input type="text" class="form-control register_form " name="address" id="address" placeholder="Address"  autocomplete="off" >
     </div>	
 	
 	
 	
 	
     <div class="col-4">
-Opening Balance:   <input type="text" class="form-control register_form " name="ob" id="ob" placeholder="Opening Balance"  autocomplete="off" >
+ওপেনিং ব্যালেন্স :   <input type="text" class="form-control register_form " name="ob" id="ob" placeholder="Opening Balance"  autocomplete="off" >
     </div>	
 	
 	
@@ -141,7 +141,7 @@ Opening Balance:   <input type="text" class="form-control register_form " name="
 <div class="container">
   <div class="row">
     <div class="col-md-12 col-sm-6" >
-    <h1>Opening Balance and Address</h1>
+    <h1>ওপেনিং ব্যালেন্স এবং এড্রেস </h1>
     
 
 	
@@ -149,14 +149,14 @@ Opening Balance:   <input type="text" class="form-control register_form " name="
     <table id="patient_table"  class="table  table-success table-striped data-tablem">
         <thead>
             <tr>
-<th>No</th>
-			<th>ID</th>
-				<th>Name</th>
-	<th>opening balance</th>
+
+			<th>আইডি </th>
+				<th>নাম </th>
+	<th>ওপেনিং ব্যালেন্স </th>
         
 			
 			     
-       <th>Action</th>	      
+       <th>একশন </th>	      
                 
             </tr>
         </thead>
@@ -390,7 +390,7 @@ jQuery("input").on('keyup', function(event) {
 		
 		 
 		 
-		  {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+	
             {data: 'id', name: 'id'},
 			 {data: 'shopname', name: 'shopname'},
             {data: 'openingbalance', name: 'openingbalance'},

@@ -46,7 +46,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 	
 	
 		<div  class="container" style="background-color:#EEE8AA; "  >
-		<h2>Money is Given/ returned back to/from Project </h2>
+		<h2>প্রজেক্ট থেকে টাকা প্রদান অথবা উত্তোলন </h2>
   <span id="form_result"></span>
 	
 		<form method="post" action="{{ route('moneyexchange.store') }}"   id="sample_form" class="form-horizontal" enctype="multipart/form-data">
@@ -55,7 +55,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 		   <div class="row">
  
             <div class="col-6">
-	       Project Name  :   <select id="project"  class="form-control "  name="project"     style='width: 270px;'>  
+	       প্রজেক্ট নাম   :   <select id="project"  class="form-control "  name="project"     style='width: 270px;'>  
            
 			
 			</select>
@@ -69,7 +69,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 		   <div class="row">
  
             <div class="col-6">
-	  Through the Accountant  :   <select id="account"  class="form-control "  name="account"     style='width: 270px;'>  
+	  একাউন্টেন্ট মাধ্যম   :   <select id="account"  class="form-control "  name="account"     style='width: 270px;'>  
            
 			
 			</select>
@@ -123,7 +123,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
   <div class="row">
  				     <div class="col-6">
       
-  Amount :  <input type="text" name="amount" id="amount" autocomplete="off"    class="form-control  amount" required />
+  টাকার পরিমাণ :  <input type="text" name="amount" id="amount" autocomplete="off"    class="form-control  amount" required />
 		  
     </div>
 	
@@ -133,7 +133,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 	
 	    <div class="col-6">
        
-comment:  <textarea class="form-control"  name="comment" rows="3"></textarea>
+কমেন্ট :  <textarea class="form-control"  name="comment" rows="3"></textarea>
 		  
     </div>
 	
@@ -148,9 +148,9 @@ comment:  <textarea class="form-control"  name="comment" rows="3"></textarea>
   	    <div class="col-6">
        
 <input type="radio" id="MOney_given" name="MOney_given_taken" value="1">
-<label for="html">Money is given to the Project </label><br>
+<label for="html">প্রজেক্টে টাকা প্রদান  </label><br>
 <input type="radio" id="Money_taken" name="MOney_given_taken" value="2">
-<label for="css">Money is returned back from the Project</label><br>
+<label for="css">প্রজেক্ট থেকে টাকা উত্তোলন </label><br>
 
 		  
     </div>
@@ -160,7 +160,7 @@ comment:  <textarea class="form-control"  name="comment" rows="3"></textarea>
 
 <div class="col-6">
 
-Date:  <input type="date"   required id="datePicker" name="Date_of_Transition" class="form-control" />
+ডেট :  <input type="date"   required id="datePicker" name="Date_of_Transition" class="form-control" />
 
 </div>
   
@@ -193,28 +193,28 @@ Date:  <input type="date"   required id="datePicker" name="Date_of_Transition" c
 
 	
 
-	<b>Money Exchange Transition: </b>
+	<b> টাকা ট্রাঞ্জিশন : </b>
 		<div class="table-responsive">
     <table id="patient_table"  class="table  table-success table-striped data-tablem">
         <thead>
             <tr>
 	
-			<th>Serial NO.</th>
-			<th>Orer NO.</th>
 		
-                <th>Project</th>
+			<th> অর্ডার নং </th>
+		
+                <th>প্রজেক্ট </th>
 				
-				<th>Amount</th>
+				<th>টাকার পরিমাণ </th>
 			
 				
-			<th>Type</th>
+			<th>টাইপ </th>
 		
 
-<th>Entryby</th>			
+<th>এন্ট্রি </th>			
 
-<th>Date</th>		
+<th>ডেট </th>		
 		     
- <th>Action</th>            
+ <th>একশন </th>            
                
             </tr>
         </thead>
@@ -296,13 +296,7 @@ $(document).ready(function(){
         ajax: "{{ route('moneyexchange.index') }}",
         columns: [
 		
-		 {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-		 
-		 
-		
-            
-			
-			
+
 			{data: 'id', name: 'id'},
             {data: 'project', name: 'project'},
 

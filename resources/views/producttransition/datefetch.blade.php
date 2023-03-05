@@ -30,7 +30,7 @@
 @endif
   </div>
 
-Project Name:<select style="width:300px;" required name="project" id="project">
+প্রজেক্ট :<select style="width:300px;" required name="project" id="project">
 <option value=""></option>
 @foreach($project as $c)
   <option value="{{$c->id}}">{{$c->name}}</option>

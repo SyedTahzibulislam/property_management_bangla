@@ -46,7 +46,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 	
 	
 		<div  class="container" style="background-color:#EEE8AA; "  >
-		<h2>Assign a Supervisor in a Project:</h2>
+		<h2>প্রজেক্টে সুপারভাইজার এসাইন করেন :</h2>
   <span id="form_result"></span>
 	
 		<form method="post" action="{{ route('projectsupervisor.store') }}"   id="sample_form" class="form-horizontal" enctype="multipart/form-data">
@@ -57,7 +57,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
        
            
 <div class="row">
-		  <div class="col-6"> Supervisor:
+		  <div class="col-6"> সুপার ভাইজার :
 	        <select id="supervisor_Id"  class="form-control "  name="supervisor_Id"  required   style='width: 270px;'>  
            
 			
@@ -66,7 +66,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 			 
 
 
-		   <div class="col-6"> Project:
+		   <div class="col-6"> প্রজেক্ট :
 	        <select id="project_id"  class="form-control "  name="project_id"  required   style='width: 270px;'>  
            
 			
@@ -118,14 +118,14 @@ tr:nth-child(even) {background-color: #f2f2f2;}
         <thead>
             <tr>
 	
-			<th>Serial NO.</th>
-			<th>Orer NO.</th>
 		
-                <th> Project </th>
+			<th>অর্ডার নং .</th>
+		
+                <th> প্রজেক্ট  </th>
 				
-				<th>Supervisor</th>
+				<th>সুপার ভাইজার </th>
 		     
- <th>Action</th>            
+ <th>একসন </th>            
                
             </tr>
         </thead>
@@ -155,10 +155,10 @@ tr:nth-child(even) {background-color: #f2f2f2;}
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h2 class="modal-title">Confirmation</h2>
+                <h2 class="modal-title">কনফার্মসন </h2>
             </div>
             <div class="modal-body">
-                <h4 align="center" style="margin:0;">Are you sure you want to remove this data?</h4>
+                <h4 align="center" style="margin:0;">আপনি কি ডিলিট করতে চান ?</h4>
             </div>
             <div class="modal-footer">
              <button type="button" name="ok_button" id="ok_button" class="btn btn-danger">OK</button>
@@ -218,7 +218,7 @@ $(document).ready(function(){
         ajax: "{{ route('projectsupervisor.index') }}",
         columns: [
 		
-		 {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+
 		 
 		 
 		

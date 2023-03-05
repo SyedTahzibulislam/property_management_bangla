@@ -46,7 +46,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 	
 	
 		<div  class="container" style="background-color:#EEE8AA; "  >
-		<h2>Use Products</h2>
+		<h2> প্রডাক্ট ব্যবহার </h2>
   <span id="form_result"></span>
 	
 		<form method="post" action="{{ route('useproduct.store') }}"   id="sample_form" class="form-horizontal" enctype="multipart/form-data">
@@ -64,7 +64,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 
 
 		   <div class="col-4">
-	    Project:    <select id="project_id"  class="form-control "  name="project_id"  required   style='width: 270px;'>  
+	   প্রজেক্ট :    <select id="project_id"  class="form-control "  name="project_id"  required   style='width: 270px;'>  
            
 			
 			</select>
@@ -87,18 +87,12 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 			 <table   class="table" id="products_table">
                 <thead>
                     <tr>
-                        <th>Product</th>
-						<th>Unit</th>
-                        <th  style="width:100px;"  >Unit Price</th>
-						<th style="width:150px;" >Quan<br>tity</th>
+                        <th>প্রডাক্ট </th>
+						<th>ইউনিট </th>
+
+						<th style="width:150px;" >পরিমাণ </th>
 				
-						<th id="dis1"  style="width:80px;">Disc<br>ount(%)</th>
-						
-						<th    >Discount(TK)</th>
-						
-					
-						<th style="width:200px;" >Adjusted<br>Price</th>
-					
+
 						
                     </tr>
                 </thead>
@@ -118,10 +112,10 @@ tr:nth-child(even) {background-color: #f2f2f2;}
                         </td>			
 						
 						
-                        <td>
-						  <input type="text" style="width:150px;" autocomplete="off"  name="unit_price[]" id="unit_price" class="form-control numbers  unit_price" required style='width: 100px;' />
+                     
+						  <input type= "hidden" style="width:150px;" autocomplete="off"  name="unit_price[]" id="unit_price" class="form-control numbers  unit_price" required style='width: 100px;' />
                            
-                        </td>
+                       
 						<td>
 						  <input type="text" style="width:150px;" name="quantity[]" autocomplete="off" id="quantity" class="form-control numbers quantity" required />
 						</td>
@@ -134,24 +128,24 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 						 <input type="hidden" name="vattk[]" value="0" id="vattk" class="form-control numbers vattk" readonly />
 						
 						
-						<td>
-						<input type="text" name="discount[]" value="0" id="discount" class="form-control numbers discount" />
-						</td>
+			
+						<input type="hidden" name="discount[]" value="0" id="discount" class="form-control numbers discount" />
 						
 						
 						
-			            <td>
-						<input type="text" name="totaldiscount[]" value="0" id="totaldiscount" class="form-control numbers totaldiscount" readonly />
-						</td>
+						
+			           
+						<input type="hidden" name="totaldiscount[]" value="0" id="totaldiscount" class="form-control numbers totaldiscount" readonly />
+						
 			             
 						
 												
 						
 						<input type="hidden" name="amount[]" value="0" id="amount" class="form-control numbers amount" readonly style='width: 100px;' />
 						
-						<td>
-						<input type="text" style="width:200px;"  autocomplete="off" name="adjust[]" value="0" id="adjust" class="form-control numbers adjust" style='width: 100px;' />
-						</td> 
+					
+						<input type="hidden" style="width:200px;"  autocomplete="off" name="adjust[]" value="0" id="adjust" class="form-control numbers adjust" style='width: 100px;' />
+				 
 						
 						<td>
 						
@@ -186,28 +180,27 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 		     <div class="row">
 			 
 			 <div class="col-4">
-Date:  <input type="date"  required id="datePicker" name="Date_of_Transition" class="form-control" />
+ডেট :  <input type="date"  required id="datePicker" name="Date_of_Transition" class="form-control" />
 </div>
 			 
 			 
 			 
 			 
-    <div id="dis2"   class="col-2 ">
-      
-	 Discount on Total(%):  <input type="text" readonly name="percentofdicountontaotal" id="percentofdicountontaotal"  value="0" autocomplete="off" class="form-control  percentofdicountontaotal"  />
+
+  <input type="hidden" readonly name="percentofdicountontaotal" id="percentofdicountontaotal"  value="0" autocomplete="off" class="form-control  percentofdicountontaotal"  />
 		  
-    </div>
-    <div class="col-4">
+ 
+
       
- Gross Amount :  <input type="text" readonly name="grossamount" id="grossamount"  value="0"  class="form-control  grossamount"  />
+ <input type="hidden" readonly name="grossamount" id="grossamount"  value="0"  class="form-control  grossamount"  />
 		  
-    </div>
+ 
 	
-	    <div class="col-2">
+
       
- Discount :  <input type="text" readonly  name="discountatend" id="discountatend" autocomplete="off"  value="0"  class="form-control  discountatend" readonly  />
+  <input type="hidden" readonly  name="discountatend" id="discountatend" autocomplete="off"  value="0"  class="form-control  discountatend" readonly  />
 		  
-    </div>
+  
 	
 	 <input type="hidden" id="typevale" name="typevale" class="typevale" >
 	
@@ -217,17 +210,17 @@ Date:  <input type="date"  required id="datePicker" name="Date_of_Transition" cl
   <div class="row">
     <div class="col-4">
       
-		Paid:  <input type="text" readonly name="paid" id="paid"  value="0"  autocomplete="off"   class="form-control numbers paid"  />
+ <input type="hidden" readonly name="paid" id="paid"  value="0"  autocomplete="off"   class="form-control numbers paid"  />
 		  
     </div>
     <div class="col-4">
       
-		Due:   <input type="text" readonly name="due" id="due_at_the_time_of_selling" value="0" class="form-control numbers due" readonly />
+   <input type="hidden" readonly name="due" id="due_at_the_time_of_selling" value="0" class="form-control numbers due" readonly />
 		   
     </div>
     <div class="col-4">
        
-	Receivable Amount	   <input type="text" readonly name="totalamount" id="totalamount"  value="0" autocomplete="off"  class="form-control numbers totalamount"  />
+   <input type="hidden" readonly name="totalamount" id="totalamount"  value="0" autocomplete="off"  class="form-control numbers totalamount"  />
 		  
     </div>
   </div>
@@ -278,7 +271,7 @@ Descripton:  <textarea class="form-control"   name="comment" rows="3"></textarea
         <thead>
             <tr>
 	
-			<th>Serial NO.</th>
+			
 			<th>Orer NO.</th>
 		
                 <th>Name</th>
@@ -286,9 +279,6 @@ Descripton:  <textarea class="form-control"   name="comment" rows="3"></textarea
 				<th>Amount</th>
 			
 			<th>Comment</th>
-
-			
-<th>print</th>
 <th>Date</th>		
 <th>Entryby</th>		     
  <th>Action</th>            
@@ -389,12 +379,7 @@ $('#datePicker').val(new Date().toDateInputValue());
         ajax: "{{ route('useproduct.index') }}",
         columns: [
 		
-		 {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-		 
-		 
-		
-            
-			
+
 			
 			{data: 'id', name: 'id'},
             {data: 'projectname', name: 'projectname'},
@@ -403,13 +388,18 @@ $('#datePicker').val(new Date().toDateInputValue());
 
     
 	  {data: 'comment', name: 'comment'},
-	  	
-			  	 
-			 {data: 'pdf', name: 'pdf'},   
+ 
                {data: 'created', name: 'created'}, 
 			     {data: 'entryby', name: 'User.name'},
 			    {data: 'action', name: 'action'}, 
-        ]
+        ],
+
+
+        order: [
+        [0, 'desc']
+    ] 
+
+
     });
 
 
@@ -428,7 +418,7 @@ $('#datePicker').val(new Date().toDateInputValue());
 $('.addmoreproduct').delegate('.numbers','change',function(){
 
 
-    this.value = this.value.replace(/[^0-9\.]/g,'');
+  this.value = this.value.replace(/[^0-9\u09E6-\u09EF\.]/g,'');
 });	
 	
 fetch();
@@ -809,7 +799,7 @@ var stock= tr.find('.medicine_name option:selected').attr("data-stock");
 
 
 
-var qun = parseFloat(tr.find(".quantity").val());
+var qun = parseFloat( convertToEnglish(tr.find(".quantity").val()));
 
 
 
@@ -950,7 +940,7 @@ success:function (response) {
 	
 	
 	var price = parseFloat(tr.find('.unit_price').val()); // 2y bar price neya hoyeche karon jodi pore user pirce poriboron kore
-var qun = parseFloat(tr.find(".quantity").val());
+var qun = parseFloat(convertToEnglish(tr.find(".quantity").val()));
 
 
 
@@ -1007,7 +997,7 @@ $('.addmoreproduct').delegate('.unit_price, .quantity, .discount ,.vat','change'
 
 	var tr= $(this).parent().parent();
 	var price = parseFloat(tr.find('.unit_price').val());
-var qun = parseFloat(tr.find(".quantity").val());
+var qun = parseFloat(convertToEnglish(tr.find(".quantity").val()));
 
 var discount = (tr.find(".discount").val());
 var vat = (tr.find(".vat").val());
@@ -1026,7 +1016,7 @@ calculationforinputfield();
 
 function calculationforinputfield(){
 
-qun = tr.find(".quantity").val();
+qun = convertToEnglish(tr.find(".quantity").val());
 
 var total = Number(price) * Number(qun);
 var grossprice = total;
@@ -1077,7 +1067,7 @@ var total = parseFloat(tr.find('.amount').val());
 var vat =parseFloat( tr.find(".vat").val());
 
 var price = parseFloat(tr.find('.unit_price').val());
-var qun = parseFloat(tr.find(".quantity").val());
+var qun = parseFloat(convertToEnglish(tr.find(".quantity").val()));
 var discount = parseFloat(tr.find(".discount").val());
 
 
@@ -1286,12 +1276,10 @@ else
 
 
 
-  $("#percentofdicountontaotal").change(function(){
-     this.value = this.value.replace(/[^0-9\.]/g,'');
-	 totalamount();
-
-
-  });
+$("#percentofdicountontaotal").change(function(){
+     this.value = this.value.replace(/[^0-9\u09E6-\u09EF\.]/g,'');
+     totalamount();
+});
 
 
 

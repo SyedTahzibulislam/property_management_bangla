@@ -316,7 +316,7 @@ $product = product::with('projectstock')->with('projectstock', function ($query)
 			
         );
 	
-
+$request->unitprice =  convertToEnglish($request->unitprice);
         $error = Validator::make($request->all(), $rules);
 
 	
@@ -477,7 +477,7 @@ $unit= unitcoversion::where('softdelete',0)->latest()->get();
 			
 			
         );
-
+$request->unitprice =  convertToEnglish($request->unitprice);
             $error = Validator::make($request->all(), $rules);
 
             if($error->fails())

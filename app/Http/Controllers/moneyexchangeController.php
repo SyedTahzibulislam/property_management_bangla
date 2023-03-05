@@ -25,13 +25,13 @@ class moneyexchangeController extends Controller
 		
 		
 		
-                  $moneyexchange =  moneyexchange::latest()->get();
+                  $moneyexchange =  moneyexchange::orderBy('id','DESC')->get();
 	  
 	
 	  
 	        if ($request->ajax()) {
 				
-           $moneyexchange =  moneyexchange::latest()->get();
+           $moneyexchange =  moneyexchange::orderBy('id','DESC')->get();
             
 			
 			
@@ -52,10 +52,10 @@ class moneyexchangeController extends Controller
 
 if ($moneyexchange->type == 1)
 {
-return "Money Given to Project";
+return "প্রজেক্টে টাকা প্রদান ";
 }
 else{
-return "Money return back from Project";	
+return "প্রজেক্ট থেকে টাকা উত্তোলন ";	
 }
 				 
                 }) 
@@ -70,6 +70,19 @@ return $moneyexchange->project->name;
 				 
                 })
 
+
+
+->addColumn('amount', function (moneyexchange $moneyexchange) {
+ return convertToBangla($moneyexchange->amount);                                    
+ })
+
+->addColumn('id', function (moneyexchange $moneyexchange) {
+ return convertToBangla($moneyexchange->id);                                    
+ })
+
+
+
+                
 
 	 ->addColumn('supervisor', function (moneyexchange $moneyexchange) {
 
@@ -89,7 +102,7 @@ return $moneyexchange->superviser->name;
 
                  ->editColumn('created', function(moneyexchange $moneyexchange) {
 					
-					 return date('d/m/y h:i A', strtotime($moneyexchange->created_at) );
+					 return convertToBangla(date('d/m/y', strtotime($moneyexchange->created_at) ));
                     
                 })
 
@@ -163,6 +176,13 @@ $project = project::where('softdelete',0)->orderBy('name')->get();
 				'MOney_given_taken' => 'required',
 				'Date_of_Transition'=> 'required',
             );
+
+
+$request->amount = convertToEnglish($request->amount);
+
+
+
+
 
             $error = Validator::make($request->all(), $rules);
 
@@ -366,13 +386,11 @@ $cashtransition->save();
      */
     public function destroy($id)
     {
-		DB::beginTransaction(); 
         $data = moneyexchange::findOrFail($id);
 		cashtransition::where('moneyexchange_id', $id)->delete();
 		
 		
 		
 		$data->delete();
-		DB::commit();
     }
 }

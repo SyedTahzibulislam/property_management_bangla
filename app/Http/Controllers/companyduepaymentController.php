@@ -136,14 +136,22 @@ if ($productcompanyorder->project_id)
 
                  ->editColumn('created', function(productcompanyorder $data) {
 					
-					 return date('d/m/y', strtotime($data->created_at) );
+					 return convertToBangla(date('d/m/y', strtotime($data->created_at) ));
                     
                 })
 				
-
-				
-
-					
+->addColumn('amount', function (productcompanyorder $productcompanyorder) {
+return convertToBangla($productcompanyorder->amount);
+})
+->addColumn('credit', function (productcompanyorder $productcompanyorder) {
+return convertToBangla($productcompanyorder->credit);
+})				
+->addColumn('debit', function (productcompanyorder $productcompanyorder) {
+return convertToBangla($productcompanyorder->debit);
+})
+->addColumn('id', function (productcompanyorder $productcompanyorder) {
+return convertToBangla($productcompanyorder->id);
+})					
 					
                     ->rawColumns(['action','created' ])
 
@@ -244,6 +252,12 @@ if ($productcompanyorder->project_id)
 'adjusttype',		
 		
     ]);
+	
+	
+$request->grossamount = convertToEnglish($request->grossamount);
+$request->percentofdicountontaotal = convertToEnglish($request->percentofdicountontaotal);	
+$request->discountatend = convertToEnglish($request->discountatend);	
+$request->balance = convertToEnglish($request->balance);	
 	
 
 $role = Auth()->user()->role;

@@ -306,7 +306,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
   	
 
 
- <th>একশন </th> 
+ <th>. </th> 
      
            
                
@@ -338,10 +338,10 @@ tr:nth-child(even) {background-color: #f2f2f2;}
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h2 class="modal-title">Confirmation</h2>
+                <h2 class="modal-title">কনফার্মসন </h2>
             </div>
             <div class="modal-body">
-                <h4 align="center" style="margin:0;">Are you sure you want to remove this data?</h4>
+                <h4 align="center" style="margin:0;">আপনি কি ডিলিট করতে চান ?</h4>
             </div>
             <div class="modal-footer">
              <button type="button" name="ok_button" id="ok_button" class="btn btn-danger">OK</button>
@@ -430,7 +430,11 @@ $('#datePicker').val(new Date().toDateInputValue());
 
 			    {data: 'action', name: 'action'}, 
 	
-        ]
+        ],
+        order: [
+        [0, 'desc']
+    ]
+
     });
 
 
@@ -717,7 +721,7 @@ $('#sample_form').delegate('#company_Id','change',function(){
 
 console.log(presentdue);
 	
-		$('#balance').val(presentdue);
+		$('#balance').val(convertToBangla(presentdue));
 		
 totalamount();
 
@@ -767,8 +771,8 @@ totalamount();
 function totalamount(){
 	
 
-	var percentageofdiscount= parseFloat($('#percentofdicountontaotal').val());
-var grossamount= 	parseFloat($('#grossamount').val());
+	var percentageofdiscount= parseFloat(convertToEnglish($('#percentofdicountontaotal').val()));
+var grossamount= 	parseFloat(convertToEnglish($('#grossamount').val()));
 
 var discount = grossamount *(percentageofdiscount/100);
 var receiveableamount = grossamount - discount;
@@ -788,8 +792,8 @@ $('#paid').val(receiveableamount);
 $('#sample_form').delegate('#paid','change',function(){
 
 
-var grossamount= 	parseFloat($('#grossamount').val());
-var paid = parseFloat($('#paid').val());
+var grossamount= 	parseFloat(convertToEnglish($('#grossamount').val()));
+var paid = parseFloat(convertToEnglish($('#paid').val()));
  var discount = grossamount - paid;
  
  var percentage_dis = ((discount/grossamount)*100).toFixed(2);

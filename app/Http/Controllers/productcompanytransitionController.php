@@ -78,7 +78,7 @@ class productcompanytransitionController extends Controller
 
 
 ->addColumn('id', function (productcompanyorder $productcompanyorder) {
-return  convertToBangla($productcompanyorder->id);
+return  ($productcompanyorder->id);
 })
 ->addColumn('amount', function (productcompanyorder $productcompanyorder) {
 return convertToBangla($productcompanyorder->amount);

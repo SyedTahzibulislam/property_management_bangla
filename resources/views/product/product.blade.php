@@ -87,7 +87,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
           <input type="hidden" value="0" readonly  class="form-control register_form " name="stock" id="stock" placeholder="stock" required  autocomplete="off" >
         </div>
         <div class="col-4">
-     <input type="hidden" value="0" class="form-control register_form " name="unitprice" id="unitprice" placeholder="unitprice" required  autocomplete="off" >
+   প্রাইস  <input type="text" value="0" class="form-control register_form " name="unitprice" id="unitprice" placeholder="unitprice" required  autocomplete="off" >
         </div>
 	
 	</div>

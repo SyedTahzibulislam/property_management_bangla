@@ -71,6 +71,19 @@ return $moneyexchange->project->name;
                 })
 
 
+
+->addColumn('amount', function (moneyexchange $moneyexchange) {
+ return convertToBangla($moneyexchange->amount);                                    
+ })
+
+->addColumn('id', function (moneyexchange $moneyexchange) {
+ return convertToBangla($moneyexchange->id);                                    
+ })
+
+
+
+                
+
 	 ->addColumn('supervisor', function (moneyexchange $moneyexchange) {
 
 
