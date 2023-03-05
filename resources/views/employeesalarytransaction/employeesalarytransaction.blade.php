@@ -30,21 +30,19 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 col-sm-6" >
-    <h1>Employee Salary Transitions</h1>
-    <a style="float:right; margin-bottom:20px;" class="btn btn-success  create_record" href="javascript:void(0)" id="create_record"> Add New </a>
+    <h1>বেতন দেন </h1>
+    <a style="float:right; margin-bottom:20px;" class="btn btn-success  create_record" href="javascript:void(0)" id="create_record"> এড করেন  </a>
 	
 	
 	<div class="table-responsive">
     <table id="patient_table"  class="table  table-success table-striped data-tablem">
         <thead>
             <tr>
-<th>No. </th>
+<th> নং  </th>
 			
-				<th> Name</th>
-	
-             <th> Date</th>
-		  <th> Amount</th>
-				<th>Action</th>
+				<th> নাম </th>
+		  <th> টাকার পরিমাণ </th>
+				<th>একশন </th>
     
 				
 				
@@ -69,7 +67,7 @@
   <div class="modal-content">
    <div class="modal-header">
           <button type="button" id="close" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Add New Record</h4>
+          <h4 class="modal-title">নতুন রেকর্ড যুক্ত </h4>
         </div>
         <div class="modal-body">
          <span id="form_result"></span>
@@ -77,7 +75,7 @@
           @csrf
 		  
 		  <div class="form-group">
-            <label class="control-label col-md-4">Employee List  : </label>
+            <label class="control-label col-md-4">কর্মচারীদের তালিকা *  : </label>
             <div class="col-md-8">
 	
 	<select id="employeelist"  class="form-control "  name="employeelist"  required   style='width: 270px;'>
@@ -90,7 +88,7 @@
 			 
 			 
 		  <div class="form-group">
-            <label class="control-label col-md-4">Project  : </label>
+            <label class="control-label col-md-4">প্রজেক্ট *  : </label>
             <div class="col-md-8">
 	
 	<select id="project"  class="form-control "  name="project"  required   style='width: 270px;'>
@@ -108,7 +106,7 @@
 			 
 			 
 			 		             <div class="form-group">
-            <label class="control-label col-md-4" >Salary : </label>
+            <label class="control-label col-md-4" >বেতনের পরিমাণ * : </label>
             <div class="col-md-8">
              <input type="text" autocomplete="off" name="salary" id="salary" class="form-control" />
             </div>
@@ -121,14 +119,14 @@
   
   		    <div class="form-group">
 	
-            <label class="control-label col-md-4"> যে তারিখে বেতন দেয়া হচ্ছে : </label>
+            <label class="control-label col-md-4"> যে তারিখে বেতন দেয়া হচ্ছে * : </label>
             <div class="col-md-8">
              <input type="date" id="Startdate" name="Startdate" class="form-control" />
             </div>
            </div>
   
 		 		  <div class="form-group">
-            <label class="control-label col-md-4">যে মাসের বেতন দেয়া হচ্ছে  : </label>
+            <label class="control-label col-md-4">যে মাসের বেতন দেয়া হচ্ছে * : </label>
             <div class="col-md-8">
 	
 	<select id="month"  class="form-control "  name="month"  required   style='width: 270px;'>
@@ -151,7 +149,7 @@
 			 </div>  
 
 		 		  <div class="form-group">
-            <label class="control-label col-md-4">যে বছরের বেতন দেয়া হচ্ছে  : </label>
+            <label class="control-label col-md-4">যে বছরের বেতন দেয়া হচ্ছে * : </label>
             <div class="col-md-8">
 	
 	<select id="year"  class="form-control " type="reset"  name="year"  required   style='width: 270px;'>
@@ -171,13 +169,13 @@
 
 	<div class="row">
 
-				 			 <div class="col-6">Adjust with<br>
+				 			 <div class="col-6">এডজাস্ট *<br>
 			 <input type="radio"  name="adjusttype" value="1"  required >
-<label for="html">  Owner's fund  </label><br>
+<label for="html">  মালিকের ফান্ড   </label><br>
 <input type="radio"  name="adjusttype" value="2"   required >
-<label for="css">  Accountant's fund  </label><br>
+<label for="css"> একাউন্টেন্ট ফান্ড   </label><br>
 <input type="radio"  name="adjusttype" value="3"   required >
-<label for="css">  Project's fund  </label><br>
+<label for="css">  প্রজেক্ট ফান্ড   </label><br>
 			    
 			 </div>	
 			 
@@ -187,7 +185,7 @@
 		
 
           <div class="col-4">
-	   Accountant Name  :    <select id="accountant"  class="form-control "  name="accountant"  required  style="width:170px;">  
+	  একাউন্টেন্ট   :    <select id="accountant"  class="form-control "  name="accountant"  required  style="width:170px;">  
            
 			
 			</select>
@@ -195,7 +193,7 @@
 			 
 			 
             <div class="col-4">
-	  Supervisor Name  :    <select id="supervisor"  class="form-control "  name="supervisor"  required  style="width:170px;">  
+	  সুপারভাইজার   :    <select id="supervisor"  class="form-control "  name="supervisor"  required  style="width:170px;">  
            
 			
 			</select>
@@ -259,10 +257,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h2 class="modal-title">Confirmation</h2>
+                <h2 class="modal-title">কনফার্মসন </h2>
             </div>
             <div class="modal-body">
-                <h4 align="center" style="margin:0;">Are you sure you want to remove this data?</h4>
+                <h4 align="center" style="margin:0;">আপনি কি ডিলিট করতে চান ?</h4>
             </div>
             <div class="modal-footer">
              <button type="button" name="ok_button" id="ok_button" class="btn btn-danger">OK</button>
@@ -330,14 +328,20 @@ $('#formModal').on('hidden.bs.modal', function () {
 			 {data: 'employee_name', name: 'employeedetails.name'},
 			
 			 
-            {data: 'starting', name: 'starting'},
+        
 			 
 			 {data: 'totalsalary', name: 'totalsalary'},
 			
  {data: 'action', name: 'action', orderable: false, searchable: false},
 			    
            
-        ]
+        ],
+
+        order: [
+        [0, 'desc']
+    ] 
+
+
     });
 
 

@@ -76,7 +76,7 @@ class employeedetailscontroller extends Controller
             return response()->json(['errors' => $error->errors()->all()]);
         }
 
-       
+       $request->salary = convertToEnglish($request->salary);
 
         $form_data = array(
              'name'        =>  $request->name,
@@ -90,6 +90,10 @@ class employeedetailscontroller extends Controller
 			
            
         );
+
+
+
+
 
         employeedetails::create($form_data);
 

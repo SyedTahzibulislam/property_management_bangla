@@ -33,11 +33,12 @@ class employeetransactioncontroller extends Controller
      */
     public function index(Request $request)
     {
-        $employeesalarytransaction =  employeesalarytransaction::with('employeedetails')->latest()->get();
+        $employeesalarytransaction =  employeesalarytransaction::with('employeedetails')
+		->orderBy('id','DESC')->get();
 	
 	  
 	        if ($request->ajax()) {
-					  $employeesalarytransaction=  employeesalarytransaction::with('employeedetails')->latest()->get();
+					  $employeesalarytransaction=  employeesalarytransaction::with('employeedetails')->orderBy('id','DESC')->get();
             //$medicine =  medicine::latest()->get();
             return Datatables::of($employeesalarytransaction)
                    ->addIndexColumn() 
@@ -54,9 +55,15 @@ class employeetransactioncontroller extends Controller
                       ->addColumn('employee_name', function (employeesalarytransaction $employeesalarytransaction) {
                     return $employeesalarytransaction->employeedetails->name;
                 })
+				
+                      ->addColumn('totalsalary', function (employeesalarytransaction $employeesalarytransaction) {
+                    return convertToBangla($employeesalarytransaction->totalsalary);
+                })				
+				
+
 				->editColumn('created_at', function(employeesalarytransaction $data) {
 					
-					 return date('d/m/y H:i A', strtotime($data->created_at) );
+					 return convertToBangla(date('d/m/y H:i A', strtotime($data->created_at)));
                     
                 })	
 					
@@ -420,6 +427,10 @@ $employeedetails = employeedetails::findOrFail($request->employee);
         );
 
 
+
+$request->salary =  convertToEnglish($request->salary);
+
+DB::beginTransaction(); 
 $role = Auth()->user()->role;
 
 if ($role == 5)
@@ -605,7 +616,7 @@ $employeesalarytransaction->save();
 
    
    
-    DB::beginTransaction();
+ 
    	 			     /////////////update balance    	
   
    $balance = balance_of_business::first();  
@@ -717,7 +728,8 @@ $cashtransition->save();
             return response()->json(['errors' => $error->errors()->all()]);
         }
 
-       		
+       	$request->salary =  convertToEnglish($request->salary);
+	
 
         $form_data = array(
             'employeedetails_id'        =>  $request->employeelist,
