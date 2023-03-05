@@ -253,8 +253,6 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 			<th>ট্রান্সজেশন </th>
 	<th>এন্ট্রি </th>
 	
-<th>ডেট </th>	
-	
  <th>একশন </th>            
                
             </tr>
@@ -417,10 +415,13 @@ fetch();
   {data: 'transtype', name: 'transtype'},
   {data: 'whom', name: 'whom'},
 			{data: 'entryby', name: 'entryby'},
-			{data: 'created', name: 'created'},
+	
 
 			    {data: 'action', name: 'action'}, 
-        ]
+        ],
+        order: [
+        [0, 'desc']
+    ] 
     });
 
 

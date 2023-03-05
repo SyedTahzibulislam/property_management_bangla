@@ -30,7 +30,7 @@
 @endif
   </div>
 
-Partner Name:<select style="width:300px;" required name="partner" id="bankid">
+পার্টনার :<select style="width:300px;" required name="partner" id="bankid">
 <option value=""></option>
 @foreach($sharepartner as $c)
   <option value="{{$c->id}}">{{$c->name}}</option>

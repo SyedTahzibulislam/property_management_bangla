@@ -23,11 +23,12 @@ class TakaUttolonTransitionController extends Controller
      */
      public function index(Request $request)
     {
-        $Taka_uttolon_transition =  Taka_uttolon_transition::with('sharepartner')->latest()->get();
+        $Taka_uttolon_transition =  Taka_uttolon_transition::with('sharepartner')
+		->orderBy('id','DESC')->get();
 	//1-> touttolon
 	  
 	        if ($request->ajax()) {
-					  $Taka_uttolon_transition =  Taka_uttolon_transition::with('sharepartner')->latest()->get();
+					  $Taka_uttolon_transition =  Taka_uttolon_transition::with('sharepartner')->orderBy('id','DESC')->get();
         
             return Datatables::of($Taka_uttolon_transition)
                    ->addIndexColumn() 
@@ -67,14 +68,16 @@ class TakaUttolonTransitionController extends Controller
 				
 				
 				
-				
+                      ->addColumn('amount', function (Taka_uttolon_transition $Taka_uttolon_transition) {
+                    return convertToBangla($Taka_uttolon_transition->amount);
+                })				
 				
 				
 				
 				
 					->editColumn('created_at', function(Taka_uttolon_transition $data) {
 					
-					 return date('d/m/y H:i A', strtotime($data->created_at) );
+					 return convertToBangla(date('d/m/y', strtotime($data->created_at)));
                     
                 })
 					
@@ -218,6 +221,11 @@ $project = project::where('softdelete', 0)->orderBy('name')->get();
         );
 
         $error = Validator::make($request->all(), $rules);
+
+
+
+$request->amount = convertToEnglish($request->amount);
+
 
         if($error->fails())
         {

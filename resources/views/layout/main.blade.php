@@ -787,7 +787,7 @@ $(document).ready(function(){
 
 
 
-<a style=" text-decoration: none;"   target="_blank" class="collapse-item" href="{{ url('joma_uttolon_statement_today') }}">****  আজকের দিনে টাকা উত্তোলন  ও টাকা জমা/বিনিয়োগের হিসাব ।     </a><br>
+{{-- <a style=" text-decoration: none;"   target="_blank" class="collapse-item" href="{{ url('joma_uttolon_statement_today') }}">****  আজকের দিনে টাকা উত্তোলন  ও টাকা জমা/বিনিয়োগের হিসাব ।     </a><br>
 <br>
 
 <a style=" text-decoration: none;"   target="_blank" class="collapse-item" href="{{ url('joma_uttolon_statement_yesterday') }}">****  গতকালের টাকা উত্তোলন  ও টাকা জমা/বিনিয়োগের হিসাব ।     </a><br>
@@ -799,7 +799,7 @@ $(document).ready(function(){
 <a style=" text-decoration: none;"   target="_blank" class="collapse-item" href="{{ url('joma_uttolon_statement_lastmonth') }}">****  গত মাসের টাকা উত্তোলন  ও টাকা জমা/বিনিয়োগের হিসাব ।     </a><br>
 <br>
 
-<a style=" text-decoration: none;"   target="_blank" class="collapse-item" href="{{ url('joma_uttolon_statement_year') }}">****  চলতি বছরের টাকা উত্তোলন  ও টাকা জমা/বিনিয়োগের হিসাব ।     </a><br>
+<a style=" text-decoration: none;"   target="_blank" class="collapse-item" href="{{ url('joma_uttolon_statement_year') }}">****  চলতি বছরের টাকা উত্তোলন  ও টাকা জমা/বিনিয়োগের হিসাব ।     </a><br> --}}
 <br>
 
  </div>

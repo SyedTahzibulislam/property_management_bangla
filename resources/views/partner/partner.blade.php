@@ -28,7 +28,7 @@
   <div class="row">
     <div class="col-md-12 col-sm-6" >
     <h1>ব্যাবসায়ী  পার্টনারদের তালিকা  </h1>
-    <a style="float:right; margin-bottom:20px;" class="btn btn-success" href="javascript:void(0)" id="create_record"> Add New </a>
+    <a style="float:right; margin-bottom:20px;" class="btn btn-success" href="javascript:void(0)" id="create_record"> নতুন যুক্ত  </a>
 	
 	
 	<div class="table-responsive">
@@ -49,7 +49,7 @@
 				
 			     
              
-                <th width="300px">Action</th>
+                <th width="300px">একশন </th>
             </tr>
         </thead>
         <tbody   >
@@ -68,27 +68,27 @@
   <div class="modal-content">
    <div class="modal-header">
           <button type="button" id="close" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Add New Record</h4>
+          <h4 class="modal-title">নতুন যুক্ত করেন </h4>
         </div>
         <div class="modal-body">
          <span id="form_result"></span>
          <form method="post" id="sample_form" class="form-horizontal" enctype="multipart/form-data">
           @csrf
           <div class="form-group">
-            <label class="control-label col-md-4" > Name : </label>
+            <label class="control-label col-md-4" > নাম * : </label>
             <div class="col-md-8">
              <input type="text" name="name" id="name" class="form-control" />
             </div>
            </div>
            <div class="form-group">
-            <label class="control-label col-md-4">Address : </label>
+            <label class="control-label col-md-4">এড্রেস *: </label>
             <div class="col-md-8">
              <input type="text" name="address" id="address" class="form-control" />
             </div>
            </div>
 		   
 		             <div class="form-group">
-            <label class="control-label col-md-4">Mobile : </label>
+            <label class="control-label col-md-4"> মোবাইল  *: </label>
             <div class="col-md-8">
              <input type="text" name="mobile" id="mobile" class="form-control" />
             </div>

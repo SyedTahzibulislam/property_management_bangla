@@ -28,7 +28,7 @@
   <div class="row">
     <div class="col-md-12 col-sm-6" >
     <h6  style="color:red;">বিভিন্ন পার্টনারের উত্তেলিত টাকার পরিমাণের   ট্রাঞ্জিশন। এখানে তারিখসহ  ট্রাঞ্জিশন দেখতে পাবেন যে কত তারিখে কোন পার্টনার  কত টাকা ব্যাবসা থেকে তুলেছে/উত্তেলিত করেছে  নতুন করে টাকা উত্তেলনের জন্য  দিতে দিকের Add New বাটনে ক্লিক করেন।  </h6>
-    <a style="float:right; margin-bottom:20px;" class="btn btn-success  create_record" href="javascript:void(0)" id="create_record"> Add New </a>
+    <a style="float:right; margin-bottom:20px;" class="btn btn-success  create_record" href="javascript:void(0)" id="create_record"> নতুন এড করেন  </a>
 	
 	
 	<div class="table-responsive">
@@ -44,7 +44,7 @@
 <th> ট্রাঞ্জিশনের প্রকৃতি  </th>
 <th>মন্তব্য  </th>
 <th>তারিখ </th>
-<th>Action</th>
+<th>একশন </th>
     
 				
 				
@@ -69,14 +69,14 @@
   <div class="modal-content">
    <div class="modal-header">
           <button type="button" id="close" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Add New Record</h4>
+          <h4 class="modal-title">নতুন রেকর্ড যুক্ত </h4>
         </div>
         <div class="modal-body">
          <span id="form_result"></span>
          <form method="post" action="{{ route('takauttolon.store') }}" id="sample_form" class="form-horizontal" enctype="multipart/form-data">
           @csrf
 		  <div class="form-group"> <br>
-            <label style="color:green" class="control-label col-md-4"> পার্টনারের নাম  :   </label>
+            <label style="color:green" class="control-label col-md-4"> পার্টনারের নাম *  :   </label>
             <div class="col-md-8">
 	
 	<select id="partner_name"  class="form-control "  name="partner_name"  required   style='width: 270px;'>
@@ -87,7 +87,7 @@
 			 
 			 
 			  <div class="form-group"> <br>
-            <label style="color:green" class="control-label col-md-4"> প্রজেক্ট নাম  :   </label>
+            <label style="color:green" class="control-label col-md-4"> প্রজেক্ট নাম * :   </label>
             <div class="col-md-8">
 	
 	<select id="project_name"  class="form-control "  name="project_name"     style='width: 270px;'>
@@ -103,14 +103,14 @@
 			 
 			 
            
-		   <b style="color:green;">নিচের যে কোন একটি অপশন সিলেক্ট করেন </b>
+		   <b style="color:green;">নিচের যে কোন একটি অপশন সিলেক্ট করেন *</b>
 <br><input type="radio"  name="transitiontype" value="1" required>
   <label for="html">টাকা তুলছেন / উত্তোলন করছেন  </label><br>
   <input type="radio"  name="transitiontype" value="2" required>
   <label for="css">টাকা জমা দিচ্ছেন </label><br>
 		   
 		   <div class="form-group">
-            <label class="control-label col-md-4">টাকার পরিমাণ  : </label>
+            <label class="control-label col-md-4">টাকার পরিমাণ  *: </label>
             <div class="col-md-8">
              <input type="text" name="amount" id="amount" class="form-control" />
             </div>
@@ -127,7 +127,7 @@
 
 		   
 		   <div class="col-4">
-Date:  <input type="date"  required id="datePicker" name="Date_of_Transition" class="form-control" />
+ডেট *:  <input type="date"  required id="datePicker" name="Date_of_Transition" class="form-control" />
 </div>
 		   
 
@@ -238,7 +238,7 @@ $('#formModal').on('hidden.bs.modal', function () {
         ajax: "{{ route('takauttolon.index') }}",
         columns: [
 		
-		  {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+		  {data: 'id', name: 'id'},
             
 			 {data: 'partner_name', name: 'sharepartner.name'},
 			
@@ -251,7 +251,13 @@ $('#formModal').on('hidden.bs.modal', function () {
 			 
  {data: 'action', name: 'action', orderable: false, searchable: false},
 	
-        ]
+        ],
+
+        order: [
+        [0, 'desc']
+    ] 
+
+
     });
 
 

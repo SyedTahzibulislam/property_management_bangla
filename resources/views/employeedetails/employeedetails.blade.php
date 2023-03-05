@@ -28,7 +28,7 @@
   <div class="row">
     <div class="col-md-12 col-sm-6" >
     <h6 style="color:red;">কর্মচারী/কর্মকর্তাদের তালিকা । নতুন কাওকে যুক্ত করতে এড নিউতে ক্লিক করুন। আর কাওকে তালিকা থেকে বাদ দিতে ডিলিট বাটনে ক্লিক করুন। </h6>
-    <a style="float:right; margin-bottom:20px;" class="btn btn-success" href="javascript:void(0)" id="create_record"> Add New </a>
+    <a style="float:right; margin-bottom:20px;" class="btn btn-success" href="javascript:void(0)" id="create_record"> নতুন যুক্ত  </a>
 	
 	
 	<div class="table-responsive">
@@ -37,18 +37,18 @@
             <tr>
 	
 			
-			<th>No</th>
-                <th>Name</th>
-				<th>Designation</th>
-				<th>salary</th>
-				<th>Mobile</th>
-				<th>Address</th>
+			<th>আইডি </th>
+                <th>নাম </th>
+				<th>পদবি </th>
+				<th>বেতন </th>
+				<th>মোবাইল </th>
+				<th>ঠিকানা </th>
 				
 				
 				
 			     
              
-                <th width="300px">Action</th>
+                <th width="300px">একশন </th>
             </tr>
         </thead>
         <tbody   >
@@ -67,21 +67,21 @@
   <div class="modal-content">
    <div class="modal-header">
           <button type="button" id="close" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Add New Record</h4>
+          <h4 class="modal-title">নতুন রেকর্ড যুক্ত করেন </h4>
         </div>
         <div class="modal-body">
          <span id="form_result"></span>
          <form method="post" id="sample_form" action="{{ route('employeelist.store') }}"  class="form-horizontal" enctype="multipart/form-data">
           @csrf
           <div class="form-group">
-            <label class="control-label col-md-4" > Name : </label>
+            <label class="control-label col-md-4" > নাম  *: </label>
             <div class="col-md-8">
              <input type="text" name="name" id="name" class="form-control" />
             </div>
            </div>
 		   
 		             <div class="form-group">
-            <label class="control-label col-md-4" > Designation: </label>
+            <label class="control-label col-md-4" > পদবি * : </label>
             <div class="col-md-8">
              <input type="text" name="designation" id="designation" class="form-control" />
             </div>
@@ -89,7 +89,7 @@
 		   
 		   
 		             <div class="form-group">
-            <label class="control-label col-md-4" > Salary : </label>
+            <label class="control-label col-md-4" > বেতন * : </label>
             <div class="col-md-8">
              <input type="text" name="salary" id="salary" class="form-control" />
             </div>
@@ -97,14 +97,14 @@
 		   
 		   
 		             <div class="form-group">
-            <label class="control-label col-md-4" > Mobile : </label>
+            <label class="control-label col-md-4" > মোবাইল * : </label>
             <div class="col-md-8">
              <input type="text" name="mobile" id="mobile" class="form-control" />
             </div>
            </div>
 		   
 		             <div class="form-group">
-            <label class="control-label col-md-4" > Address: </label>
+            <label class="control-label col-md-4" > ঠিকানা *: </label>
             <div class="col-md-8">
              <input type="text" name="address" id="address" class="form-control" />
             </div>
@@ -130,10 +130,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h2 class="modal-title">Confirmation</h2>
+                <h2 class="modal-title"> কনফার্মসন </h2>
             </div>
             <div class="modal-body">
-                <h4 align="center" style="margin:0;">Are you sure you want to remove this data?</h4>
+                <h4 align="center" style="margin:0;">আপনি কি ডিলিট করতে চান ?</h4>
             </div>
             <div class="modal-footer">
              <button type="button" name="ok_button" id="ok_button" class="btn btn-danger">OK</button>
