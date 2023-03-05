@@ -13,9 +13,9 @@
  @csrf
 
 
-Dealer Name:<select style="width:300px;" required name="business" id="business">
+প্রজেক্ট সিলেক্ট করেন :<select style="width:300px;" required name="business" id="business">
 <option value=""></option>
- <option value="99999999999999">Owner's Stock</option>
+ <option value="99999999999999">সব প্রজেক্ট মিলিয়ে দেখান </option>
 @foreach($project as $c)
   <option value="{{$c->id}}">{{$c->name}}</option>
  @endforeach

@@ -31,9 +31,9 @@
   </div>
 
 <div   style="width:300px;" >
-   Customer Name:    <select id="customer"  class="form-control customer"  name="customer" required    > 
+   কাস্টমারের নাম :    <select id="customer"  class="form-control customer"  name="customer" required    > 
 <option value=""></option>	
- <option value="99999999999999">All </option>   
+ <option value="99999999999999">সব কাস্টমার  </option>   
   @foreach($customer as $c)
   <option value="{{$c->id}}">{{$c->name}}</option>
  @endforeach

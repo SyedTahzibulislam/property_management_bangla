@@ -20,7 +20,7 @@
 
 <form      method="post"  action="{{route('producttransition.transferstock')}}"   >
  @csrf
-Product Name:<select style="width:300px;" required name="product" id="product">
+প্রডাক্ট :<select style="width:300px;" required name="product" id="product">
 <option value=""></option>
 @foreach($product as $p)
   <option value="{{$p->id}}">{{$p->name}}</option>
@@ -31,7 +31,7 @@ Product Name:<select style="width:300px;" required name="product" id="product">
 <p>
 
 
-From Project :<select style="width:300px;" required name="fromproject" id="fromproject">
+যে প্রজেক্ট থেকে পণ্য সরাতে চান  :<select style="width:300px;" required name="fromproject" id="fromproject">
 <option value=""></option>
 @foreach($project as $p)
   <option value="{{$p->id}}">{{$p->name}}</option>
@@ -41,8 +41,7 @@ From Project :<select style="width:300px;" required name="fromproject" id="fromp
 <p>
 <p>
 
-
-To Project :<select style="width:300px;" required name="toproject" id="toproject">
+যে প্রজেক্টে পাঠাতে চান  :<select style="width:300px;" required name="toproject" id="toproject">
 <option value=""></option>
 @foreach($project as $p)
   <option value="{{$p->id}}">{{$p->name}}</option>
@@ -54,14 +53,14 @@ To Project :<select style="width:300px;" required name="toproject" id="toproject
 <p>
 
 
-Unit :<select style="width:300px;" required name="unitcoversion" id="unitcoversion">
+ইউনিট  :<select style="width:300px;" required name="unitcoversion" id="unitcoversion">
 <option value=""></option>
 @foreach($unitcoversion as $p)
   <option value="{{$p->id}}">{{$p->name}}</option>
  @endforeach
 </select>
 <P><P>
- Conversion Amount :
+ পণ্যের পরিমাণ  :
  <input type="text" style="width:150px;" name="conversionamount" autocomplete="off"   required />
 
 

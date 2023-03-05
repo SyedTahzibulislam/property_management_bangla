@@ -31,9 +31,9 @@
   </div>
 
 <div   style="width:300px;" >
-   Company Name:    <select id="company"  class="form-control company"  name="company" required    > 
+   কোম্পানি/সাপ্লাইয়ারের নাম :    <select id="company"  class="form-control company"  name="company" required    > 
 <option value=""></option>	
- <option value="99999999999999">All </option>   
+ <option value="99999999999999"> সব দেখান  </option>   
   @foreach($company as $c)
   <option value="{{$c->id}}">{{$c->name}}</option>
  @endforeach

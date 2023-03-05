@@ -622,10 +622,6 @@ $(document).ready(function(){
 
 <a style=" text-decoration: none;" target="_blank" class="collapse-item" href="{{ url('producttransition/changeprojectstock') }}">  এক প্রজেক্টের পণ্য অন্য প্রজেক্টে ট্রান্সফার করেন    </a><br><br>
 
-<a style=" text-decoration: none;" target="_blank" class="collapse-item" href="{{ url('producttransition/convertstock') }}">  গো ডাউন থেকে সেলস পয়েন্টে বা  ইউসেস পয়েন্টে পণ্য পাঠান   </a><br><br>
-
-
-<a style=" text-decoration: none;" target="_blank" class="collapse-item" href="{{ url('producttransition/stock_sale_to_godown') }}">    সেলস পয়েন্টে বা  ইউসেস পয়েন্টে  পণ্য থেকে গো ডাউন থেকে পাঠান   </a><br><br>
 
 
 
@@ -735,8 +731,10 @@ $(document).ready(function(){
 
 <a target="_blank" class="collapse-item" href="{{ url('employeeshow') }}">কর্মচারীদের বেতন এর লেজার   </a>		
 </a><P><br>
-<a target="_blank" class="collapse-item" href="{{ url('khorochtransition/selectkhoroch') }}">  খরচ দেখুন   <br> <span style="color:red " >     <br>   </a> 
 
+
+  {{-- <a target="_blank" class="collapse-item" href="{{ url('khorochtransition/selectkhoroch') }}">  খরচ দেখুন   <br> <span style="color:red " >     <br>   </a> 
+ --}}
 
 
 
@@ -744,7 +742,7 @@ $(document).ready(function(){
  </div>
  </ul> <br>
  
-  <ul>
+  {{-- <ul>
  <a style=" text-decoration: none;" href="#" id="bthirteen" >  
  <i class="fas fa-fw fa-cog"></i> <span  style="color:white;" >  ইনকাম     </span>
  </a> 
@@ -767,11 +765,11 @@ $(document).ready(function(){
  </div>
  </div>
  </ul> <br>
- 
+  --}}
  
   <ul>
  <a style=" text-decoration: none;" href="#" id="bseven" >  
- <i class="fas fa-fw fa-cog"></i> <span  style="color:white;" > ব্যাবসায়ী পার্টনারদের নামের তালিকা ও তাদের টাকা উত্তোলন ও জমা সংক্রান্ত হিসাব       </span>
+ <i class="fas fa-fw fa-cog"></i> <span  style="color:white;" > ব্যাবসায়ী পার্টনার       </span>
  </a>
  <div id="seven"> 
  <div class="bg-white py-2 collapse-inner rounded">
@@ -880,7 +878,7 @@ $(document).ready(function(){
 	
 			
 			
-			
+{{-- 			
      <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
@@ -979,7 +977,7 @@ $(document).ready(function(){
 		
 		
 		
-      </li>
+      </li> --}}
 
 			
 			

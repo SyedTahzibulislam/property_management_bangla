@@ -272,16 +272,16 @@ Descripton:  <textarea class="form-control"   name="comment" rows="3"></textarea
             <tr>
 	
 			
-			<th>Orer NO.</th>
+			<th>অর্ডার নং .</th>
 		
-                <th>Name</th>
+                <th>নাম </th>
 				
-				<th>Amount</th>
+				<th>টাকার পরিমাণ </th>
 			
-			<th>Comment</th>
-<th>Date</th>		
-<th>Entryby</th>		     
- <th>Action</th>            
+			<th>কমেন্ট </th>
+<th>ডেট </th>		
+<th>এন্ট্রি </th>		     
+ <th>একসন </th>            
                
             </tr>
         </thead>
