@@ -1047,10 +1047,10 @@ $(document).ready(function(){
 
 <div class="dropdown  hide-in-mobile">
   <button class="btn button  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    কাস্টমার  
+    ক্রেতা   
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="{{url('customer')}}">কাস্টমার লিস্ট </a>
+    <a class="dropdown-item" href="{{url('customer')}}">ক্রেতার  লিস্ট </a>
     <a class="dropdown-item"  href="{{url('plotsell')}}">প্লট বিক্রি </a>  
     <a class="dropdown-item" href="{{url('plotsellduepayment')}}" >বাকি শোধ/ রিফান্ড  </a>  
     <a class="dropdown-item" href="{{url('balancesheetforCustomer')}}" > ব্যালেন্স সিট  </a> 
