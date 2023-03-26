@@ -27,7 +27,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 col-sm-6" >
-    <h1> ইউসার লিস্ট </h1>
+    <h1>User Group List</h1>
     <a style="float:right; margin-bottom:20px;" class="btn btn-success" href="javascript:void(0)" id="create_record"> Add New </a>
 	
 	
@@ -36,14 +36,14 @@
         <thead>
             <tr>
 	
-			<th>আইডি </th>
+			<th>ID</th>
 		
-                <th>নাম </th>
-				<th>ইমেইল </th>
-				<th>মোবাইল </th>
-				<th>রোল  </th>
+                <th>Name</th>
+				<th>Email</th>
+				<th>Mobile No</th>
+				<th>Role </th>
 
-                <th width="300px">একশন </th>
+                <th width="300px">Action</th>
             </tr>
         </thead>
         <tbody   >
@@ -55,13 +55,13 @@
     <td>{{$user->mobile}}</td>
 	<?php   if ($user->role == 1) 
 	{
-		$role = "এডমিন";
+		$role = "Admin";
 		
 	}
 	else if ($user->role == 2) 
 
 {
-		$role = "পেন্ডিং ";
+		$role = "Pending";
 		
 	}
 	else if ($user->role == 3) 
@@ -72,17 +72,17 @@
 	
 	else if ($user->role ==4 ) 
 	{
-		$role = "একাউন্টেন্ট";
+		$role = "Account";
 		
 	}
 	else if ($user->role ==5 ) 
 	{
-		$role = "সুপারভাইজার ";
+		$role = "Supervisor";
 		
 	}
 	else if ($user->role ==6 ) 
 	{
-		$role = "কাস্টমার ";
+		$role = "Customer";
 		
 	}
 
@@ -108,21 +108,21 @@
   <div class="modal-content">
    <div class="modal-header">
           <button type="button" id="close" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">নতুন রেকর্ড যুক্ত </h4>
+          <h4 class="modal-title">Add New Record</h4>
         </div>
         <div class="modal-body">
          <span id="form_result"></span>
          <form method="post" id="sample_form" action="{{ route('showuserlist.update') }}" class="form-horizontal" enctype="multipart/form-data">
           @csrf
           <div class="form-group">
-            <label class="control-label col-md-4" > নাম  : </label>
+            <label class="control-label col-md-4" > Name : </label>
             <div class="col-md-8">
              <input type="text" name="name" id="name" class="form-control" />
             </div>
            </div>
 		   
 		             <div class="form-group">
-            <label class="control-label col-md-4" > ইমেইল : </label>
+            <label class="control-label col-md-4" > Email: </label>
             <div class="col-md-8">
              <input type="text" name="email" id="email" class="form-control" />
             </div>
@@ -132,37 +132,37 @@
 		             <div class="form-group">
             
             <div class="col-md-8">
-   রোল সিলেক্ট করেন :<br>
+   Select Role:<br>
 
   <label>
     <input type="radio" name="role" value="1" required>
-    এডমিন 
+    Admin
   </label><br>
 
   <label>
     <input type="radio" name="role" value="5">
-    সুপারভাইজার 
+    Supervisors
   </label><br>
 
   <label>
     <input type="radio" name="role" value="4">
- একাউন্টেন্ট 
+  Account Section
   </label><br>  
 	
     <input type="radio" name="role" value="6">
- কাস্টমার 
+  Customer Section
   </label><br> 
 	
 	  <label>
     <input type="radio" name="role" value="2">
- কোনটাই না 
+ None
   </label><br> 		
 			</div>
            </div>
 		   
 		   
 		             <div class="form-group">
-            <label class="control-label col-md-4" > মোবাইল  : </label>
+            <label class="control-label col-md-4" > Mobile : </label>
             <div class="col-md-8">
              <input type="text" name="mobile" id="mobile" class="form-control" />
             </div>
@@ -170,7 +170,7 @@
 		   
 		
 		             <div class="form-group">
-            <label class="control-label col-md-4" > ওপেনিং ব্যালেন্স  : </label>
+            <label class="control-label col-md-4" > Opening Balance : </label>
             <div class="col-md-8">
              <input type="text" name="ob" id="ob" class="form-control" />
             </div>
@@ -201,10 +201,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h2 class="modal-title">কনফার্মসেন </h2>
+                <h2 class="modal-title">Confirmation</h2>
             </div>
             <div class="modal-body">
-                <h4 align="center" style="margin:0;">আপনি কি এই ডাটা সরাতে চান ?</h4>
+                <h4 align="center" style="margin:0;">Are you sure you want to remove this data?</h4>
             </div>
             <div class="modal-footer">
              <button type="button" name="ok_button" id="ok_button" class="btn btn-danger">OK</button>

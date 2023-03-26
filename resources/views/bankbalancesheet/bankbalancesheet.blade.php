@@ -30,7 +30,7 @@
 @endif
   </div>
 
-ব্যাংক :<select style="width:300px;" required name="bankid" id="bankid">
+Bankname Name:<select style="width:300px;" required name="bankid" id="bankid">
 <option value=""></option>
 @foreach($Bankname as $c)
   <option value="{{$c->id}}">{{$c->name}}</option>

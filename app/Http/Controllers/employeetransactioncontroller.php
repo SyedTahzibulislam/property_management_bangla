@@ -33,12 +33,11 @@ class employeetransactioncontroller extends Controller
      */
     public function index(Request $request)
     {
-        $employeesalarytransaction =  employeesalarytransaction::with('employeedetails')
-		->orderBy('id','DESC')->get();
+        $employeesalarytransaction =  employeesalarytransaction::with('employeedetails')->orderBy('id', 'DESC')->get();
 	
 	  
 	        if ($request->ajax()) {
-					  $employeesalarytransaction=  employeesalarytransaction::with('employeedetails')->orderBy('id','DESC')->get();
+					  $employeesalarytransaction=  employeesalarytransaction::with('employeedetails')->orderBy('id', 'DESC')->get();
             //$medicine =  medicine::latest()->get();
             return Datatables::of($employeesalarytransaction)
                    ->addIndexColumn() 
@@ -46,24 +45,28 @@ class employeetransactioncontroller extends Controller
 
                     ->addColumn('action', function( employeesalarytransaction $data){ 
    
-                          $button = '<button type="button" name="edit" id="'.$data->id.'" class="edit btn btn-primary btn-sm">Edit</button>';
-                        $button .= '&nbsp;&nbsp;';
-                        $button .= '<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm">Delete</button>';
+                        //   $button = '<button type="button" name="edit" id="'.$data->id.'" class="edit btn btn-primary btn-sm">Edit</button>';
+                        // $button .= '&nbsp;&nbsp;';
+                        $button = '<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm">Delete</button>';
                         return $button;
                     })  
     
                       ->addColumn('employee_name', function (employeesalarytransaction $employeesalarytransaction) {
                     return $employeesalarytransaction->employeedetails->name;
                 })
-				
-                      ->addColumn('totalsalary', function (employeesalarytransaction $employeesalarytransaction) {
+
+
+
+                ->addColumn('totalsalary', function (employeesalarytransaction $employeesalarytransaction) {
                     return convertToBangla($employeesalarytransaction->totalsalary);
-                })				
-				
+                })
+
+
+
 
 				->editColumn('created_at', function(employeesalarytransaction $data) {
 					
-					 return convertToBangla(date('d/m/y H:i A', strtotime($data->created_at)));
+					 return date('d/m/y', strtotime($data->created_at) );
                     
                 })	
 					
@@ -427,8 +430,8 @@ $employeedetails = employeedetails::findOrFail($request->employee);
         );
 
 
+        $request->salary = convertToEnglish($request->salary);
 
-$request->salary =  convertToEnglish($request->salary);
 
 DB::beginTransaction(); 
 $role = Auth()->user()->role;
@@ -645,7 +648,7 @@ $cashtransition->employeesalarytransaction_id = $employeesalarytransaction->id;
 $cashtransition->amount = $request->salary;
 $cashtransition->withdrwal = $request->salary;	
 
-$cashtransition->description = "Expenditure for salary to the employee:- " .$employee;	
+$cashtransition->description = " বেতন প্রদান, কর্মচারী :- " .$employee;	
 $cashtransition->created_at = $request->Startdate;
 $cashtransition->transtype = 4;
 $cashtransition->type = 2;
@@ -728,8 +731,7 @@ $cashtransition->save();
             return response()->json(['errors' => $error->errors()->all()]);
         }
 
-       	$request->salary =  convertToEnglish($request->salary);
-	
+        $request->salary = convertToEnglish($request->salary);     		
 
         $form_data = array(
             'employeedetails_id'        =>  $request->employeelist,

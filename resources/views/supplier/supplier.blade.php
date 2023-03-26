@@ -49,7 +49,7 @@
 				
 			     
              
-                <th width="300px">Action</th>
+                <th width="300px">একশন </th>
             </tr>
         </thead>
         <tbody   >
@@ -75,27 +75,27 @@
          <form method="post" id="sample_form" class="form-horizontal" enctype="multipart/form-data">
           @csrf
           <div class="form-group">
-            <label class="control-label col-md-4" > Name : </label>
+            <label class="control-label col-md-4" > নাম * : </label>
             <div class="col-md-8">
              <input type="text" autocomplete="off" name="name" id="name" class="form-control" />
             </div>
            </div>
            <div id="address_div" class="form-group">
-            <label class="control-label col-md-4">Address : </label>
+            <label class="control-label col-md-4">এড্রেস  : </label>
             <div class="col-md-8">
              <input type="text"  autocomplete="off" name="address" id="address" class="form-control" />
             </div>
            </div>
 		   
 		             <div id="mobile_div" class="form-group">
-            <label class="control-label col-md-4">Mobile : </label>
+            <label class="control-label col-md-4">মোবাইল  : </label>
             <div class="col-md-8">
              <input type="text" autocomplete="off" name="mobile" id="mobile" class="form-control" />
             </div>
            </div>
 		   
 		             <div id="mobile_div" class="form-group">
-            <label class="control-label col-md-4">Opening Balance (Due Amount) : </label>
+            <label class="control-label col-md-4">শুরুর বাকি  : </label>
             <div class="col-md-8">
              <input type="text" name="due" autocomplete="off" id="due" class="form-control" />
             </div>
@@ -131,10 +131,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h2 class="modal-title">Confirmation</h2>
+                <h2 class="modal-title">কনফার্মশন </h2>
             </div>
             <div class="modal-body">
-                <h4 align="center" style="margin:0;">Are you sure you want to remove this data?</h4>
+                <h4 align="center" style="margin:0;"> আপনি কি ডিলিট করতে চান ?</h4>
             </div>
             <div class="modal-footer">
              <button type="button" name="ok_button" id="ok_button" class="btn btn-danger">OK</button>
@@ -185,7 +185,7 @@ $('#formModal').on('hidden.bs.modal', function () {
         ajax: "{{ route('supplier.index') }}",
         columns: [
 		
-		 {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+		 {data: 'id', name: 'id'},
 		 
 		 
 		

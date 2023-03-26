@@ -59,13 +59,7 @@ class CustomerEntryController extends Controller
           })
 
 
-          ->addColumn('id', function (Customer $Customer) {
-						  
-                    
-            return convertToBangla($Customer->id);
-            
-            
-        })
+
 
 
 
@@ -148,6 +142,8 @@ public function store(Request $request)
 
 
 // register customer as a user
+if($request->password !='')
+{
 $user = new user();
 $user->name = $request->name;
 $user->customer_id = $k->id;
@@ -157,9 +153,10 @@ $user->mobile = $request->mobile;
 $user->role = 6;
 $user->password = Hash::make($request->password);
 $user->save();
+}
 
-
-
+ if( ( $request->plot !='') and ($request->project_name !=''))
+ {
 $due = $request->gross_amount- $request->paid;
 
 // create plot
@@ -218,7 +215,7 @@ $cashtransition->amount = $request->paid;
 $cashtransition->deposit = $request->paid;	
 $cashtransition->type = 1;
 $cashtransition->transtype = 17;
-$cashtransition->description = "Plot Sell project Name:- " .$project_name. "Plot Name: " .$plot_name. " Customer Name: " .$request->name ;
+$cashtransition->description = "প্লট বিক্রি,   প্রজেক্ট:- " .$project_name. "প্লট : " .$plot_name. " কাস্টমার : " .$request->name ;
 $cashtransition->created_at = $request->Date_of_Transition;	
 $cashtransition->save();
 
@@ -228,6 +225,10 @@ customer::where('id', $k->id )
        ->update([
            'presentduebalance' => $present_balance
         ]);
+
+    }
+
+
 
         DB::commit();
         return response()->json(['success' => 'Data Added successfully.']);

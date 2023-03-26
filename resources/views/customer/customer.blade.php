@@ -39,12 +39,12 @@
 	
 	  <div class="row">
     <div class="col-4">
-    এরিয়া কোড 	<select id="areacode"  class="form-control "  name="areacode"  required   style='width: 270px;'>
+    এরিয়া কোড *	<select id="areacode"  class="form-control "  name="areacode"  required   style='width: 270px;'>
   
    </select>
     </div>
     <div class="col-4">
-      কাস্টমার নাম :			  
+      কাস্টমার নাম * :			  
 			  <input type="text" class="form-control register_form " name="name" id="name"  placeholder="Enter Name" autocomplete="off">
            
     </div>
@@ -54,14 +54,14 @@
 
   <div class="row">
     <div class="col-4">
-     মোবাইল:  <input type="text" class="form-control register_form " name="mobile" id="mobile" placeholder="Mobile"  autocomplete="off" >
+     মোবাইল * :  <input type="text" class="form-control register_form " name="mobile" id="mobile" placeholder="Mobile"  autocomplete="off" >
     </div>
     <div class="col-4">
-     ঠিকানা :   <input type="text" class="form-control register_form " name="address" id="address" placeholder="Address"  autocomplete="off" >
+     ঠিকানা * :   <input type="text" class="form-control register_form " name="address" id="address" placeholder="Address"  autocomplete="off" >
     </div>
 
     <div class="col-4">
-      ডেট :  <input type="date"  required id="datePicker" name="Date_of_Transition" class="form-control" />
+      ডেট * :  <input type="date"  required id="datePicker" name="Date_of_Transition" class="form-control" />
       </div>
   </div>
 
@@ -91,7 +91,7 @@
 		
   <div class="row">
     <div class="col-4">
- প্রজেক্ট নামঃ 	<select id="project"  class="form-control "  name="project_name"     style='width: 270px;'>
+ প্রজেক্ট নাম # : 	<select id="project"  class="form-control "  name="project_name"     style='width: 270px;'>
   
   </select>
     </div>
@@ -100,7 +100,7 @@
 
 
     <div class="col-4">
-  প্লট নম্বর:  <input type="text" class="form-control register_form " name="plot" id="plot" placeholder="Plot Name"  autocomplete="off" >
+  প্লট নম্বর # :  <input type="text" class="form-control register_form " name="plot" id="plot" placeholder="Plot Name"  autocomplete="off" >
     </div>
 
 
@@ -121,11 +121,11 @@
         </div>
 
     <div class="col-4">
-    গ্রোস প্রাইস:  <input type="text" class="form-control register_form " name="gross_amount" id="payment" placeholder="Groos Amount"  autocomplete="off" >
+    গ্রোস প্রাইস:  <input type="text" value="0" class="form-control register_form " name="gross_amount" id="payment" placeholder="Groos Amount"  autocomplete="off" >
     </div>
 
     <div class="col-4">
-    পেইড :  <input type="text" class="form-control register_form " name="paid" id="paid" placeholder="Paid"  autocomplete="off" >
+    পেইড :  <input type="text" value="0" class="form-control register_form " name="paid" id="paid" placeholder="Paid"  autocomplete="off" >
     </div>
 
   </div>
@@ -188,7 +188,7 @@
 			<th>আইডি</th>
 				<th>এরিয়া কোড</th>
 	<th>নাম</th>
-             <th>কাস্টমার কোড</th>
+
 			 <th> মোবাইল </th>
 				<th>ঠিকানা</th>
 		
@@ -339,7 +339,7 @@ jQuery("input").on('keyup', function(event) {
             {data: 'id', name: 'id'},
 			 {data: 'areacode', name: 'areacode'},
             {data: 'name', name: 'name'},
-			 {data: 'customercode', name: 'customercode'},
+
 			 {data: 'mobile', name: 'mobile'},
 			 {data: 'address', name: 'address'},
 

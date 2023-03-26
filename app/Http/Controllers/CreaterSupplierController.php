@@ -39,7 +39,21 @@ class CreaterSupplierController extends Controller
 						return $button;
                     })  
 	
-				
+	
+                    ->addColumn('due', function( supplier $data){ 
+                      return convertToBangla($data->due);
+                  })                    
+
+                  ->addColumn('advance', function( supplier $data){ 
+                    return convertToBangla($data->advance);
+                })  
+
+
+
+
+
+
+
 
 					
 					
@@ -75,8 +89,8 @@ class CreaterSupplierController extends Controller
     {
         $rules = array(
             'name'    =>  'required',
-            'address'     =>  'required',
-            'mobile'         =>  'required',
+            'address',
+            'mobile',
 			'due',
 						
         );
@@ -88,7 +102,7 @@ class CreaterSupplierController extends Controller
             return response()->json(['errors' => $error->errors()->all()]);
         }
 
-       
+        $request->due = convertToEnglish($request->due);
 
         $form_data = array(
             'name'        =>  $request->name,
@@ -160,8 +174,8 @@ class CreaterSupplierController extends Controller
         
             $rules = array(
                 'name'    =>  'required',
-                'mobile'     =>  'required',
-				'address' => 'required',
+                'mobile',
+				'address',
 				'due',
 
             );
@@ -172,7 +186,7 @@ class CreaterSupplierController extends Controller
             {
                 return response()->json(['errors' => $error->errors()->all()]);
             }
-       
+            $request->due = convertToEnglish($request->due);
 
         $form_data = array(
             'name'       =>   $request->name,
@@ -181,6 +195,8 @@ class CreaterSupplierController extends Controller
 			   'due'=>$request->due,
 			
         );
+
+     
         supplier::whereId($request->hidden_id)->update($form_data);
 
         return response()->json(['success' => 'Data is successfully updated']);

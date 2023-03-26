@@ -57,20 +57,16 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 
 	  <div class="row"> 
     <div class="col-4">
-    ক্যাটাগরিঃ  	<select id="category"  class="form-control "  name="category"  required   style='width: 270px;'>
-  
-   </select>
-    </div>
-    <div class="col-4">
-    কোম্পানি/ সাপ্লাইয়ার 	<select id="company"  class="form-control "  name="company"  required   style='width: 270px;'>
+    ক্যাটাগরি * :  	<select id="category"  class="form-control "  name="category"  required   style='width: 270px;'>
   
    </select>
     </div>
 
+
 	
 	
 		   <div class="col-4">
-স্টক ইউনিটঃ 	<select id="sellingunit"  class="form-control "  name="sellingunit"  required   style='width: 270px;'>
+স্টক ইউনিট * : 	<select id="sellingunit"  class="form-control "  name="sellingunit"  required   style='width: 270px;'>
   
    </select>
     </div>
@@ -80,14 +76,14 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 	
 	
 	    <div class="col-4">
-প্রডাক্টের নাম :      
+প্রডাক্টের নাম * :      
 			   <input type="text" class="form-control register_form " name="name" id="name" placeholder="name" autocomplete="off">
     </div>
     <div class="col-4">
           <input type="hidden" value="0" readonly  class="form-control register_form " name="stock" id="stock" placeholder="stock" required  autocomplete="off" >
         </div>
         <div class="col-4">
-   প্রাইস  <input type="text" value="0" class="form-control register_form " name="unitprice" id="unitprice" placeholder="unitprice" required  autocomplete="off" >
+   প্রাইস * <input type="text" value="0" class="form-control register_form " name="unitprice" id="unitprice" placeholder="unitprice" required  autocomplete="off" >
         </div>
 	
 	</div>
@@ -125,7 +121,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 
 			
 				<th>ক্যাটাগরি </th>
-	<th>কোম্পানি/সাপ্লাইয়ার </th>
+
              <th>প্রডাক্ট </th>
 			
 
@@ -264,7 +260,6 @@ jQuery("input").on('keyup', function(event) {
 		 
 
 			 {data: 'productcategory', name: 'productcategory'},
-            {data: 'productcompany', name: 'productcompany'},
 			 {data: 'name', name: 'name'},
 
 

@@ -22,6 +22,8 @@ function convertToEnglish(banglaValue) {
     "7": "7",
     "8": "8",
     "9": "9",
+	"-": "-",
+	".": ".",
   };
 
   for (var i = 0; i < banglaValue.length; i++) {
@@ -48,6 +50,8 @@ function convertToBangla(englishValue) {
     "7": "৭",
     "8": "৮",
     "9": "৯",
+	"-": "-",
+	".": ".",
   };
 
   if (isNaN(englishValue) && typeof englishValue !== "string") {

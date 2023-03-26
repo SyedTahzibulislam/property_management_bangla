@@ -2,9 +2,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <style>
-
+    body {
+    style="font-family: nikosh;"   
+    }
+	
 table {
-  font-family: arial, sans-serif;
+  font-family: nikosh, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
@@ -61,7 +64,7 @@ opacity: .1;
 </style>
  <?php for ($i=0; $i<3; $i++){ ?>
 </head>
-<body style="font-family: Times New Roman;">
+<body >
 <div id="c" >
 <div id="head" >
 <img width="500px;"   src="img/logo.jpg" >
@@ -73,15 +76,15 @@ opacity: .1;
     <div style="height:10px;" id="one" >
     <div style="width:30%; float:left;" >
 	<?php if( $i == 0) { ?>
-      <b><u>Balance Sheet</u></b>
+      <b><u>ব্যালেন্স সিট </u></b>
     <?php } if ( $i == 1){ ?>
-	  <b>office's Copy  </b>
+	  <b>অফিস কপি  </b>
 	  <?php } if ( $i == 2){ ?>
-	 <b> Accountant's Copy  </b>
+	 <b> একাউন্টস কপি   </b>
 	  <?php } ?>
 	</div>
     <div style="width:40%;float:left;" >
- <b>Customer ID:</b> {{$data->id}}
+ <b>কাস্টমার আইডি :</b> {{$data->id}}
     </div>
 
 
@@ -91,18 +94,18 @@ opacity: .1;
 
     <div style="height:10px;" id="two" >
     <div style="width:40%; float:left;" >
-      <b>Name :</b> {{$data->name}}
+      <b>নাম :</b> {{$data->name}}
     </div>
 
 	
 	    <div style="width:26%;float:left;" >
- <b>code:</b> {{$data->customercode}}
+ <b>কোড :</b> {{$data->customercode}}
     </div>
 
 	
 	
 	    <div style="width:34%;float:left;" >
-<b>Mobile No.</b> {{$data->mobile}} 
+<b>মোবাইল .</b> {{$data->mobile}} 
     </div>
 
   </div>
@@ -110,19 +113,19 @@ opacity: .1;
 
     <div style="height:10px;" id="two" >
     <div style="width:30%; float:left;" >
-      <b>Opening Balance :</b> {{$data->openingbalance}}TK
+      <b>শুরুর বাকি  :{{ convertToBangla($data->openingbalance)}} টাকা </b> 
     </div>
     <div style="width:30%; float:left;" >
-      <b>Current Due Balance :</b> {{$data->presentduebalance}}TK
+      <b>বর্তমান বাকি  : {{convertToBangla($data->presentduebalance) }}টাকা </b>
     </div>
 
     <div style="width:30%; float:left;" >
-      <b>Previous Due Balance  :</b> {{$obtillfirstdate}}TK
+      <b>প্রদেয় তারিখের আগের বাকি :</b> {{convertToBangla($obtillfirstdate)}}টাকা 
     </div>
   </div>  
   
   
-Balance Sheet from date: <?php echo date('d/m/Y ', strtotime($start)); ?>  to <?php echo date('d/m/Y ', strtotime($lastday)); ?> 
+প্রদেয় তারিখ : <?php echo convertToBangla(date('d/m/Y ', strtotime($start))); ?>  to <?php echo convertToBangla(date('d/m/Y ', strtotime($lastday))); ?> 
   
   <?php  $b= $obtillfirstdate;  ?>
   
@@ -144,22 +147,22 @@ Balance Sheet from date: <?php echo date('d/m/Y ', strtotime($start)); ?>  to <?
   <tr>
      
 	
- <th style="width:40px;" >	Date</th>
+ <th style="width:40px;" >	তারিখ </th>
   
     <th style="width:100px;" >
 	
-	  Project Name
+	  প্রজেক্ট 
     
 	 </th>
-	  <th style="width:100px;"  >Plot</th>
-	  <th style="width:100px;"  >Comment</th>
-    <th style="width:100px;"  >Amount(TK)</th>
-	<th style="width:100px;"  >Disount(TK)</th>
-    <th  style="width:100px;" >Receiveable Amount(TK)</th>
-	 <th style="width:100px;"  >Debit(Due) </th>
+	  <th style="width:100px;"  >প্লট </th>
+	  <th style="width:100px;"  >কমেন্ট </th>
+    <th style="width:100px;"  >টাকার পরিমাণ </th>
+	<th style="width:100px;"  >ডিস্কাউন্ট </th>
+    <th  style="width:100px;" >রিসিভেবল এমাউন্ট </th>
+	 <th style="width:100px;"  >ডেবিট ( বাকি)  </th>
 	 
-	 <th style="width:100px;"   >Credit(Paid)</th> 
-	  <th style="width:100px;"   > Due Balance</th> 
+	 <th style="width:100px;"   >ক্রেডিট (পেইড )</th> 
+	  <th style="width:100px;"   > বাকির ব্যালেন্স </th> 
   </tr>
   </thead>	
  @foreach ( $order as $o )
@@ -186,14 +189,14 @@ $b = $b- $o->amount;
 
   <tr>
     <?php  //$myDateTime = DateTime::createFromFormat('Y-m-d', $o->created_at);  echo  $myDateTime->format('d/m/Y'); ?> 
-  <td> <?php echo date('d/m/Y h:i:s A', strtotime($o->created_at));; ?> </td>
+  <td> <?php echo convertToBangla(date('d/m/Y', strtotime($o->created_at)));; ?> </td>
 <td>  {{$o->project->name}}    </td>
 <td>  {{$o->plot->name}}   </td>  
-<td> Type: <?php   if ($o->type ==1) { ?> Buying/Booking : 
+<td> টাইপ : <?php   if ($o->type ==1) { ?> ক্রয়/ বুকিং  : 
 
-<?php } if ($o->type ==2) { ?> Due Payment by Customer:  <?php } if ($o->type ==3) { ?>
+<?php } if ($o->type ==2) { ?> ক্রেতা কর্তৃক বাকি শোধ :  <?php } if ($o->type ==3) { ?>
 
-Refund to Customer:  <?php } ?>
+কাস্টমারকে টাকা ফেরত :  <?php } ?>
 
 
     {!! nl2br(e($o->comment)) !!}   
@@ -207,15 +210,15 @@ Refund to Customer:  <?php } ?>
 
 
 
- <td><?php echo round($o->amount,2); ?> </td>
-   <td><?php echo round($o->discount,2); ?> </td>
+ <td><?php echo (convertToBangla (round($o->amount,2))); ?> </td>
+   <td><?php echo (convertToBangla (round($o->discount,2))); ?> </td>
 
    
-    <td><?php echo round($o->amountafterdiscount,2); ?></td>
-	 <td><?php echo round($o->due_first,2); ?></td>
+    <td><?php echo (convertToBangla (round($o->amountafterdiscount,2))); ?></td>
+	 <td><?php echo (convertToBangla (round($o->due_first,2))); ?></td>
 	 
-	 <td><?php echo round($o->paid,2); ?></td>
-	  <td>        <?php echo round($b,2); ?>   </td>
+	 <td><?php echo (convertToBangla (round($o->paid,2))); ?></td>
+	  <td>        <?php echo (convertToBangla (round($b,2))); ?>   </td>
 
 	 
 	 
@@ -226,11 +229,11 @@ Refund to Customer:  <?php } ?>
 	
 	<div  style="height:10px;" id="btwo" >
     <div style="width:50%;float:left;" >
- <b>Date :</b><?php echo date("d/m/y") ;  ?>
+ <b>তারিখ :</b><?php echo  convertToBangla(date("d/m/y"));  ?>
     </div>
-
+ 
 	    <div style="width:50%;float:left;" >
-		<b>Print By:{{Auth()->user()->name}}</b>
+		<b>প্রিন্ট :{{Auth()->user()->name}}</b>
 
     </div>
 

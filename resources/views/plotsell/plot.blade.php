@@ -57,7 +57,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
   <div class="row">
 <!-- test_name -->
     <div class="col-6">
-	প্রজেক্ট :
+	প্রজেক্ট *:
  <select id="project_name"  class="form-control project_name"  name="project_name"     style='width: 170px;'>
     </select>
     </div>
@@ -66,7 +66,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
  
  
      <div class="col-6">
-	কাস্টমার :
+	কাস্টমার *:
  <select id="customer"  class="form-control customer"  name="customer"     style='width: 170px;'>
     </select>
     </div>
@@ -77,7 +77,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
    <div class="row">
 <!-- test_name -->
     <div class="col-6">
-	প্লট : 
+	প্লট *: 
  <select id="plot_name"  class="form-control plot_name"  name="plot_name"     style='width: 170px;'>
     </select>
     </div>
@@ -97,7 +97,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
   
   <div class="row">
   
-  				 			 <div class="col-6">এডজাস্ট <br>
+  				 			 <div class="col-6">এডজাস্ট *<br>
 			 <input type="radio"  name="adjusttype" value="1"  required >
 <label for="html">  মালিকের ফান্ড   </label><br>
 <input type="radio"  name="adjusttype" value="2"   required >
@@ -152,7 +152,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
   
   <div class="row">
   <div class="col-6">
-ডেট :  <input type="date"  required id="datePicker" name="Date_of_Transition" class="form-control" />
+ডেট *:  <input type="date"  required id="datePicker" name="Date_of_Transition" class="form-control" />
 </div>
   
       <div class="col-6">

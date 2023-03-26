@@ -168,7 +168,10 @@ $useproduct=  useproduct::with('useproducttransition')->where('project_id', $req
 	
 
 
-
+ $start_formatted = date("d/m/y", strtotime($start));
+ $lastday_formatted = date("d/m/y", strtotime($end));
+ $title = "USG_" . $project_name. "_" . $start_formatted . "-" . $lastday_formatted;
+ 
 
 			 $pdf = PDF::loadView('producttransition.voucherforusages', compact('useproduct','start','end','project_name', ),
    [], [
@@ -180,13 +183,15 @@ $useproduct=  useproduct::with('useproducttransition')->where('project_id', $req
 	'margin_right'             => 7,
 	'margin_top'               => 7,
 	'margin_bottom'            => 7,
+    'title' => $title,
 ]
    
    
    );
 	
+   $save = $title.".pdf";
 	
-	 return $pdf->stream('document.pdf');
+	 return $pdf->stream($save);
 
 
 

@@ -28,7 +28,7 @@
 
 
 		<div  class="container" style="background-color:#EEE8AA; "  >
-		<h2>Expenses Category</h2>
+		<h2>খরচ </h2>
   <span id="form_result"></span>
 	
 		<form method="post" action="{{ route('khorocer_khad.store') }}"   id="sample_form" class="form-horizontal" enctype="multipart/form-data">
@@ -39,7 +39,7 @@
 			 
 			 <div class="row">
 			 			 <div class="col-4" >
-			Expenses Name:   <input type="text" autocomplete="off"  name="expensesname" id="expensesname" class="form-control numbers  expensesname" required  />
+			খরচের নাম :   <input type="text" autocomplete="off"  name="expensesname" id="expensesname" class="form-control numbers  expensesname" required  />
 			
 			</div>
 			 
@@ -98,24 +98,22 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 col-sm-6" >
-    <h6 style="color:red;">আপনি এখানে প্রতিষ্ঠানের খরচের খাতসমূহ দেখতে পারবেন। চাইলে ইডিট বা ডিলিট ও করতে পারবেন। নতুন করে কোন খরচের খাত তৈরি করতে ADD Button  এ ক্লিক করুন । </h6>
-    <a style="float:right; margin-bottom:20px;" class="btn btn-success" href="javascript:void(0)" id="create_record"> Add New </a>
-	
+
 	
 	<div class="table-responsive">
     <table id="patient_table"  class="table  table-success table-striped data-tablem">
         <thead>
             <tr>
 	
-			<th>ID</th>
-			<th>No</th>
-                <th>Name</th>
+			<th>আইডি </th>
+		
+                <th>নাম </th>
 				
 				
 				
 			     
              
-                <th width="300px">Action</th>
+                <th width="300px">একশন </th>
             </tr>
         </thead>
         <tbody   >
@@ -165,10 +163,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h2 class="modal-title">Confirmation</h2>
+                <h2 class="modal-title">কনফার্মশন </h2>
             </div>
             <div class="modal-body">
-                <h4 align="center" style="margin:0;">Are you sure you want to remove this data?</h4>
+                <h4 align="center" style="margin:0;"> আপনি কি ডিলিট করতে চান ?</h4>
             </div>
             <div class="modal-footer">
              <button type="button" name="ok_button" id="ok_button" class="btn btn-danger">OK</button>
@@ -217,7 +215,7 @@ $(document).ready(function(){
         ajax: "{{ route('khorocer_khad.index') }}",
         columns: [
 		
-		 {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+	
             {data: 'id', name: 'id'},
             {data: 'name', name: 'name'},
 			

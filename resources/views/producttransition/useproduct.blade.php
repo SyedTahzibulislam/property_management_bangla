@@ -64,7 +64,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 
 
 		   <div class="col-4">
-	   প্রজেক্ট :    <select id="project_id"  class="form-control "  name="project_id"  required   style='width: 270px;'>  
+	   প্রজেক্ট * :    <select id="project_id"  class="form-control "  name="project_id"  required   style='width: 270px;'>  
            
 			
 			</select>
@@ -87,10 +87,10 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 			 <table   class="table" id="products_table">
                 <thead>
                     <tr>
-                        <th>প্রডাক্ট </th>
-						<th>ইউনিট </th>
+                        <th>প্রডাক্ট * </th>
+						<th>ইউনিট * </th>
 
-						<th style="width:150px;" >পরিমাণ </th>
+						<th style="width:150px;" >পরিমাণ * </th>
 				
 
 						
@@ -180,7 +180,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 		     <div class="row">
 			 
 			 <div class="col-4">
-ডেট :  <input type="date"  required id="datePicker" name="Date_of_Transition" class="form-control" />
+ডেট * :  <input type="date"  required id="datePicker" name="Date_of_Transition" class="form-control" />
 </div>
 			 
 			 
@@ -272,16 +272,16 @@ Descripton:  <textarea class="form-control"   name="comment" rows="3"></textarea
             <tr>
 	
 			
-			<th>অর্ডার নং .</th>
+			<th>Orer NO.</th>
 		
                 <th>নাম </th>
 				
-				<th>টাকার পরিমাণ </th>
+
 			
 			<th>কমেন্ট </th>
-<th>ডেট </th>		
-<th>এন্ট্রি </th>		     
- <th>একসন </th>            
+<th>তারিখ  </th>		
+<th>এন্ট্রি বাই </th>		     
+ <th>একশন </th>            
                
             </tr>
         </thead>
@@ -384,7 +384,7 @@ $('#datePicker').val(new Date().toDateInputValue());
 			{data: 'id', name: 'id'},
             {data: 'projectname', name: 'projectname'},
 
-			  {data: 'amount', name: 'amount'},
+
 
     
 	  {data: 'comment', name: 'comment'},

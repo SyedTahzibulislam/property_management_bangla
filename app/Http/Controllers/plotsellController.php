@@ -77,7 +77,7 @@ $plotsell=  plotsell::with('plot','Customer','user')->where('type', 1)->orderBy(
 				
 		
                 ->addColumn('id', function (plotsell $plotsell) {
-                    return convertToBangla($plotsell->id);
+                    return ($plotsell->id);
                 }) 
 
 
@@ -342,7 +342,7 @@ $cashtransition->amount = $request->paid;
 $cashtransition->deposit = $request->paid;	
 $cashtransition->type = 1;
 $cashtransition->transtype = 17;
-$cashtransition->description = "Plot Sell project Name:- " .$project_name. "Plot Name: " .$plot_name. " Customer Name: " .$customer->name ;
+$cashtransition->description = "প্লট বিক্রি, প্রজেক্ট :- " .$project_name. "প্লট নং : " .$plot_name. " কাস্টমার : " .$customer->name ;
 $cashtransition->created_at = $request->Date_of_Transition;	
 $cashtransition->save();
 

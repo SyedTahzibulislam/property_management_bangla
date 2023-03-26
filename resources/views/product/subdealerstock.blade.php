@@ -5,7 +5,7 @@
 @section('content')
 
 
-<h6 style="color:red;">আপনি যে ডিলারের স্টক দেখতে চান সেটা সিলেক্ট করেন </h6>
+<h6 style="color:red;">আপনি যে প্রজেক্টের স্টক দেখতে চান সেটা সিলেক্ট করেন </h6>
 <br>
 
 
@@ -13,9 +13,9 @@
  @csrf
 
 
-প্রজেক্ট সিলেক্ট করেন :<select style="width:300px;" required name="business" id="business">
+প্রজেক্ট নাম :<select style="width:300px;" required name="business" id="business">
 <option value=""></option>
- <option value="99999999999999">সব প্রজেক্ট মিলিয়ে দেখান </option>
+
 @foreach($project as $c)
   <option value="{{$c->id}}">{{$c->name}}</option>
  @endforeach

@@ -13,7 +13,7 @@
 
 <div class="row">
             <div class="col-6">
-	মাস :
+	Month:
 	<select id="month"  class="form-control "  name="month"  required   style='width: 170px;'>
 	<option value=""></option>
    <option   value="1">Jan</option>
@@ -35,7 +35,7 @@
 	<div class="col-6">
 
             <div class="col-6">
-	সাল :
+	Year:
 	<select id="year"  class="form-control " type="reset"  name="year"  required   style='width: 170px;'>
 	<option value=""></option> 
 	

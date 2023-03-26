@@ -466,7 +466,7 @@ $cashtransition->project_id = $request->project_id;
 
 $cashtransition->transtype = 9;
 
-$cashtransition->description = "Buy Product from Company:"  .$company->name ;
+$cashtransition->description = "প্রডাক্ট/জমি ক্রয়,  সাপ্লাইয়ার :"  .$company->name ;
 $cashtransition->created_at = $request->Date_of_Transition;	
 $cashtransition->adjusttype = $request->adjusttype;
 $cashtransition->account_id = $request->accountant;
@@ -1052,25 +1052,32 @@ $producttransition = productcompanytransition::with('Product','unitcoversion')
 
 $product = product::with('productpriceaccunit')->where('balance_of_business_id', Auth()->user()->balance_of_business_id )->orderBy('name')->get();	
 
-$company= "All";
+$company= "সব";
+
+$start = date("Y-m-d"); // Set $start to today's date in "YYYY-MM-DD" format
+$today = date("d/m/y", strtotime($start)); // Format $start as "dd/mm/yy"
+$title = "PS_RPT_" . $company. "_" . $today;
 
 	 $pdf = PDF::loadView('product.purchasereport', compact('producttransition','start','e','product','returnproduct','company' ),
    [], [
  'mode'                     => '',
-	'format'                   => 'A5',
+	'format'                   => 'A4',
 	'default_font_size'        => '7',
 	'default_font'             => 'Times-New-Roman',
 	'margin_left'              => 7,
 	'margin_right'             => 7,
 	'margin_top'               => 7,
 	'margin_bottom'            => 7,
+	'title' => $title,
 ]
    
    
    );
 	
+	$save = $title. '.pdf';
+	 return $pdf->stream($save);
 	
-	 return $pdf->stream('document.pdf');
+
 
 }
 
@@ -1119,10 +1126,18 @@ $company = productcompany::findOrFail($request->company)->name;
 
 $product = product::with('productpriceaccunit')->where('balance_of_business_id', Auth()->user()->balance_of_business_id )->orderBy('name')->get();	
 
+
+
+$start = date("Y-m-d"); // Set $start to today's date in "YYYY-MM-DD" format
+$today = date("d/m/y", strtotime($start)); // Format $start as "dd/mm/yy"
+$title = "PS_RPT_" . $company. "_" . $today;
+
+
+
 	 $pdf = PDF::loadView('product.purchasereport', compact('producttransition','start','e','product','returnproduct','company' ),
    [], [
  'mode'                     => '',
-	'format'                   => 'A5',
+	'format'                   => 'A4',
 	'default_font_size'        => '7',
 	'default_font'             => 'Times-New-Roman',
 	'margin_left'              => 7,
@@ -1135,8 +1150,9 @@ $product = product::with('productpriceaccunit')->where('balance_of_business_id',
    );
 	
 	
-	 return $pdf->stream('document.pdf');
-	
+   $save = $title. '.pdf';
+   return $pdf->stream($save);
+  
 	
 	
 }

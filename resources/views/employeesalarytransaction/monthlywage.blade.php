@@ -3,9 +3,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <style>
 
-
+    body {
+    font-family: nikosh, sans-serif;"   
+    }
 table {
-  font-family: arial, sans-serif;
+  font-family: nikosh, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
@@ -59,7 +61,7 @@ opacity: .1;
 </style>
 
 </head>
-<body style="font-family: Times New Roman;">
+<body style="font-family: nikosh;">
 <div id="c" >
 <div id="head" >
 <img width="500px;"   src="img/logo.jpg" >
@@ -72,17 +74,17 @@ opacity: .1;
 
 
 
-	 	   <h2> Salary Expenditure Statemnet between date:
+	 	   <h2> বেতন খরচ :
 	   
 	   <?php 
 	     
-	    $myDateTime = DateTime::createFromFormat('Y-m-d', $start);  echo  $myDateTime->format('d/m/Y'); ?> 
+	    $myDateTime = DateTime::createFromFormat('Y-m-d', $start);  echo  convertToBangla($myDateTime->format('d/m/Y')); ?> 
     
 	   
 
-	   to 
+	   থেকে  
 	   	   <?php 
-   $myDateTime = DateTime::createFromFormat('Y-m-d', $e);  echo  $myDateTime->format('d/m/Y');
+   $myDateTime = DateTime::createFromFormat('Y-m-d', $e);  echo  convertToBangla($myDateTime->format('d/m/Y'));
 	   ?>
 	   
 	    </h2>
@@ -97,15 +99,15 @@ opacity: .1;
 
 
 <?php $totalbeton=0; if (!$employee_salary->isEmpty())  { ?>
-<h5 >   Salary Expenditure   </h5>
+<h5 >   বেতন খরচ    </h5>
   <hr>
   <table class="table">
   <thead>
     <tr>
     
-      <th scope="col"> Employee  </th>
-      <th scope="col">Salary Amount.  </th>
-     <th scope="col">Month  </th>
+      <th scope="col"> কর্মচারী   </th>
+      <th scope="col">বেতনের পরিমাণ .  </th>
+     <th scope="col">মাস   </th>
 	
     </tr>
   </thead>
@@ -126,7 +128,7 @@ opacity: .1;
 	<tr>
       <th >{{$ems->employeedetails->name}}</th>
       
-  <td> <?php echo  number_format($ems->totalsalary, 2, '.', ',');?>	 </td>  
+  <td> <?php echo  convertToBangla(number_format($ems->totalsalary, 2, '.', ','));?>	 </td>  
   <td> {{$ems->month_year}}	 </td> 
 
 
@@ -137,7 +139,7 @@ opacity: .1;
   </tbody>
 </table>
 
-<span > So Total Amoutnt of Salary Given:  </span> <?php echo $totalbeton  ?> TK. 
+<span > মোট প্রদেয় বেতন :  </span> <?php echo convertToBangla($totalbeton)  ?> টাকা  
 
   
 

@@ -65,16 +65,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
     
 	
 	
-	<div class="col-4">
-   কোম্পানি  	<select id="company"  class="form-control "   name="company"  required   style='width: 270px;'>
- 
-  <option value="{{$product->Productcompany_id}}" > {{$selectedcomapny}} <option>  
-  @foreach($productcompany as $p)
-    <option value="{{$p->id}}" > {{$p->name}} <option>
-  
-  @endforeach    
-   </select>
-    </div>
+
     <div class="col-4">
      প্রডাক্ট কোড :  <input type="text" class="form-control register_form " value="{{$product->productcode}}" name="productcode" id="productcode" placeholder="productcode" required autocomplete="off" >
     </div>

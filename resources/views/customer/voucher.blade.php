@@ -5,7 +5,7 @@
 
 
 table {
-  font-family: arial, sans-serif;
+  font-family: nikosh, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
@@ -54,7 +54,9 @@ opacity: .1;
  background-color:red;;
 
 }
-
+    body {
+        font-family: nikosh, sans-serif;
+    }
 
 
 </style>

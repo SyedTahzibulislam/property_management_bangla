@@ -353,15 +353,15 @@ $request->accountant = null;
 				
 		$s = $company->due -  $request->grossamount;
 		
-		if ($s  < 0)
-		{
-			global $status; 
-			$status=1;
-			goto flag;
+		// if ($s  < 0)
+		// {
+		// 	global $status; 
+		// 	$status=1;
+		// 	goto flag;
 		
 		
-		}
-		else{
+		// }
+		// else{
 		//////////////////////////////////////////////////// insert shuru ///////////////////////
 		
 		
@@ -452,7 +452,7 @@ $cashtransition->adjusttype = $request->adjusttype;
 $cashtransition->account_id = $request->accountant;
 
 
-$cashtransition->description = "Pay the due to the company: "  .$company->name ;
+$cashtransition->description = " সাপ্লাইয়ারকে ডিউ/এডভান্স বাবদ টাকা প্রদান : "  .$company->name ;
 $cashtransition->save();		
 		
 		
@@ -466,7 +466,7 @@ $cashtransition->save();
 		
 		
 		
-		}
+		//}
 		
 		
 		
@@ -565,7 +565,7 @@ $cashtransition->amount = $request->paid;
 $cashtransition->deposit = $request->paid;
 $cashtransition->project_id = $request->project_id;	
 $cashtransition->type = 1;
-$cashtransition->description = "Money Back for producti Return from Company: "  .$company->name  ;
+$cashtransition->description = "সাপ্লাইয়ার থেকে টাকা ফেরত পাওয়া : "  .$company->name  ;
 	$cashtransition->created_at  = $request->Date_of_Transition;
 $cashtransition->transtype = 11;
 

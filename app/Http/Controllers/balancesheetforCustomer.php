@@ -165,25 +165,29 @@ if ($o->type == 2)
 
 		  ->whereBetween('created_at',[$start,$end])->orderBy('created_at')->get();
 	
-			
+			$start_formatted = date("d/m/y", strtotime($start));
+$lastday_formatted = date("d/m/y", strtotime($lastday));
+$title = "BS_" . $data->name . "_" . $start_formatted . "-" . $lastday_formatted;
+
 		
 			 $pdf = PDF::loadView('customerbalacesheet.voucher', compact('data','start','lastday','order','obtillfirstdate' ),
    [], [
  'mode'                     => '',
 	'format'                   => 'A4',
 	'default_font_size'        => '7',
-	'default_font'             => 'Times-New-Roman',
+	'default_font'             => 'nikosh',
 	'margin_left'              => 7,
 	'margin_right'             => 7,
 	'margin_top'               => 7,
 	'margin_bottom'            => 7,
+	'title'                    =>$title, 
 ]
    
    
    );
 	
-	
-	 return $pdf->stream('document.pdf');
+	$save = $title. ".pdf";
+	 return $pdf->stream($save);
 	
 		
 

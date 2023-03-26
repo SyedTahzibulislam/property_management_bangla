@@ -630,7 +630,7 @@ $(document).ready(function(){
 <a style=" text-decoration: none;" target="_blank" class="collapse-item" href="{{ url('Productstock') }}">  প্রডাক্টের স্টক দেখুন    </a><br><br>
 
 
-<a style=" text-decoration: none;" target="_blank" class="collapse-item" href="{{ url('producttransition/saleproduct') }}"> সেলস রিপোর্ট দেখেন   </a><br><br>
+{{-- <a style=" text-decoration: none;" target="_blank" class="collapse-item" href="{{ url('producttransition/saleproduct') }}"> সেলস রিপোর্ট দেখেন   </a><br><br> --}}
 
 
 
@@ -723,7 +723,7 @@ $(document).ready(function(){
 <a target="_blank" class="collapse-item" href="{{ url('picktwodate') }}"> দুই ডেটের মধ্যবর্তী সময়ের হিসাব </a><P><br>
 
 
-<a target="_blank" class="collapse-item" href="{{ url('picktwodatedetails') }}">  দুই ডেটের মধ্যবর্তী সময়ের বিস্তারিত হিসাব </a><P><br>
+{{-- <a target="_blank" class="collapse-item" href="{{ url('picktwodatedetails') }}">  দুই ডেটের মধ্যবর্তী সময়ের বিস্তারিত হিসাব </a><P><br> --}}
 
 
 
@@ -878,7 +878,7 @@ $(document).ready(function(){
 	
 			
 			
-{{-- 			
+			
      <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
@@ -977,7 +977,7 @@ $(document).ready(function(){
 		
 		
 		
-      </li> --}}
+      </li> 
 
 			
 			
@@ -1074,7 +1074,7 @@ $(document).ready(function(){
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" href="{{url('productcompany')}}"> বিক্রেতা লিস্ট </a>
     <a class="dropdown-item"  href="{{url('productcompanytrans')}}">ক্রয়/ফেরত </a> 
-    <a class="dropdown-item" href="{{url('productcompanduetra')}}" > বাকি শোধ/ রিফান্ড   </a>  
+    <a class="dropdown-item" href="{{url('productcompanduetra')}}" > টাকা প্রদান/গ্রহণ   </a>  
     <a class="dropdown-item" href="{{url('balancesheetforcompany')}}" > ব্যালেন্স সিট  </a> 
   </div>
   

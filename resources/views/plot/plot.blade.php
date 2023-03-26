@@ -62,7 +62,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 			 
 	           
             <div class="col-6">
-	     প্রজেক্ট  :   <select id="project"  class="form-control "  name="project"     style='width: 170px;'>  
+	     প্রজেক্ট * :   <select id="project"  class="form-control "  name="project"     style='width: 170px;'>  
            
 			
 			</select>
@@ -125,7 +125,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 
 				     <div class="col-6">
       
-  প্লটের নাম/নং :  <input type="text" name="name" id="name" autocomplete="off"    class="form-control  amount" required />
+  প্লটের নাম/নং * :  <input type="text" name="name" id="name" autocomplete="off"    class="form-control  amount" required />
 		  
     </div>
 

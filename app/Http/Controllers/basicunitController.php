@@ -12,6 +12,7 @@ use DataTables;
 use Validator;
 
 use App\Models\basicunit;
+use App\Models\unitcoversion;
 use Illuminate\Support\Facades\DB; 
 use Illuminate\Support\Facades\Redirect;
 use PDF;
@@ -101,7 +102,26 @@ class basicunitController extends Controller
             
         );
 
-        basicunit::create($form_data);
+    $unit =     basicunit::create($form_data);
+
+
+
+
+        $form_data = array(
+            'name'       =>   $request->name,
+			'coversionamount'       =>  1,
+			'basicunit_id' =>   $unit->id
+            
+        );
+
+        unitcoversion::create($form_data);
+
+
+
+
+
+
+
 
         return response()->json(['success' => 'Data Added successfully.']);
     }
@@ -164,6 +184,23 @@ class basicunitController extends Controller
         );
        basicunit::whereId($request->hidden_id)->update($form_data);
 
+
+
+       $form_data = array(
+        'name'       =>   $request->name,
+        
+    );
+
+    unitcoversion::where('basicunit_id', $request->hidden_id )->where('coversionamount', 1)->update($form_data);
+
+
+
+
+
+
+
+
+
         return response()->json(['success' => 'Data is successfully updated']);
     }
 
@@ -177,5 +214,14 @@ class basicunitController extends Controller
     {
        	   	basicunit::whereId($id)
   ->update(['softdelete' => '1']);
+
+
+  unitcoversion::whereId('basicunit_id', $id )
+  ->update(['softdelete' => '1']);
+
+
+
+
+
     }
 }

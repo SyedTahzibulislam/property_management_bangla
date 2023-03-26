@@ -141,37 +141,22 @@ if ($khoroch_transition->superviser_id)
 				
 				
 				
-				
-				
-				
-				
-				
-				
-				
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                ->addColumn('amount', function (khoroch_transition $khoroch_transition) {
+                  return convertToBangla($khoroch_transition->amount);
+              })			  
 				  
-				  
-				  
+              ->addColumn('due', function (khoroch_transition $khoroch_transition) {
+                return convertToBangla($khoroch_transition->due);
+            })
+
+
 				       ->addColumn('entryby', function (khoroch_transition $khoroch_transition) {
                     return $khoroch_transition->User->name;
                 })
 				
                  ->editColumn('created_at', function(khoroch_transition $data) {
 					
-					 return date('d/m/y', strtotime($data->created_at) );
+					 return convertToBangla(date('d/m/y', strtotime($data->created_at) ));
                     
                 })
 				
@@ -258,8 +243,9 @@ $project = project::where('softdelete',0)->get();
         }
 
        	
-
-
+        $request->amount = convertToEnglish($request->amount);
+        $request->due = convertToEnglish($request->due);
+        $request->advance = convertToEnglish($request->advance);
 
 $role = Auth()->user()->role;
 
@@ -394,7 +380,7 @@ $khoroch_transition->save();
    
   	$cashtransition = new  cashtransition();
 $cashtransition->balance_of_business_id = Auth()->user()->balance_of_business_id;
-$cashtransition->description = "Paying for "  .$khorocname;
+$cashtransition->description = " খরচঃ  "  .$khorocname;
 $cashtransition->User_id = Auth()->user()->id;
 $cashtransition->project_id = $request->project;
 $cashtransition->khoroch_transition_id = $khoroch_transition->id;
@@ -676,7 +662,9 @@ $project = project::where('softdelete',0)->get();
         }
 
        		
-
+        $request->amount = convertToEnglish($request->amount);
+        $request->due = convertToEnglish($request->due);
+        $request->advance = convertToEnglish($request->advance);
 
 
 		$supervisor_id = Auth()->user()->superviser_id;

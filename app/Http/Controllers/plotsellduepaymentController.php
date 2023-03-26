@@ -368,13 +368,13 @@ if ($request->type == 2)
 {
 $cashtransition->deposit = $request->receiveableamount;	
 $cashtransition->type = 1;
-$cashtransition->description = "Due Payment project Name:- " .$project_name. "Plot Name: " .$plot_name. " Customer Name: " .$customer->name ;
+$cashtransition->description = "বাকি পরিষোধ,  প্রজেক্ট :- " .$project_name. "প্লট : " .$plot_name. " কাস্টমার : " .$customer->name ;
 }
 if ($request->type == 3)
 {
 $cashtransition->type = 2;	
 $cashtransition->withdrwal = $request->receiveableamount;
-$cashtransition->description = "Refund project Name:- " .$project_name. "Plot Name: " .$plot_name. " Customer Name: " .$customer->name ;		
+$cashtransition->description = "রিফান্ড,  প্রজেক্ট :- " .$project_name. "প্লট : " .$plot_name. " কাস্টমার : " .$customer->name ;		
 }
 $cashtransition->transtype = 17;
 

@@ -3,8 +3,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <style>
 
+    body {
+        font-family: nikosh, sans-serif;
+    }
+
 table {
-  font-family: arial, sans-serif;
+  font-family: nikosh, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
@@ -61,7 +65,7 @@ opacity: .1;
 </style>
  <?php for ($i=0; $i<1; $i++){ ?>
 </head>
-<body style="font-family: Times New Roman;">
+<body style="font-family:nikosh;">
 <div id="c" >
 <div id="head" >
 <img width="500px;"   src="img/logo.jpg" >
@@ -73,7 +77,7 @@ opacity: .1;
     <div style="height:10px;" id="one" >
     <div style="width:30%; float:left;" >
 	<?php if( $i == 0) { ?>
-      <b><u>Balance Sheet</u></b>
+      <b><u>Balancei Sheet</u></b>
     <?php } if ( $i == 1){ ?>
 	  <b>office's Copy  </b>
 	  <?php } if ( $i == 2){ ?>

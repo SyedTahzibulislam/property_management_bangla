@@ -2,9 +2,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <style>
-
+    body {
+    font-family: nikosh, sans-serif;"   
+    }
 table {
-  font-family: arial, sans-serif;
+  font-family: nikosh, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
@@ -61,7 +63,7 @@ opacity: .1;
 </style>
  <?php for ($i=0; $i<3; $i++){ ?>
 </head>
-<body style="font-family: Times New Roman;">
+<body style="font-family: nikosh;">
 <div id="c" >
 <div id="head" >
 <img width="500px;"   src="img/logo.jpg" >
@@ -73,11 +75,11 @@ opacity: .1;
     <div style="height:10px;" id="one" >
     <div style="width:30%; float:left;" >
 	<?php if( $i == 0) { ?>
-      <b><u>Balance Sheet</u></b>
+      <b><u>ব্যালেন্স সিট </u></b>
     <?php } if ( $i == 1){ ?>
-	  <b>office's Copy  </b>
+	  <b>অফিস কপি  </b>
 	  <?php } if ( $i == 2){ ?>
-	 <b> Accountant's Copy  </b>
+	 <b> একাউন্টস কপি  </b>
 	  <?php } ?>
 	</div>
 
@@ -89,7 +91,7 @@ opacity: .1;
 
     <div style="height:10px;" id="two" >
     <div style="width:40%; float:left;" >
-      <b>Bank Name :</b> {{$data->name}}
+      <b>ব্যাংক  :</b> {{$data->name}}
     </div>
 
 	
@@ -104,7 +106,7 @@ opacity: .1;
     <div style="height:10px;" id="two" >
  
   
- <b>Transition: From  <?php echo date('d/m/Y ', strtotime($start)); ?> to <?php echo date('d/m/Y ', strtotime($end)); ?> </b><p>
+ <b>তারিখঃ   <?php echo convertToBangla(date('d/m/Y ', strtotime($start))) ; ?> থেকে  <?php echo convertToBangla(date('d/m/Y ', strtotime($end))); ?> </b><p>
   <?php  $b= $obtillfirstdate;  ?>
   
   
@@ -125,20 +127,20 @@ opacity: .1;
   <tr>
      
 	
- <th style="width:40px;" >	Date</th>
+ <th style="width:40px;" >	তারিখ </th>
   
    
-<th style="width:40px;" > Project </th>
+<th style="width:40px;" > প্রজেক্ট  </th>
 
 
    <th style="width:150px;" >
 	
-Deposit
+জমা 
     
 	 </th>
-	  <th style="width:100px;"  >Withdrawl</th>
+	  <th style="width:100px;"  >উত্তোলন </th>
 
-	<th style="width:100px;"  >Balance </th>
+	<th style="width:100px;"  >ব্যালেন্স  </th>
 
   </tr>
   </thead>
@@ -166,11 +168,18 @@ $b = $b- $o->amount;
 
   <tr>
     <?php  //$myDateTime = DateTime::createFromFormat('Y-m-d', $o->created_at);  echo  $myDateTime->format('d/m/Y'); ?> 
-  <td> <?php echo date('d/m/Y ', strtotime($o->created_at));; ?> </td>
+  <td> <?php echo convertToBangla(date('d/m/Y ', strtotime($o->created_at)));; ?> </td>
   
   
   
-   <td>  {{ $o->project->name }}  </td>
+   <td> 
+
+<?php if( $o->project_id){ ?>
+   {{ $o->project->name }} 
+
+<?php } ?>
+
+   </td>
   
   
     <td> 
@@ -179,7 +188,7 @@ $b = $b- $o->amount;
 	
 <?php if ($o->transitiontype == 2)
 { ?>
-	{{ $o->amount}} 
+	{{ convertToBangla($o->amount)}} 
 <?php 
 } ?>	
 		
@@ -191,7 +200,7 @@ $b = $b- $o->amount;
 		
 <?php if ($o->transitiontype == 1)
 { ?>
-	{{ $o->amount}} 
+	{{ convertToBangla($o->amount)}} 
 <?php 
 } ?>
 	
@@ -211,7 +220,7 @@ $b = $b- $o->amount;
 
 
 
-   <td><?php echo round($b,2); ?> </td>
+   <td><?php echo convertToBangla(round($b,2)); ?> </td>
 
    
 
@@ -225,11 +234,11 @@ $b = $b- $o->amount;
 	
 	<div  style="height:10px;" id="btwo" >
     <div style="width:50%;float:left;" >
- <b>Date :</b><?php echo date("d/m/y") ;  ?>
+ <b>তারিখ  :</b><?php echo convertToBangla(date("d/m/y")) ;  ?>
     </div>
 
 	    <div style="width:50%;float:left;" >
-		<b>Print By:{{Auth()->user()->name}}</b>
+		<b>প্রিন্ট :{{Auth()->user()->name}}</b>
 
     </div>
 

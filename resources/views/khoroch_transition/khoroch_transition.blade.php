@@ -44,7 +44,7 @@
 		  
 		  
 		  		<div  class="container" style="background-color:#EEE8AA; "  >
-		<h2>Expenses Category</h2>
+		<h2>খরচ করুন </h2>
   <span id="form_result"></span>
 	
 		<form method="post" action="{{ route('khorochtransition.update') }}"   id="sample_form" class="form-horizontal" enctype="multipart/form-data">
@@ -80,7 +80,7 @@
 
 
     <div class="col-6">
-খরচ  :  <select id="khorocer_khad"  class="form-control khorocer_khad"  name="parentid"  required   style='width: 170px;'>
+খরচ * :  <select id="khorocer_khad"  class="form-control khorocer_khad"  name="parentid"  required   style='width: 170px;'>
     </select>
     </div>
 
@@ -89,7 +89,7 @@
 
 
     <div class="col-6">
- সাপ্লাইয়ারের নাম   :  <select id="supplier"  class="form-control supplier"  name="supplier"  required   style='width: 170px;'>
+ সাপ্লাইয়ারের নাম  *  :  <select id="supplier"  class="form-control supplier"  name="supplier"  required   style='width: 170px;'>
     </select>
     </div>
 	
@@ -101,7 +101,7 @@
 	<div class="row">
 	
     <div class="col-6">
-প্রজেক্ট  :  <select id="project"  class="form-control project"  name="project"     style='width: 170px;'>
+প্রজেক্ট  * :  <select id="project"  class="form-control project"  name="project"     style='width: 170px;'>
     </select>
     </div>	
 		
@@ -110,13 +110,13 @@
 
 
 
-				 			 <div class="col-6">Adjust with<br>
+				 			 <div class="col-6"> এডজাস্ট * <br>
 			 <input type="radio"  name="adjusttype" value="1"  required >
-<label for="html">  Owner's fund  </label><br>
+<label for="html">  মালিকের ফান্ড   </label><br>
 <input type="radio"  name="adjusttype" value="2"   required >
-<label for="css">  Accountant's fund  </label><br>
+<label for="css">  একাউন্টেস এর ফান্ড  </label><br>
 <input type="radio"  name="adjusttype" value="3"   required >
-<label for="css">  Project's fund  </label><br>
+<label for="css">  প্রজেক্টের ফান্ড   </label><br>
 			    
 			 </div>			
 	  </div>
@@ -127,7 +127,7 @@
 
         <div class="row">
             <div class="col-6">
-	   Accountant Name  :    <select id="accountant"  class="form-control "  name="accountant"  required  style="width:170px;">  
+	   একাউন্টেন্ট  :    <select id="accountant"  class="form-control "  name="accountant"  required  style="width:170px;">  
            
 			
 			</select>
@@ -135,7 +135,7 @@
 			 
 			 
             <div class="col-6">
-	  Supervisor Name  :    <select id="supervisor"  class="form-control "  name="supervisor"  required  style="width:170px;">  
+	  সুপার ভাইজার   :    <select id="supervisor"  class="form-control "  name="supervisor"  required  style="width:170px;">  
            
 			
 			</select>
@@ -174,15 +174,15 @@
 <div class="row">
 
     <div class="col-4">
-     মোট ক্রয়কৃত পণ্য/সেবার  মূল্য     : 	<input type="text" value="0"  autocomplete="off"  name="amount" id="amount" class="form-control amount" required  />
+     মোট ক্রয়কৃত পণ্য/সেবার  মূল্য  *    : 	<input type="text" value="0"  autocomplete="off"  name="amount" id="amount" class="form-control amount" required  />
     </div>
 
 	    <div class="col-4">
-বাকি     : 	<input type="text"  autocomplete="off"  name="due" id="due" class="form-control  due" required  />
+বাকি     : 	<input type="text" value="0"  autocomplete="off"  name="due" id="due" class="form-control  due" required  />
     </div>
 
 <div class="col-4">
-Date:  <input type="date"  required id="datePicker" name="Date_of_Transition" class="form-control" />
+ডেট :  <input type="date"  required id="datePicker" name="Date_of_Transition" class="form-control" />
 </div>	
  </div>
 <p> 
@@ -229,17 +229,17 @@ Date:  <input type="date"  required id="datePicker" name="Date_of_Transition" cl
         <thead>
             <tr>
 <th>নং </th>
-			<th>product/service</th>
+			<th>পণ্য/ সেবা </th>
 			
-			<th> supplier </th>
-			<th> Project   </th>
+			<th> সাপ্লাইয়ার  </th>
+			<th> প্রজেক্ট    </th>
 			
 			
-			<th>Amount (Tk) </th>
-			<th> Due  </th>
+			<th>টাকার পরিমাণ  (Tk) </th>
+			<th> বাকি   </th>
 			
-			<th> Date </th>
-			<th>Action </th>
+			<th> তারিখ   </th>
+			<th>একশন </th>
 				
 			<th> Supervisor </th>
 			<th> Accountant </th>	

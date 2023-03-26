@@ -40,7 +40,7 @@
 	  <div class="row">
 
     <div class="col-6">
-       নাম:			  
+       নাম * :			  
 			  <input type="text" class="form-control register_form " name="name" id="name"  placeholder="Enter Name" autocomplete="off">
            
     </div>
@@ -52,12 +52,16 @@
 	
 
   <div class="row">
-    <div class="col-6">
+    <div class="col-4">
     মোবাইল :  <input type="text" class="form-control register_form " name="mobile" id="mobile" placeholder="Mobile"  autocomplete="off" >
     </div>
-    <div class="col-6">
-বর্তমান বাকি:   <input type="text" class="form-control register_form " name="due" id="due" placeholder="Due Amount"  autocomplete="off" >
+    <div class="col-4">
+বর্তমান বাকি:   <input type="text" value="0" class="form-control register_form " name="due" id="due" placeholder="Due Amount"  autocomplete="off" >
     </div>
+
+    <div class="col-4">
+      শুরুর বাকি:   <input type="text"  class="form-control register_form " name="opening_balance" id="opening_balance" placeholder="Opening Due"  autocomplete="off" >
+          </div>
 
   </div>
 
@@ -131,7 +135,7 @@
 	<th>ঠিকানা</th>
              <th>মোবাইল</th>
 			 <th> বাকি</th>
-			
+			 <th> শুরুর বাকি</th>
 			     
        <th>একশন </th>	      
                 
@@ -273,7 +277,7 @@ jQuery("input").on('keyup', function(event) {
             {data: 'address', name: 'address'},
 			 {data: 'mobile', name: 'mobile'},
 			 {data: 'due', name: 'due'},
-			
+       {data: 'openingbalance', name: 'openingbalance'},
 
 			
 			 
@@ -390,6 +394,9 @@ $('#sample_form').on('submit', function(event){
     $('#name').val(html.data.name);
 	$('#mobile').val(html.data.mobile);
     $('#due').val(convertToBangla(html.data.due));
+    $('#opening_balance').val(convertToBangla(html.data.openingbalance));
+
+    
       
 	$('#hidden_id').val(html.data.id);
     $('.modal-title').text("Edit New Record");

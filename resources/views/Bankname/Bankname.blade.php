@@ -40,16 +40,16 @@
 	  <div class="row">
  
     <div class="col-4">
-    ব্যাংকের নাম :			  
+     Bank Name:			  
 			  <input type="text" class="form-control register_form " name="name" id="name"  placeholder="Enter Name" autocomplete="off">
            
     </div>
     <div class="col-4">
-    এড্রেস :      
+     Address:      
 			   <input type="text" class="form-control register_form " name="address" id="address" placeholder="Address" autocomplete="off">
     </div>
 	    <div class="col-4">
-     শুরুর ব্যালেন্স :      
+     Opening Balance:      
 			   <input type="text" class="form-control register_form " name="ob" id="ob" placeholder="Opening Balance" autocomplete="off">
     </div>
 	
@@ -59,7 +59,7 @@
 	  <div class="row">
  
     <div class="col-4">
-  বর্তমান ব্যালেন্স 		  
+  Current Balance		  
 			  <input type="text" class="form-control register_form " name="cb" id="cb"  placeholder="Current Balance" autocomplete="off">
            
     </div>
@@ -109,7 +109,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 col-sm-6" >
-    <h1>ব্যাংক লিস্ট </h1>
+    <h1>Bank List</h1>
    
 	
 	
@@ -117,13 +117,13 @@
     <table id="patient_table"  class="table  table-success table-striped data-tablem">
         <thead>
             <tr>
-<th>নং </th>
+<th>No</th>
 		
-				<th>নাম </th>
-	<th>এড্রস</th>
-   		<th>ব্যালেন্স </th>		
+				<th>Name</th>
+	<th>Address</th>
+   		<th>Balance</th>		
 			     
-       <th>একশন </th>	      
+       <th>Action</th>	      
                 
             </tr>
         </thead>
@@ -145,7 +145,7 @@
   <div class="modal-content">
    <div class="modal-header">
           <button type="button" id="close" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">নতুন রেকর্ড যুক্ত করেন </h4>
+          <h4 class="modal-title">Add New Record</h4>
         </div>
         <div class="modal-body">
          <span id="form_result"></span>
@@ -171,10 +171,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="closedelete" data-dismiss="modal">&times;</button>
-                <h2 class="modal-title">কনফার্মসন </h2>
+                <h2 class="modal-title">Confirmation</h2>
             </div>
             <div class="modal-body">
-                <h4 align="center" style="margin:0;">আপনি কি ডিলিট করতে চান ?</h4>
+                <h4 align="center" style="margin:0;">Are you sure you want to remove this data?</h4>
             </div>
             <div class="modal-footer">
              <button type="button" name="ok_button" id="ok_button" class="btn btn-danger">OK</button>

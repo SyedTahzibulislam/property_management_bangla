@@ -75,18 +75,7 @@ class ProductController extends Controller
 	
 				
 				
-				                      ->addColumn('productcompany', function (Product $Product) {
-						  
-						  $Productcompany = Productcompany::find($Product->Productcompany_id)->name;
-						  if($Productcompany)
-						  {
-                    return $Productcompany;
-						  }
-						  else{
-							  return "Not Applicable";  
-						  }
-		
-                })
+
 					
 					
                     ->rawColumns(['action'])
@@ -104,16 +93,17 @@ class ProductController extends Controller
 	
 	public function editdproduct( $id )
 	{
-	
+
 
 	  
 	  $product=  Product::with('productcategory','Productcompany','productpriceaccunit')->findOrFail($id);
-	  
 $category = productcategory::where('softdelete',0)->where('balance_of_business_id', Auth()->user()->id)->orderBy('name')->get();
-$productcompany = Productcompany::where('softdelete',0)->where('balance_of_business_id', Auth()->user()->id)->orderBy('name')->get();
-$selectedcomapny = Productcompany::where('softdelete',0)->findOrFail($product->Productcompany_id)->name;
 
-		return view('product.productedit', compact('product','category','productcompany','selectedcomapny'));   
+$productcompany = Productcompany::where('softdelete',0)->where('balance_of_business_id', Auth()->user()->id)->orderBy('name')->get();
+
+//$selectedcomapny = Productcompany::where('softdelete',0)->findOrFail($product->Productcompany_id)->name;
+
+		return view('product.productedit', compact('product','category','productcompany'));   
 		
 		
 		
@@ -139,7 +129,7 @@ $selectedcomapny = Productcompany::where('softdelete',0)->findOrFail($product->P
      
        $data = productcategory::where('softdelete',0)->where('balance_of_business_id',$shopid)->orderBy('name')->get(); 
 	    $Productcompany = Productcompany::where('softdelete',0)->where('balance_of_business_id',$shopid)->orderBy('name')->get(); 
-$unit = unitcoversion::latest()->get();
+$unit = unitcoversion::where('softdelete',0)->latest()->get();
 			
             return response()->json(['data' => $data , 'unit'=> $unit, 'Productcompany' => $Productcompany ]);
 
@@ -244,7 +234,9 @@ $product = product::with('projectstock')->with('projectstock', function ($query)
 
 
 
-
+    $start = date("Y-m-d"); // Set $start to today's date in "YYYY-MM-DD" format
+    $today = date("d/m/y", strtotime($start)); // Format $start as "dd/mm/yy"
+    $title = "STk_".$project_name.  "_" . $today;
 
 
 	 $pdf = PDF::loadView('product.project_stock', compact('product','project_name', ),
@@ -258,13 +250,16 @@ $product = product::with('projectstock')->with('projectstock', function ($query)
 	'margin_right'             => 7,
 	'margin_top'               => 7,
 	'margin_bottom'            => 7,
+    'title'                     => $title,
 ]
    
    
    );
 	
+    $save = $title.'.pdf';
 	
-	 return $pdf->stream('document.pdf');
+	 return $pdf->stream($save);
+
 
 
 
@@ -301,7 +296,7 @@ $product = product::with('projectstock')->with('projectstock', function ($query)
 		
         $rules = array(
             'category'    =>  'required',
-            'company'     =>  'required',
+            'company',
             'name'         =>  'required',
 			'productcode',
 				'stock',
@@ -466,7 +461,7 @@ $unit= unitcoversion::where('softdelete',0)->latest()->get();
 		
     $rules = array(
             'category'    =>  'required',
-            'company'     =>  'required',
+            'company',
             'name'         =>  'required',
 			'productcode'   =>  'required',
 				'productid'   =>  'required',

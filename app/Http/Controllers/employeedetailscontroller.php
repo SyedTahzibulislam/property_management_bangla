@@ -33,7 +33,19 @@ class employeedetailscontroller extends Controller
                         return $button;
                     })  
 
-					
+
+                    ->addColumn('salary', function( employeedetails $data){ 
+
+                      return convertToBangla($data->salary);
+                  })                     
+
+
+
+
+
+
+
+
 					
                     ->rawColumns(['action'])
                     ->make(true);
@@ -71,12 +83,15 @@ class employeedetailscontroller extends Controller
 
         $error = Validator::make($request->all(), $rules);
 
+
+
+
         if($error->fails())
         {
             return response()->json(['errors' => $error->errors()->all()]);
         }
 
-       $request->salary = convertToEnglish($request->salary);
+   $request->salary = convertToEnglish($request->salary);     
 
         $form_data = array(
              'name'        =>  $request->name,
@@ -90,10 +105,6 @@ class employeedetailscontroller extends Controller
 			
            
         );
-
-
-
-
 
         employeedetails::create($form_data);
 
@@ -146,7 +157,7 @@ class employeedetailscontroller extends Controller
         );
 
         $error = Validator::make($request->all(), $rules);
-
+        $request->salary = convertToEnglish($request->salary); 
         if($error->fails())
         {
             return response()->json(['errors' => $error->errors()->all()]);

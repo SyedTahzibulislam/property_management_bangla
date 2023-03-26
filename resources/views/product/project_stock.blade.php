@@ -3,8 +3,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <style>
 
+    body {
+        font-family: nikosh, sans-serif;
+    }
+
 table {
-  font-family: arial, sans-serif;
+  font-family: nikosh, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
@@ -61,7 +65,7 @@ opacity: .1;
 </style>
 
 </head>
-<body style="font-family: Times New Roman;">
+<body style="font-family: nikosh;">
 <div id="c" >
 <div id="head" >
 <img width="500px;"   src="img/logo.jpg" >
@@ -81,9 +85,12 @@ opacity: .1;
   </div>
 
 
-<b> Stock Report </b><br>
+<b> স্টক রিপোর্ট  </b><br>
      
-<b>Project Name:</b> {{ $project_name }} <P>
+<b>প্রজেক্ট :</b> {{ $project_name }} <br>
+
+<b> তারিখ   :</b> {{ convertToBangla(date("d-m-y H:i:s")) }} <P>
+ <P>
 
 
   
@@ -107,12 +114,12 @@ opacity: .1;
   
     <th style="width:150px;" >
 	
-	  Product Name
+	  প্রডাক্টের নাম 
     
 	 </th>
-	  <th style="width:100px;"  >Stock</th>
+	  <th style="width:100px;"  >স্টক </th>
   
-  <th style="width:100px;"  >Total</th>
+  <th style="width:100px;"  >মোট </th>
 
   </tr>
   </thead>	
@@ -142,9 +149,9 @@ $total_amount_sale_point =0;
 <table>
   <thead>
   <tr>
-    <th style="width:100px;" >Unit Name </th>
-    <th>Qun.</th>
-	<th> Basic Unit ( KG / Piece / Decimal ) </th>
+    <th style="width:100px;" >ইউনিট এর নাম  </th>
+    <th>পরিমাণ .</th>
+	<th> বেসিক ইউনিট ( কেজি / পিস  / শতক /  </th>
     
   </tr>
     </thead>
@@ -155,8 +162,8 @@ $total_amount_sale_point =0;
 
  <td> {{ $g->unitcoversion->name }} </td>
 
-   <td>{{ $g->stock }}     </td> 
-   <td> <?php         $amnt=  $g->stock * $g->unitcoversion->coversionamount ; $s= $s+$amnt; $total_amount = $total_amount + $amnt ;  ?> {{ $amnt }}   </td> 
+   <td>{{ convertToBangla($g->stock) }}     </td> 
+   <td> <?php         $amnt=  $g->stock * $g->unitcoversion->coversionamount ; $s= $s+$amnt; $total_amount = $total_amount + $amnt ;  ?> {{ convertToBangla($amnt) }}   </td> 
 	 
 
 	 
@@ -166,10 +173,10 @@ $total_amount_sale_point =0;
 
   <tr>
 
- <td> Total </td>
+ <td> মোট  </td>
 
    <td>NA      </td> 
-   <td> {{ $total_amount }}    </td> 
+   <td> {{ convertToBangla($total_amount) }}    </td> 
 	 
 
 	 
@@ -232,12 +239,10 @@ $total_amount_sale_point =0;
 </table>
 	
 	<div  style="height:10px;" id="btwo" >
-    <div style="width:50%;float:left;" >
- <b>Date :</b><?php echo date("d/m/y") ;  ?>
-    </div>
+
 
 	    <div style="width:50%;float:left;" >
-		<b>Print By:{{Auth()->user()->name}}</b>
+		<b>প্রিন্ট :{{Auth()->user()->name}}</b>
 
     </div>
 

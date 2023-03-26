@@ -2,9 +2,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <style>
-
+    body {
+    font-family: nikosh, sans-serif;"   
+    }
 table {
-  font-family: arial, sans-serif;
+  font-family: nikosh, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
@@ -61,7 +63,7 @@ opacity: .1;
 </style>
  <?php for ($i=0; $i<3; $i++){ ?>
 </head>
-<body style="font-family: Times New Roman;">
+<body style="font-family: nikosh;">
 <div id="c" >
 <div id="head" >
 <img width="500px;"   src="img/logo.jpg" >
@@ -73,11 +75,11 @@ opacity: .1;
     <div style="height:10px;" id="one" >
     <div style="width:30%; float:left;" >
 	<?php if( $i == 0) { ?>
-      <b><u>Balance Sheet</u></b>
+      <b><u>ব্যালেন্স সিট </u></b>
     <?php } if ( $i == 1){ ?>
-	  <b>office's Copy  </b>
+	  <b> অফিস কপি   </b>
 	  <?php } if ( $i == 2){ ?>
-	 <b> Accountant's Copy  </b>
+	 <b> একাউন্টস কপি   </b>
 	  <?php } ?>
 	</div>
 
@@ -89,7 +91,7 @@ opacity: .1;
 
     <div style="height:10px;" id="two" >
     <div style="width:40%; float:left;" >
-      <b>Business Name :</b> {{$data->shopname}}
+      <b>নাম  :</b> {{$data->shopname}}
     </div>
 
 	
@@ -103,19 +105,19 @@ opacity: .1;
 
     <div style="height:10px;" id="two" >
     <div style="width:30%; float:left;" >
-      <b>Opening Balance :</b> {{$opening_balance}} TK
+      <b>ওপেনিং ব্যালেন্স  : {{convertToBangla($opening_balance)}} টাকা </b>
     </div>
 
 
     <div style="width:30%; float:left;" >
-      <b> Balance  :</b> at the begining of Transition   {{$obtillfirstdate}} TK
+      <b> বর্তমান ব্যালেন্স   :  {{convertToBangla($obtillfirstdate)}} টাকা </b>
     </div>
   </div>  
   
- <b>Transition: From  <?php echo date('d/m/Y ', strtotime($start)); ?> to <?php echo date('d/m/Y ', strtotime($end)); ?> </b><p>
+ <b>তারিখ :   <?php echo convertToBangla(date('d/m/Y ', strtotime($start))); ?> থেকে  <?php echo convertToBangla(date('d/m/Y ', strtotime($end))); ?> </b><p>
   <?php  $b= $obtillfirstdate;  ?>
   
-  
+   
   
  <br> 
 
@@ -132,22 +134,22 @@ opacity: .1;
 <thead>
   <tr>
      
- <th style="width:40px;" >ID</th>	
- <th  style="width:40px;" >Project </th>
-  <th  style="width:40px;" >Accountant </th>
-   <th  style="width:40px;" >Supervisor </th>
-    <th  style="width:40px;" >Adjust with </th>
- <th style="width:40px;" >	Date</th>
+ <th style="width:40px;" >আইডি </th>	
+ <th  style="width:40px;" >প্রজেক্ট  </th>
+  <th  style="width:40px;" >একাউন্ট  </th>
+   <th  style="width:40px;" >সুপারভাইজার  </th>
+    <th  style="width:40px;" >এডজাস্ট  </th>
+ <th style="width:40px;" >	তারিখ </th>
   
     <th style="width:150px;" >
 	
-	Descripton
+	বিবরণ 
     
 	 </th>
-	  <th style="width:100px;"  >Deposit</th>
-    <th style="width:100px;"  >Withdrawl </th>
-	<th style="width:100px;"  >Balance </th>
-<th style="width:100px;"  >Entry By </th>
+	  <th style="width:100px;"  >জমা </th>
+    <th style="width:100px;"  >উত্তোলন  </th>
+	<th style="width:100px;"  >ব্যালেন্স  </th>
+<th style="width:100px;"  > এন্ট্রি  </th>
   </tr>
   </thead>
  @foreach ( $order as $o )
@@ -274,12 +276,12 @@ Income Transition ID: {{$o->externalincometransition_id }}
 	
 	<?php if( ($o->adjusttype== 1) or ($o->adjusttype== null))  { ?>
 	
-	Owner
+	মালিক 
 	
 	<?php } else if ($o->adjusttype== 2) { ?>
 	
-	Accountant <?php } else if ($o->adjusttype== 3) { ?>
-	Supervisor
+	একাউন্টেন্ট  <?php } else if ($o->adjusttype== 3) { ?>
+	সুপারভাইজার 
 	<?php } ?>
 </td>
  
@@ -318,7 +320,7 @@ Income Transition ID: {{$o->externalincometransition_id }}
 </td>
   
 <td>    
-{{ $o->deposit }}
+{{   convertToBangla($o->deposit) }}
  </td>
 
 
@@ -327,11 +329,11 @@ Income Transition ID: {{$o->externalincometransition_id }}
  <td>       
 
 
-{{ $o->withdrwal }}
+{{ convertToBangla($o->withdrwal) }}
 
 
  </td>
-   <td><?php echo round($b,2); ?> </td>
+   <td><?php echo convertToBangla(round($b,2)); ?> </td>
 
      <td>{{ $o->user->name}} </td> 
 
@@ -345,11 +347,11 @@ Income Transition ID: {{$o->externalincometransition_id }}
 	
 	<div  style="height:10px;" id="btwo" >
     <div style="width:50%;float:left;" >
- <b>Date :</b><?php echo date("d/m/y") ;  ?>
+ <b>তারিখ  :</b><?php echo convertToBangla(date("d/m/y")) ;  ?>
     </div>
 
 	    <div style="width:50%;float:left;" >
-		<b>Print By:{{Auth()->user()->name}}</b>
+		<b>প্রিন্ট :{{Auth()->user()->name}}</b>
 
     </div>
 

@@ -56,7 +56,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 		   <div  id="cusid"  class="form-group">
         <div class="row">
             <div class="col-6">
-	   কোম্পানি/সাপ্লাইয়ার   :    <select id="company_Id"  class="form-control "  name="company_Id"  required  style="width:170px;">  
+	   কোম্পানি/সাপ্লাইয়ার  * :    <select id="company_Id"  class="form-control "  name="company_Id"  required  style="width:170px;">  
            
 			
 			</select>
@@ -64,7 +64,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 			 
 			 
 	            <div class="col-6">
-	  প্রজেক্ট  :    <select id="project_id"  class="form-control "  name="project_id"  required  style="width:170px;" >  
+	  প্রজেক্ট  * :    <select id="project_id"  class="form-control "  name="project_id"  required  style="width:170px;" >  
            
 			
 			</select>
@@ -97,7 +97,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 		<p>	 
 	<div class="row">
 
-				 			 <div class="col-6">এডজাস্ট <br>
+				 			 <div class="col-6">এডজাস্ট * <br>
 			 <input type="radio"  name="adjusttype" value="1"  required >
 <label for="html">  মালিকের ফান্ড </label><br>
 <input type="radio"  name="adjusttype" value="2"   required >
@@ -109,7 +109,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 			 
 			 
 			 
-			 			 			 <div class="col-6">
+			 			 			 <div class="col-6">টাইপ * <br>
 			 <input type="radio"  name="type" value="1"  required >
 <label for="html"> ক্রয়  </label><br>
 <input type="radio"  name="type" value="3"   required >
@@ -139,7 +139,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 			 <P><p>
 			 <div class="row">
 				 <div class="col-6">
-ডেট :  <input type="date"  required id="datePicker" name="Date_of_Transition" class="form-control" />
+ডেট * :  <input type="date"  required id="datePicker" name="Date_of_Transition" class="form-control" />
 </div>		 
 			 
 
@@ -166,10 +166,10 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 			 <table class="table" id="products_table">
                 <thead>
                     <tr>
-                        <th>প্রডাক্ট </th>
-						 <th  style="width:200px;"  >ইউনিট </th>
-                        <th  style="width:200px;"  >প্রাইস </th>
-										<th style="width:80px;" >পরিমাণ </th>		
+                        <th>প্রডাক্ট *</th>
+						 <th  style="width:200px;"  >ইউনিট *</th>
+                        <th  style="width:200px;"  >প্রাইস *</th>
+										<th style="width:80px;" >পরিমাণ * </th>		
 		
 							
                     </tr>

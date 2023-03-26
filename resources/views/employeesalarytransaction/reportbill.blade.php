@@ -3,9 +3,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <style>
 
-
+    body {
+    font-family: nikosh, sans-serif;"   
+    }
 table {
-  font-family: arial, sans-serif;
+  font-family: nikosh, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
@@ -59,7 +61,7 @@ opacity: .1;
 </style>
 
 </head>
-<body style="font-family: Times New Roman;">
+<body style="font-family: nikosh;">
 <div id="c" >
 <div id="head" >
 <img width="500px;"   src="img/logo.jpg" >
@@ -71,7 +73,7 @@ opacity: .1;
 <div style="font-size:2.5 px;"  >
     <div style="height:10px;" id="one" >
     <div style="width:33%; float:left;" >
-	<b> Salary Transition </b>
+	<b> বেতন ট্রাঞ্জাকশন  </b>
 	</div>
 
 
@@ -81,7 +83,7 @@ opacity: .1;
 
     <div style="height:10px;" id="two" >
     <div style="width:35%; float:left;" >
-      <b>Employee Name :</b> {{  $employeedetails->name }}
+      <b> কর্মচারী  :</b> {{  $employeedetails->name }}
 
 	
 
@@ -89,13 +91,13 @@ opacity: .1;
   </div>
      
     <div style="width:30%; float:left;" >
-      <b>Designation :</b> {{  $employeedetails->designation }}
+      <b>পদবি  :</b> {{  $employeedetails->designation }}
   </div>
 
 
 
       <div style="width:30%; float:left;" >
-      <b>Mobile:</b> {{  $employeedetails->mobile }}
+      <b>মোবাইল  </b> {{  $employeedetails->mobile }}
   </div>
 
   
@@ -105,13 +107,13 @@ opacity: .1;
 <table>
 <thead>
   <tr>
-  <th >Year  </th>
-    <th > In the month  </th>
-  <th >Date  </th>
+  <th >বছর   </th>
+    <th > যে মাসে দেয়া হয়েছে  </th>
+  <th >তারিখ   </th>
   
-    <th > For the month  </th>
-    <th >Amount  </th>
-    <th>Total</th>
+    <th > যে মাসের জন্য দেয়া হয়েছে   </th>
+    <th >টাকার পরিমাণ   </th>
+    <th> মোট   </th>
 
 
   </tr>
@@ -232,18 +234,18 @@ $sum =  $e->totalsalary;
 	 
 	 
 	 
-    <td> {{$e->totalsalary}}</td>
+    <td> {{ convertToBangla($e->totalsalary)}}</td>
       <td>  <?php 
 if ($s == 1)
 {
 ?>
 
-	<span color="red">  {{$sum}} </span>
+	<span color="red">  {{convertToBangla($sum)}} </span>
 	  
 	  
 <?php } else { ?>
 
- {{$sum}} 
+ {{convertToBangla($sum)}} 
 
 <?php } ?>
 	  </td>

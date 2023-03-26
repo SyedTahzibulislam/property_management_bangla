@@ -28,6 +28,8 @@ class compnanybalncecontroller extends Controller
     {
    $Productcompany = Productcompany::where('softdelete',0)->get();
 
+   
+
         return view('companybalancesheet.companybalancesheet', compact('Productcompany'));   
     }
 
@@ -130,7 +132,9 @@ $obtillfirstdate = $obtillfirstdate+ $o->debit;
 
 		
 		
-
+                  $start_formatted = date("d/m/y", strtotime($start));
+                  $lastday_formatted = date("d/m/y", strtotime($lastday));
+                  $title = "BS_" . $data->name . "_" . $start_formatted . "-" . $lastday_formatted;
 				
 		
 			 $pdf = PDF::loadView('companybalancesheet.voucher', compact('data','start','lastday','order','obtillfirstdate' ),
@@ -143,13 +147,15 @@ $obtillfirstdate = $obtillfirstdate+ $o->debit;
 	'margin_right'             => 7,
 	'margin_top'               => 7,
 	'margin_bottom'            => 7,
+    'title'                     => $title,
 ]
    
    
    );
 	
+   $save = $title.'.pdf';
 	
-	 return $pdf->stream('document.pdf');
+	 return $pdf->stream($save);
 	
 			
 	

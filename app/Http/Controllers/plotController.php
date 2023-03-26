@@ -94,7 +94,7 @@ return $user;
 
 
 
-                                        $id =  convertToBangla($plot->id); 
+                                        $id =  ($plot->id); 
                                         
                                         
                                         return $id;

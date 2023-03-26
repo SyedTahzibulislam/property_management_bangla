@@ -50,7 +50,7 @@ class incomestatemnetController extends Controller
 {
     Public function todaystatment()
 	{
-		//$todays_external_cost = khoroch_transition::whereDate('created_at', Carbon::today())->get();
+		//  picktwodate       $todays_external_cost = khoroch_transition::whereDate('created_at', Carbon::today())->get();
 		 
 	
 				
@@ -957,6 +957,13 @@ duecollectionfromincomeprovider::with('externalincomeprovider','project')
                 ->get();	
 
 
+
+$start_formatted = date("d/m/y", strtotime($start));
+$lastday_formatted = date("d/m/y", strtotime($end));
+$title = "BS_ALL_" . $start_formatted . "-" . $lastday_formatted;
+
+	
+	
 	
 		   $pdf = PDF::loadView('incomestatement.databetweentwodata',
 
@@ -975,12 +982,16 @@ duecollectionfromincomeprovider::with('externalincomeprovider','project')
 	'margin_right'             => 7,
 	'margin_top'               => 7,
 	'margin_bottom'            => 7,
+	'title'                    => $title,
 ]
    
    
    );
 	
-	 return $pdf->stream('document.pdf');	
+	
+	$save = $title. ".pdf";
+	
+	 return $pdf->stream($save);	
 		
 		
 		
@@ -1203,7 +1214,9 @@ duecollectionfromincomeprovider::with('externalincomeprovider','project')
 
 		$project_name = project::findOrFail($request->project)->name;
 
-
+$start_formatted = date("d/m/y", strtotime($start));
+$lastday_formatted = date("d/m/y", strtotime($end));
+$title = "BS_" . $project_name . "_" . $start_formatted . "-" . $lastday_formatted;
 
 		   $pdf = PDF::loadView('incomestatement.databetweentwodata_project',
 
@@ -1225,12 +1238,15 @@ duecollectionfromincomeprovider::with('externalincomeprovider','project')
 	'margin_right'             => 7,
 	'margin_top'               => 7,
 	'margin_bottom'            => 7,
+	'title'                    => $title,
 ]
    
    
    );
 	
-	 return $pdf->stream('document.pdf');
+	$save = $title. ".pdf";
+	
+	 return $pdf->stream($save);
 
 
 

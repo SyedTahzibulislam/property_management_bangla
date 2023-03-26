@@ -3,8 +3,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <style>
 
+    body {
+        font-family: nikosh, sans-serif;
+    }
+
 table {
-  font-family: arial, sans-serif;
+  font-family: nikosh, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
@@ -61,7 +65,7 @@ opacity: .1;
 </style>
 
 </head>
-<body style="font-family: Times New Roman;">
+<body style="font-family: nikosh;">
 <div id="c" >
 <div id="head" >
 <img width="500px;"   src="img/logo.jpg" >
@@ -73,7 +77,7 @@ opacity: .1;
     <div style="height:10px;" id="one" >
     <div style="width:30%; float:left;" >
 
-      <b><u>Sale's Report:</u></b>
+      <b><u>ক্রয়/ ক্রয় ফেরত  রিপোর্ট :</u></b>
 
 	</div>
 
@@ -85,7 +89,7 @@ opacity: .1;
 
     <div style="height:10px;" id="two" >
     <div style="width:40%; float:left;" >
-      <b>Company Name :  {{$company}}    </b> 
+      <b>কোম্পানি নেম  :  {{$company}}    </b> 
     </div>
 
 	
@@ -99,7 +103,7 @@ opacity: .1;
 
 
   
- <b>Transition: From  <?php echo date('d/m/Y ', strtotime($start)); ?> to <?php echo date('d/m/Y ', strtotime($e)); ?> </b><p>
+ <b> ট্রাঞ্জেশন   <?php echo convertToBangla(date('d/m/Y ', strtotime($start))); ?> থেকে  <?php echo convertToBangla (date('d/m/Y ', strtotime($e))); ?> </b><p>
 
   
   
@@ -107,7 +111,7 @@ opacity: .1;
  <br> 
 
 
-<b>  Purchase Report </b>
+<b>  ক্রয় রিপোর্ট  </b>
 
 <table>
 
@@ -115,29 +119,29 @@ opacity: .1;
   <tr>
      
 	
- <th style="width:40px;" >	Product Name</th>
+ <th style="width:40px;" >	প্রডাক্ট </th>
   
     <th style="width:100px;" >
 	
-Unit 
+ইউনিট  
     
 	 </th>
-	  <th style="width:100px;"  > Qun.  </th>
-    <th style="width:100px;"  >Qun.(Base) </th>
-	<th style="width:100px;"  > Gross Amnt. </th>
-<th style="width:100px;"  > Dis. </th>
-<th style="width:100px;"  > Receiveable Amnt. </th>
+	  <th style="width:100px;"  > পরিমাণ .  </th>
+    <th style="width:100px;"  >পরিমাণ .(বেস ইউনিটে ) </th>
+	<th style="width:100px;"  > গ্রোস প্রাইস . </th>
+<th style="width:100px;"  > ডিস্কাউন্ট . </th>
+<th style="width:100px;"  > পে-এবল প্রাইস . </th>
   </tr>
   </thead>
  @foreach ( $producttransition as $p )
  <tr>
  <td>{{$p->Product->name}} </td>
  <td>{{$p->unitcoversion->name}} </td>
-   <td><?php echo round($p->quantity,2); ?> </td>
-   <td><?php echo round($p->quantityinbase,2); ?> </td>
-    <td><?php echo round($p->amount,2); ?> </td>  
-    <td><?php echo round($p->discount,2); ?> </td>
-    <td><?php echo round($p->finalamountafterdiscount,2); ?> </td>
+   <td><?php echo convertToBangla( round($p->quantity,2)); ?> </td>
+   <td><?php echo convertToBangla(round($p->quantityinbase,2)); ?> </td>
+    <td><?php echo convertToBangla(round($p->amount,2)); ?> </td>  
+    <td><?php echo convertToBangla(round($p->discount,2)); ?> </td>
+    <td><?php echo convertToBangla(round($p->finalamountafterdiscount,2)); ?> </td>
 	 
 	 
   </tr>
@@ -150,7 +154,7 @@ Unit
 	
 	<p>
 	
-<b> Return Product to Company</b> 
+<b> ক্রয় ফেরত রিপোর্ট </b> 
 
 
 <table>
@@ -164,29 +168,29 @@ Unit
   <tr>
      
 	
- <th style="width:40px;" >	Product Name</th>
+ <th style="width:40px;" >	প্রডাক্ট </th>
   
     <th style="width:100px;" >
 	
-Unit 
+ইউনিট  
     
 	 </th>
-	  <th style="width:100px;"  > Qun.  </th>
-    <th style="width:100px;"  >Qun.(Base) </th>
-	<th style="width:100px;"  > Gross Amnt. </th>
-<th style="width:100px;"  > Dis. </th>
-<th style="width:100px;"  > Return Amnt. </th>
+	  <th style="width:100px;"  > পরিমাণ .  </th>
+    <th style="width:100px;"  >পরিমাণ .(বেস ইউনিটে ) </th>
+	<th style="width:100px;"  > গ্রোস প্রাইস  </th>
+<th style="width:100px;"  > ডিস্কাউন্ট . </th>
+<th style="width:100px;"  > রিসিভেবল প্রাইস . </th>
   </tr>
   </thead>
  @foreach ( $returnproduct as $p )
  <tr>
  <td>{{$p->Product->name}} </td>
  <td>{{$p->unitcoversion->name}} </td>
-   <td><?php echo round($p->quantity,2); ?> </td>
-   <td><?php echo round($p->quantityinbase,2); ?> </td>
-    <td><?php echo round($p->amount,2); ?> </td>  
-    <td><?php echo round($p->discount,2); ?> </td>
-    <td><?php echo round($p->finalamountafterdiscount,2); ?> </td>
+   <td><?php echo convertToBangla(round($p->quantity,2)); ?> </td>
+   <td><?php echo convertToBangla(round($p->quantityinbase,2)); ?> </td>
+    <td><?php echo convertToBangla(round($p->amount,2)); ?> </td>  
+    <td><?php echo convertToBangla(round($p->discount,2)); ?> </td>
+    <td><?php echo convertToBangla(round($p->finalamountafterdiscount,2)); ?> </td>
 	 
 	 
   </tr>
@@ -209,7 +213,7 @@ Unit
 	
 	
 	
-	
+{{-- 	
 	
 	<b> Product Stock </b>
 	
@@ -310,18 +314,18 @@ Unit
 	
 	
 	
-	
+	 --}}
 	
 	
 	
 	
 	<div  style="height:10px;" id="btwo" >
     <div style="width:50%;float:left;" >
- <b>Date :</b><?php echo date("d/m/y") ;  ?>
+ <b>তারিখ  :</b><?php echo convertToBangla(date("d/m/y")) ;  ?>
     </div>
 
 	    <div style="width:50%;float:left;" >
-		<b>Print By:{{Auth()->user()->name}}</b>
+		<b>প্রিন্ট :{{Auth()->user()->name}}</b>
 
     </div>
 

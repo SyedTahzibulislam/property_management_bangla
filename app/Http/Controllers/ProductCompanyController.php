@@ -53,12 +53,13 @@ class ProductCompanyController extends Controller
                       return convertToBangla($data->due);
                   }) 	
                   
-                  
-                  ->addColumn('id', function( Productcompany $data){ 
+                  ->addColumn('openingbalance', function( Productcompany $data){ 
 
-                    return convertToBangla($data->id);
-                }) 
-					
+                    return convertToBangla($data->openingbalance);
+                })                   
+
+                  
+
                     ->rawColumns(['action'])
                     ->make(true);
         }
@@ -103,9 +104,10 @@ class ProductCompanyController extends Controller
 		
         $rules = array(
             'name'    =>  'required',
-            'address'     =>  'required',
-            'mobile'         =>  'required',
-			'due'   =>  'required',
+            'address',
+            'mobile',
+			'due',
+            'opening_balance', 
 			
 			
 			
@@ -119,13 +121,14 @@ class ProductCompanyController extends Controller
         }
 
         $request->due= convertToEnglish($request->due);
+        $request->opening_balance= convertToEnglish($request->opening_balance);
 
         $form_data = array(
             'name'        =>  $request->name,
             'address'         =>  $request->address,
            'mobile' =>$request->mobile,
 		   'due' =>$request->due,
-		   		   'openingbalance' =>$request->due,
+		   		   'openingbalance' =>$request->opening_balance,
 			'balance_of_business_id' => Auth()->user()->balance_of_business_id,
 								   
         );
@@ -201,7 +204,8 @@ class ProductCompanyController extends Controller
             'name'    =>  'required',
             'address'     =>  'required',
             'mobile'         =>  'required',
-			'due'   =>  'required',
+			'due',
+            'opening_balance',
 			
 			
 			
@@ -213,14 +217,16 @@ class ProductCompanyController extends Controller
             {
                 return response()->json(['errors' => $error->errors()->all()]);
             }
-              $request->due= convertToEnglish($request->due);
+            $request->due= convertToEnglish($request->due);
+            $request->opening_balance= convertToEnglish($request->opening_balance);
+    
 
         $form_data = array(
             'name'        =>  $request->name,
             'address'         =>  $request->address,
            'mobile' =>$request->mobile,
 		   'due' =>$request->due,
-		   		   'openingbalance' =>$request->due,
+		   		   'openingbalance' =>$request->opening_balance,
 
 								   
         );

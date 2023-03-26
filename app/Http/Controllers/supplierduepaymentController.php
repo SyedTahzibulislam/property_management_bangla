@@ -238,6 +238,10 @@ if ($dhar_shod_othoba_advance_er_mal_buje_pawa->superviser_id)
 			'supervisor',
             );
 
+
+
+
+            $request->amount = convertToEnglish($request->amount);
             $error = Validator::make($request->all(), $rules);
 
             if($error->fails())
@@ -443,7 +447,7 @@ $dhar_shod_othoba_advance_er_mal_buje_pawa->adjusttype  = $request->adjusttype;
 		
 		  	$cashtransition = new  cashtransition();
 $cashtransition->balance_of_business_id = Auth()->user()->balance_of_business_id;
-$cashtransition->description = "Due Payment to the supplier  "  .$supplier->name;
+$cashtransition->description = "বাকি পরিষোধ , সাপ্লাইয়ারঃ"  .$supplier->name;
 $cashtransition->User_id = Auth()->user()->id;
 $cashtransition->project_id = $request->project;
 $cashtransition->dhar_shod_othoba_advance_er_mal_buje_pawa_id = $dhar_shod_othoba_advance_er_mal_buje_pawa->id;

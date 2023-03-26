@@ -2,9 +2,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <style>
+    body {
+    style="font-family: nikosh;"   
+    }
+
 
 table {
-  font-family: arial, sans-serif;
+  font-family: nikosh, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
@@ -61,7 +65,7 @@ opacity: .1;
 </style>
  <?php for ($i=1; $i<3; $i++){ ?>
 </head>
-<body style="font-family: Times New Roman;">
+<body style="font-family: nikosh;">
 <div id="c" >
 <div id="head" >
 <img width="500px;"   src="img/logo.jpg" >
@@ -69,19 +73,19 @@ opacity: .1;
 </div>
 
 
-
+<h2>প্রডাক্ট ব্যবহার রিপোর্ট  </h2>
     <div style="height:10px;" id="one" >
     <div style="width:30%; float:left;" >
 	<?php if( $i == 0) { ?>
-      <b><u>Balance Sheet</u></b>
+      <b><u> ব্যালেন্স সিট </u></b>
     <?php } if ( $i == 1){ ?>
-	  <b>office's Copy  </b>
+	  <b> অফিস কপি   </b>
 	  <?php } if ( $i == 2){ ?>
-	 <b> Accountant's Copy  </b>
+	 <b> একাউন্টস কপি   </b>
 	  <?php } ?>
 	</div>
     <div style="width:40%;float:left;" >
- <b>Project Name:</b> {{$project_name}}
+ <b>প্রজেক্ট নাম :</b> {{$project_name}}
     </div>
 
 
@@ -96,7 +100,7 @@ opacity: .1;
 
   
   
-  Balance Sheet from date: <?php echo date('d/m/Y ', strtotime($start)); ?>  to <?php echo date('d/m/Y ', strtotime($end)); ?> 
+  তারিখ : <?php echo convertToBangla(date('d/m/Y ', strtotime($start))); ?>  থেকে  <?php echo convertToBangla(date('d/m/Y ', strtotime($end))); ?> 
   
 
   
@@ -119,15 +123,15 @@ opacity: .1;
      
 <thead>	
   <tr>
- <th style="width:40px;" >	Date</th>
+ <th style="width:40px;" >	ডেট </th>
   
     <th style="width:150px;" >
 	
-	  Product Name
+	  প্রডাক্ট 
     
 	 </th>
-	  <th style="width:100px;"  >Comment</th>
-    <th style="width:100px;"  >Amount(TK)</th>
+	  <th style="width:100px;"  >কমেন্ট </th>
+    <th style="width:100px;"  >প্রাইস </th>
  
   </tr>
   </thead>
@@ -138,15 +142,15 @@ opacity: .1;
 
   <tr>
 
-  <td> <?php echo date('d/m/Y', strtotime($o->created_at));; ?> </td>
+  <td> <?php echo convertToBangla(date('d/m/Y', strtotime($o->created_at)));; ?> </td>
     <td> 
 
 <table>
   <tr>
-    <th style="width:100px;" >Product Name </th>
-    <th>Qun.</th>
-	<th>Unit Pr.</th>
-    <th>Unit</th>
+    <th style="width:100px;" >প্রডাক্টের নাম  </th>
+    <th> পরিমাণ .</th>
+	<th>ইউনিট প্রাইস .</th>
+    <th>ইউনিট </th>
   </tr>
   
 
@@ -154,8 +158,8 @@ opacity: .1;
  @foreach ( $o->useproducttransition as $t )
   <tr>
     <td> {{$t->product->name}}</td>
-   <td><?php echo round($t->quantity,2); ?> </td>
-   <td><?php echo round($t->unirprice,2); ?> </td>
+   <td><?php echo convertToBangla(round($t->quantity,2)); ?> </td>
+   <td><?php echo convertToBangla(round($t->unirprice,2)); ?> </td>
 <td> {{$t->unitname}} </td>
    
 
@@ -186,7 +190,7 @@ opacity: .1;
 
 
 
- <td><?php echo round($o->amount,2); ?> </td>
+ <td><?php echo convertToBangla(round($o->amount,2)); ?> </td>
  <
 
 	 
@@ -198,11 +202,11 @@ opacity: .1;
 	
 	<div  style="height:10px;" id="btwo" >
     <div style="width:50%;float:left;" >
- <b>Date :</b><?php echo date("d/m/y") ;  ?>
+ <b>তারিখ  :</b><?php echo convertToBangla(date("d/m/y")) ;  ?>
     </div>
 
 	    <div style="width:50%;float:left;" >
-		<b>Print By:{{Auth()->user()->name}}</b>
+		<b> প্রিন্ট :{{Auth()->user()->name}}</b>
 
     </div>
 

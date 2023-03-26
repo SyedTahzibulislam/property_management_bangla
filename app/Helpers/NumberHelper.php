@@ -16,6 +16,8 @@ function convertToEnglish($number)
         '৭' => 7,
         '৮' => 8,
         '৯' => 9,
+		'-' =>'-',
+		'.' =>'.',
     ];
 
     if (is_array($number)) {
@@ -48,6 +50,8 @@ function convertToEnglish($number)
             7 => '৭',
             8 => '৮',
             9 => '৯',
+			'-' =>'-',
+		    '.' =>'.',
         ];
 
         $bangla_number = strtr($number, $bangla_numbers);

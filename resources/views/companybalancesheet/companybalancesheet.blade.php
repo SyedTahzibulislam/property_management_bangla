@@ -30,12 +30,14 @@
 @endif
   </div>
 
-কোম্পানি নাম :<select style="width:300px;" required name="company" id="company">
+কোম্পানি/ সাপ্লাইয়ারের নাম :<select style="width:300px;" required name="company" id="company">
 <option value=""></option>
 @foreach($Productcompany as $c)
   <option value="{{$c->id}}">{{$c->name}}</option>
  @endforeach
 </select>
+<p>
+<br>
 
 
   <button   type="submit"   target="_blank" class="btn btn-primary">Submit</button>

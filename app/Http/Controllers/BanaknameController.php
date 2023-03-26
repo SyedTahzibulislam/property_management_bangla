@@ -33,16 +33,6 @@ class BanaknameController extends Controller
 
 					
 					
-					
-                    ->addColumn('currentbalance', function( Bankname $data){ 
-                        return convertToBangla($data->currentbalance);
-                    })					
-					
-					
-					
-					
-					
-					
                     ->rawColumns(['action'])
                     ->make(true);
         }
@@ -79,9 +69,6 @@ class BanaknameController extends Controller
 			
         );
 
-
-
-
         $error = Validator::make($request->all(), $rules);
 
         if($error->fails())
@@ -89,8 +76,7 @@ class BanaknameController extends Controller
             return response()->json(['errors' => $error->errors()->all()]);
         }
 
- $request->ob = convertToEnglish($request->ob);
-$request->cb = convertToEnglish($request->cb);      
+       
 
         $form_data = array(
             'name'        =>  $request->name,
@@ -163,8 +149,7 @@ $request->cb = convertToEnglish($request->cb);
                 return response()->json(['errors' => $error->errors()->all()]);
             }
        
-$request->ob = convertToEnglish($request->ob);
-$request->cb = convertToEnglish($request->cb);
+
         $form_data = array(
             'name'        =>  $request->name,
             

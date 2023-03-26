@@ -32,11 +32,17 @@ class CreatePartnerController extends Controller
                         return $button;
                     })  
 			
-					
-		
-				
+                    ->addColumn('uttholon', function( sharepartner $data){ 
 
-					
+                      return convertToBangla($data->uttholon);
+                  })  					
+		
+                  ->addColumn('joma', function( sharepartner $data){ 
+
+                    return convertToBangla($data->joma);
+                }) 				
+
+                    					
 					
                     ->rawColumns(['action'])
                     ->make(true);

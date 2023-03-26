@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+ 
 use Illuminate\Http\Request;
 use DataTables;
 use Validator;
@@ -34,16 +34,14 @@ class banktransitionController extends Controller
      */
    	       public function index(Request $request)
     {
-      $Bankchalan=  Bankchalan::with('Bankname','Productcompany','Customer','user')
-	  ->orderBy('id', 'DESC')->get();
+      $Bankchalan=  Bankchalan::with('Bankname','Productcompany','Customer','user')->latest()->get();
 	  
 	
 	  
 	        if ($request->ajax()) { 
             
 
-			$Bankchalan=  Bankchalan::with('Bankname','Productcompany','Customer','user')
-			->orderBy('id', 'DESC')->get();
+			$Bankchalan=  Bankchalan::with('Bankname','Productcompany','Customer','user')->latest()->get();
             return Datatables::of($Bankchalan)
                    ->addIndexColumn()
                     ->addColumn('action', function( Bankchalan $data){ 
@@ -59,39 +57,32 @@ class banktransitionController extends Controller
                    
     if($Bankchalan->type == 0)
 	{
-		return "জমা ";
+		return "Deposit";
 	}
 
 
     if($Bankchalan->type == 1)
 	{
-		return "উত্তোলন ";
+		return "Withdrawl";
 	}
 				 
                 }) 
 					
 					
-		
-
-
-
-	 ->addColumn('amount', function (Bankchalan $Bankchalan) {
-                   return convertToBangla($Bankchalan->amount);	 
-                }) 
-
-				
+					
+					
 	 ->addColumn('whom', function (Bankchalan $Bankchalan) {
                    
     if($Bankchalan->whom == 0)
 	{
-		return "ব্যবসা হতে ";
+		return "From Business";
 	}
 
 
     if($Bankchalan->whom == 1)
 	{
 		$customer = Customer::findOrFail($Bankchalan->customer_id)->name;
-		return "কাস্টমার :".$customer;
+		return "customer:".$customer;
 	}
 	
 	
@@ -99,7 +90,7 @@ class banktransitionController extends Controller
     if($Bankchalan->whom == 2)
 	{
 		$company = Productcompany::findOrFail($Bankchalan->productcompany_id)->name;
-			return "কোম্পানি :".$company;
+			return "company:".$company;
 	
 	}
 	
@@ -108,7 +99,7 @@ class banktransitionController extends Controller
     if($Bankchalan->whom == 3)
 	{
 		$partner = sharepartner::findOrFail($Bankchalan->sharepartner_id)->name;
-		return "পার্টনার :".$partner;
+		return "Partner:".$partner;
 	}
 	
 	
@@ -300,6 +291,10 @@ $username = user::findOrFail($Bankchalan->User_id)->name;
      */
     public function store(Request $request)
     {
+		
+		
+		DB::transaction(function () use ($request) {
+		
         	$validated = $request->validate([
 	
 	 	'customer',
@@ -316,7 +311,7 @@ $username = user::findOrFail($Bankchalan->User_id)->name;
 		
     ]);
 	
-	$request->grossamount= convertToEnglish($request->grossamount);
+	
 
 	if ( ($request->whom != 0   ) && ($request->customer == "") && ($request->company == "") && ($request->partner == "") )
 	{
@@ -851,6 +846,7 @@ $cashtransition->save();
 
 	
 	flag:
+	});	
 	global $status;
 	if($status==1)
 	{
@@ -916,6 +912,9 @@ $cashtransition->save();
      */
     public function destroy($id)
     {
+		
+		//dd($id);
+		DB::transaction(function () use ($id) {
         $data= Bankchalan::findOrFail($id);
 		
 		
@@ -1093,7 +1092,7 @@ sharepartner::where('id', $data->sharepartner_id )
 
 
 $data->delete();
-
+});
 
 return response()->json(['success' => 'Data Deleted successfully. ' ]);	
 

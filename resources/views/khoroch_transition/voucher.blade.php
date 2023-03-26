@@ -2,9 +2,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <style>
-
+    body {
+    font-family: nikosh, sans-serif;"   
+    }
 table {
-  font-family: arial, sans-serif;
+  font-family: nikosh, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
@@ -73,7 +75,7 @@ $totalsum=0;
 $totaldue=0;
 ?>
 </head>
-<body style="font-family: Times New Roman;">
+<body style="font-family: nikosh;">
 <div id="c" >
 <div id="head" >
 <img width="500px;"   src="img/logo.jpg" >
@@ -84,17 +86,17 @@ $totaldue=0;
 
 
 
-	  <br> Expenses Statemnet between date:
+	  <br> খরচ :
 	   
 	   <?php 
 	     
-	    $myDateTime = DateTime::createFromFormat('Y-m-d', $start);  echo  $myDateTime->format('d/m/Y'); ?> 
+	    $myDateTime = DateTime::createFromFormat('Y-m-d', $start);  echo  convertToBangla( $myDateTime->format('d/m/Y')); ?> 
     
 	   
 
-	   to 
+	   থেকে  
 	   	   <?php 
-   $myDateTime = DateTime::createFromFormat('Y-m-d', $datethatsentasenddatefromcust);  echo  $myDateTime->format('d/m/Y');
+   $myDateTime = DateTime::createFromFormat('Y-m-d', $datethatsentasenddatefromcust);  echo  convertToBangla( $myDateTime->format('d/m/Y'));
 	   ?>
 	   
 	
@@ -139,20 +141,20 @@ $totaldue=0;
 
     <th style="width:150px;" >
 	
-Expenses Name
+খরচ 
     
 	 </th>
 	    <th style="width:150px;" >
 	
-Project Name
+প্রজেক্ট 
     
 	 </th> 
 	 
-	  <th style="width:100px;"  >Amount </th>
-    <th style="width:100px;"  >Paid </th>
-	 <th style="width:100px;"  >Due </th>
+	  <th style="width:100px;"  >টাকার পরিমাণ  </th>
+    <th style="width:100px;"  >পেইড  </th>
+	 <th style="width:100px;"  >বাকি  </th>
 
-		  <th style="width:100px;"  >Date </th>
+		  <th style="width:100px;"  >তারিখ  </th>
 
   </tr>
   </thead>
@@ -160,10 +162,10 @@ Project Name
 <tr>
 <td> {{$khoroc->khorocer_khad->name}} </td>
 <td> {{$khoroc->project->name}} </td>
-<td> {{$khoroc->amount}} </td>
-<td> {{$khoroc->amount - $khoroc->due}} </td>
-<td> {{ $khoroc->due}} </td>
-<td > {{ Carbon\Carbon::parse($khoroc->created_at)->format('d/m/Y') }} </td>	 
+<td> {{   convertToBangla($khoroc->amount)}} </td>
+<td> {{convertToBangla($khoroc->amount - $khoroc->due)}} </td>
+<td> {{ convertToBangla($khoroc->due)}} </td>
+<td > {{ convertToBangla(Carbon\Carbon::parse($khoroc->created_at)->format('d/m/Y')) }} </td>	 
 	 
   </tr>
 
